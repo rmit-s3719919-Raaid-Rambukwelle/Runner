@@ -18,4 +18,17 @@ public abstract class Interactable : MonoBehaviour
         if (PlayerController.instance.interactables.Contains(this))
             PlayerController.instance.interactables.Remove(this);
     }
+
+    private void OnMouseEnter()
+    {
+        Debug.Log("Hovered over " + gameObject.name);
+        PlayerController.instance.currentInteractable = this;
+    }
+
+    private void OnMouseExit()
+    {
+        Debug.Log("Hovered left " + gameObject.name);
+        if (PlayerController.instance.currentInteractable == this)
+            PlayerController.instance.currentInteractable = null;
+    }
 }

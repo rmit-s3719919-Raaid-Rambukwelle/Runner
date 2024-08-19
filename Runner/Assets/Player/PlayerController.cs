@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode interactKey;
     Interactable closestInteractable;
+    public Interactable currentInteractable;
 
 
     private void Start()
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        /*
         GetClosestInteractable();
         if (Input.GetKeyDown(interactKey))
         {
@@ -39,6 +41,15 @@ public class PlayerController : MonoBehaviour
             }
             
             closestInteractable.Interact();
+        }
+        */
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (currentInteractable == null) return;
+
+            if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
+                currentInteractable.Interact();
         }
     }
 
@@ -56,5 +67,17 @@ public class PlayerController : MonoBehaviour
         } 
     }
 
+    private void OnDrawGizmos()
+    {
+        if (currentInteractable != null)
+        {
+            if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
+                Gizmos.color = Color.green;
+            else
+                Gizmos.color = Color.red;
+
+            Gizmos.DrawLine(transform.position, currentInteractable.transform.position);
+        }
+    }
 
 }

@@ -2104,10 +2104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isIsometric: 1
   moveSpeed: 5
-  turnSpeed: 960
-  interactRange: 5
+  turnSpeed: 1080
+  interactRange: 4
   interactables: []
   interactKey: 102
+  currentInteractable: {fileID: 0}
 --- !u!1 &4984778732499902881
 GameObject:
   m_ObjectHideFlags: 0
