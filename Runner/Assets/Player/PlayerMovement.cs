@@ -37,15 +37,16 @@ public class PlayerMovement : MonoBehaviour
 
     void isoMovement()
     {
-        // Movement
-        if (moveDir.magnitude <= 0) return;
-        rb.MovePosition(transform.position + orientation.forward * PlayerController.instance.moveSpeed * Time.deltaTime);
-
         // Rotation
         if (moveDir.magnitude <= 0) return;
         var iso = IsometricConversion(moveDir);
         var rot = Quaternion.LookRotation(iso);
         orientation.rotation = Quaternion.RotateTowards(orientation.rotation, rot, Time.deltaTime * PlayerController.instance.turnSpeed);
+
+        // Movement
+        if (moveDir.magnitude <= 0) return;
+        rb.MovePosition(transform.position + iso * PlayerController.instance.moveSpeed * Time.deltaTime);
+
     }
 
     Vector3 IsometricConversion(Vector3 dir)
