@@ -20,10 +20,17 @@ public class PlayerController : MonoBehaviour
     Interactable closestInteractable;
     public Interactable currentInteractable;
 
+    [Header("Inventory")]
+    public float currentInventoryWeight = 0;
+    public float maxInventoryWeight;
+
+    public List<Item> items;
+
 
     private void Start()
     {
         instance = this;
+        items = new List<Item>();
         interactables = new List<Interactable>();
     }
 
@@ -53,18 +60,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void GetClosestInteractable()
+    public void DropItem(float itemSlot)
     {
-        if (interactables.Count <= 0) return;
 
-        closestInteractable = interactables[0];
-        foreach(var interactable in interactables)
-        {
-            if (Vector3.Distance(transform.position, interactable.transform.position) < Vector3.Distance(transform.position, closestInteractable.transform.position))
-            {
-                closestInteractable = interactable;
-            }
-        } 
     }
 
     private void OnDrawGizmos()

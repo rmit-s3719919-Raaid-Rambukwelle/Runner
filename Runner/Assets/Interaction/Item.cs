@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class Item : Interactable
 {
+    public string itemName;
+    public string itemDesc;
+    public Sprite itemImage;
+
+    public float weight;
+
+
     public override void Interact()
     {
-        throw new System.NotImplementedException();
+        AddToInventory();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void AddToInventory()
     {
-        
+        if (weight + PlayerController.instance.currentInventoryWeight > PlayerController.instance.maxInventoryWeight)
+        {
+            Debug.Log("Item is too heavy");
+            return;
+        }
+
+        PlayerController.instance.items.Add(this);
+        gameObject.SetActive(false);
+        PlayerController.instance.currentInteractable = null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
