@@ -24,6 +24,8 @@ public class Item : Interactable
             return;
         }
 
+        PlayerController.instance.currentInventoryWeight += weight;
+
         PlayerController.instance.items.Add(this);
         gameObject.SetActive(false);
         PlayerController.instance.currentInteractable = null;
