@@ -1,0 +1,32 @@
+first person drifter version 1.0 // 20.1.2014
+compiled by @torahhorse [http://torahhorse.com]
+email: benjamin.esposito@gmail.com
+
+edits from everest pipkin for unity 2019.2.12 // 08.12.2019
+email: everest.pipkin@gmail.com
+
+
+dead simple first person character controller written in c# for unity3d
+requires 
+first person drifter improves on unitys default first person controller in a few ways:
+
+- smooths mouse input
+- adds optional run mode, air control, sliding on slopes
+- adds mouse lock (and unlock with ESC)
+
+how to use:
+drop the Player prefab into a scene, get rid of the Main Camera that unity makes for you. hit play.
+
+run with left shift.
+
+if youre getting the error 'There are 2 Audio Listeners in the scene' that means you have another camera 
+in the scene, probably the default one called Main Camera. delete that.
+
+*****************
+
+a drifting game is a piece of art software that people walk around in for the hell of it (see: proteus)
+i made this package bc i want to encourage artists & non-programmers to make more drifting games
+and 2 provide users w/ controls  that behave in waays they expect
+
+you can use this for whatever purposes, commercial or noncommercial.
+like all my endeavors, i stole most of the code from ppl smarter than me
