@@ -8,6 +8,8 @@ public class Item : Interactable
     public string itemDesc;
     public Sprite itemImage;
 
+    public string itemID;
+
     public float weight;
 
 

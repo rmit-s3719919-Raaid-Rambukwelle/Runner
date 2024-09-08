@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Interaction")]
     public float interactRange;
+    public float grappleRange;
     public List<Interactable> interactables;
 
     [Header("Keybinds")]
@@ -37,25 +38,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        /*
-        GetClosestInteractable();
-        if (Input.GetKeyDown(interactKey))
-        {
-            if (interactables.Count <= 0)
-            {
-                Debug.Log("No Interactables in range");
-                return;
-            }
-            
-            closestInteractable.Interact();
-        }
-        */
 
         if (Input.GetMouseButtonDown(0))
         {
             if (currentInteractable == null) return;
 
             if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
+                currentInteractable.Interact();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (currentInteractable == null) return;
+
+            if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange)
                 currentInteractable.Interact();
         }
     }
@@ -65,12 +61,27 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public bool SearchInventory(string input)
+    {
+        foreach (Item item in items)
+        {
+            if (item.itemID == input)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void OnDrawGizmos()
     {
         if (currentInteractable != null)
         {
             if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
                 Gizmos.color = Color.green;
+            else if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange)
+                Gizmos.color = Color.blue;
             else
                 Gizmos.color = Color.red;
 
