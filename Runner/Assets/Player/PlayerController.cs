@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Interaction")]
     public float interactRange;
+    public float grappleRange;
     public List<Interactable> interactables;
 
     [Header("Keybinds")]
@@ -20,29 +21,23 @@ public class PlayerController : MonoBehaviour
     Interactable closestInteractable;
     public Interactable currentInteractable;
 
+    [Header("Inventory")]
+    public float currentInventoryWeight = 0;
+    public float maxInventoryWeight;
+
+    public List<Item> items;
+
 
     private void Start()
     {
         instance = this;
+        items = new List<Item>();
         interactables = new List<Interactable>();
     }
 
 
     private void Update()
     {
-        /*
-        GetClosestInteractable();
-        if (Input.GetKeyDown(interactKey))
-        {
-            if (interactables.Count <= 0)
-            {
-                Debug.Log("No Interactables in range");
-                return;
-            }
-            
-            closestInteractable.Interact();
-        }
-        */
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -51,20 +46,32 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
                 currentInteractable.Interact();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (currentInteractable == null) return;
+
+            if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange)
+                currentInteractable.Interact();
+        }
     }
 
-    void GetClosestInteractable()
+    public void DropItem(float itemSlot)
     {
-        if (interactables.Count <= 0) return;
 
-        closestInteractable = interactables[0];
-        foreach(var interactable in interactables)
+    }
+
+    public bool SearchInventory(string input)
+    {
+        foreach (Item item in items)
         {
-            if (Vector3.Distance(transform.position, interactable.transform.position) < Vector3.Distance(transform.position, closestInteractable.transform.position))
+            if (item.itemID == input)
             {
-                closestInteractable = interactable;
+                return true;
             }
-        } 
+        }
+
+        return false;
     }
 
     private void OnDrawGizmos()
@@ -73,6 +80,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange)
                 Gizmos.color = Color.green;
+            else if (Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange)
+                Gizmos.color = Color.blue;
             else
                 Gizmos.color = Color.red;
 

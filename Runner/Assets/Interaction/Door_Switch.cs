@@ -5,13 +5,30 @@ using UnityEngine;
 public class Door_Switch : Interactable
 {
     public GameObject DoorObj;
+
+    public bool locked = false;
+    public string lockedMessage;
+    public string requiredObj;
+    public bool reactivateOnUse;
     Animator animator;
+
     bool open = false;
+    bool active = true;
+    
 
     public override void Interact()
     {
+        if (!active) return;
+
+        if (locked && !PlayerController.instance.SearchInventory(requiredObj))
+        {
+            Debug.Log(lockedMessage);
+            return;
+        }
         open = !open;
         animator.SetBool("Open", open);
+
+        if (!reactivateOnUse) active = false;
     }
 
     // Start is called before the first frame update
@@ -21,9 +38,4 @@ public class Door_Switch : Interactable
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
