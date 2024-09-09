@@ -303,7 +303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -609,6 +609,7 @@ MonoBehaviour:
   itemName: Test obj
   itemDesc: an item used for testing the inventory
   itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemID: 
   weight: 5
 --- !u!65 &447777044
 BoxCollider:
@@ -651,7 +652,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -792,7 +793,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -859,6 +860,7 @@ MonoBehaviour:
   itemName: Test obj
   itemDesc: an item used for testing the inventory
   itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemID: 
   weight: 5
 --- !u!65 &495918263
 BoxCollider:
@@ -901,7 +903,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1004,6 +1006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1088,6 +1091,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &741516901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1569,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1643,6 +1669,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorObj: {fileID: 1382780120}
+  locked: 0
+  lockedMessage: 
+  requiredObj: 
+  reactivateOnUse: 0
 --- !u!1 &1347119231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1737,7 @@ MonoBehaviour:
   itemName: Test obj
   itemDesc: an item used for testing the inventory
   itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemID: 
   weight: 5
 --- !u!65 &1347119234
 BoxCollider:
@@ -1749,7 +1780,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2052,7 +2083,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2422,6 +2453,7 @@ MonoBehaviour:
   itemName: Test obj
   itemDesc: an item used for testing the inventory
   itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemID: 
   weight: 5
 --- !u!65 &1898137157
 BoxCollider:
@@ -2464,7 +2496,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2738,7 +2770,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b05689ffa7e45741b7e83f8c7ff4d50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2794,6 +2826,7 @@ MonoBehaviour:
   moveSpeed: 5
   turnSpeed: 1080
   interactRange: 4
+  grappleRange: 0
   interactables: []
   interactKey: 102
   currentInteractable: {fileID: 0}
