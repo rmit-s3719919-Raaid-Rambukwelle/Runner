@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     [Header("Movement")]
+    public bool canMove;
     public bool isIsometric;
     public float moveSpeed;
     public float turnSpeed;
