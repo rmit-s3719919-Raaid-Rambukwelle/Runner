@@ -33,7 +33,7 @@ public class CameraMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, tpTransform.rotation, Time.deltaTime * transformSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) { ChangePerspective(); }
+        //if (Input.GetKeyDown(KeyCode.Space)) { ChangePerspective(); }
     }
 
     public void ChangePerspective()

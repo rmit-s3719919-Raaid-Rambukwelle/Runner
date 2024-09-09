@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PlayerController.instance.isIsometric) isoMovement();
+        if (PlayerController.instance.isIsometric && PlayerController.instance.canMove) isoMovement();
 
     }
 
