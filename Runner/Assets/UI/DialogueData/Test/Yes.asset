@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Yes
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Ah!
-
-    You said yes.'
+  - Great! Please phase through the door infront of you.
   responses: []

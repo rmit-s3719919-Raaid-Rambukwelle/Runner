@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
-  m_Name: ClickTest
+  m_Name: GoAway
   m_EditorClassIdentifier: 
   dialogue:
-  - If you're seeing this, it means the 'click' worked!
-  - Congratulations.
+  - 'I already told you where to go.
+
+    Go away now, shoo!'
   responses: []

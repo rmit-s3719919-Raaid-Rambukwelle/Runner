@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [Header("Reference")]
 
     public Transform orientation;
@@ -20,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Gets vector from player inputs
         GetInput();
-
     }
 
     private void FixedUpdate()

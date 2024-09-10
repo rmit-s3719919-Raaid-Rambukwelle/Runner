@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //Dialogue system
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+    public IInteractable Interactable { get; set; }
+
+
     public static PlayerController instance;
 
     [Header("Movement")]
@@ -39,6 +46,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Stops player from moving if dialogue is open
+        //if (dialogueUI.IsOpen) return;
+
+        //Dialogue system
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Interactable != null)
+            {
+                Interactable.Interact(playerController: this);
+            }
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
