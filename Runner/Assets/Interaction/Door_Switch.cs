@@ -26,7 +26,8 @@ public class Door_Switch : Interactable
             return;
         }
         open = !open;
-        animator.SetBool("Open", open);
+        //animator.SetBool("Open", open);
+        DoorObj.gameObject.SetActive(false);
 
         if (!reactivateOnUse) active = false;
     }
@@ -34,7 +35,7 @@ public class Door_Switch : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        animator = DoorObj.GetComponent<Animator>();
+        //animator = DoorObj.GetComponent<Animator>();
         
     }
 
