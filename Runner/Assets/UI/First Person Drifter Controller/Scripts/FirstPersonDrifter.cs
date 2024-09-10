@@ -12,8 +12,8 @@ public class FirstPersonDrifter: MonoBehaviour
 {
 
     //DIALOGUE SYSTEM
-    [SerializeField] private DialogueUI dialogueUI;
-    public DialogueUI DialogueUI => dialogueUI;
+    //[SerializeField] private DialogueUI dialogueUI;
+    //public DialogueUI DialogueUI => dialogueUI;
     public IInteractable Interactable { get; set; }
 
     public float walkSpeed = 6.0f;
@@ -82,7 +82,7 @@ public class FirstPersonDrifter: MonoBehaviour
         {
             if (Interactable != null)
             {
-                Interactable.Interact(firstPersonDrifter: this);
+                //Interactable.Interact(firstPersonDrifter: this);
             }
         }
 

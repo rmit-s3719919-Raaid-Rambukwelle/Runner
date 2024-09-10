@@ -5,27 +5,37 @@ using UnityEngine;
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
+
+    public void UpdateDialogueObject(DialogueObject dialogueObject) 
+    {
+        this.dialogueObject = dialogueObject;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out FirstPersonDrifter firstPersonDrifter))
+        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerController playerController))
         {
-            firstPersonDrifter.Interactable = this;
+            playerController.Interactable = this;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out FirstPersonDrifter firstPersonDrifter)) 
+        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerController playerController))
         {
-            if (firstPersonDrifter.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this) 
+            if (playerController.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
-                firstPersonDrifter.Interactable = null;
+                playerController.Interactable = null;
             }
         }
 
     }
-    public void Interact(FirstPersonDrifter firstPersonDrifter) 
+    public void Interact(PlayerController playerController)
     {
-        firstPersonDrifter.DialogueUI.ShowDialogue(dialogueObject);
+        if (TryGetComponent(out DialogueResponseEvents responseEvents) && responseEvents.DialogueObject == dialogueObject)
+        {
+            playerController.DialogueUI.AddResponseEvents(responseEvents.Events);
+        }
+
+        playerController.DialogueUI.ShowDialogue(dialogueObject);
     }
 }
