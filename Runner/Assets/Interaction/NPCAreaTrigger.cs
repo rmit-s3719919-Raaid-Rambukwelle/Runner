@@ -32,8 +32,6 @@ public class NPCAreaTrigger : MonoBehaviour
         // activateDialogue bool is used to control the player and dialogue - only one NPC needs to control the player and dialogue at a time
         if (other.CompareTag("Player") && readyToTrigger && activateDialogue)
         {
-            // Disables player movement
-            PlayerController.instance.canMove = false;
 
             // Disables trigger if only used for single activation
             if (singleActivation)

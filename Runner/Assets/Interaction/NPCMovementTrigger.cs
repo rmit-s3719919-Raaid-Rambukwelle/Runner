@@ -14,8 +14,6 @@ public class NPCMovementTrigger : MonoBehaviour
         // Starts movement according to navmesh
         agent.SetDestination(targetPosition.position);
 
-        // Re-enables player movement
-        PlayerController.instance.canMove = true;
     }
 
     //Used to end prototype

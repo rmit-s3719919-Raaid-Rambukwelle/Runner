@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: AtDoor
   m_EditorClassIdentifier: 
   dialogue:
-  - Hmm... It appears there is a door obstructing the way. Any ideas on what to do?
+  - A closed door.
+  - Don't worry, i'll open it
   responses:
-  - responseText: Blow it up?
+  - responseText: Let's go
     dialogueObject: {fileID: 11400000, guid: 0a5b1a28637d7e040942c5b28cab3048, type: 2}
-  - responseText: '*Cry*'
-    dialogueObject: {fileID: 11400000, guid: a93a62b06e2ac9744917aee619304bdb, type: 2}

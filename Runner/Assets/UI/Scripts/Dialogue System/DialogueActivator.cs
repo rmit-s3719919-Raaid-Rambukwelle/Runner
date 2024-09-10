@@ -6,36 +6,47 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
 
+
     public void UpdateDialogueObject(DialogueObject dialogueObject) 
     {
         this.dialogueObject = dialogueObject;
     }
+
+    public void DisableDialogue()
+    {
+
+        PlayerManager.current.Interactable = null;
+        
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerController playerController))
+        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerManager playerManager))
         {
-            playerController.Interactable = this;
+            playerManager.Interactable = this;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerController playerController))
+        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerManager playerManager))
         {
-            if (playerController.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
+            if (playerManager.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
-                playerController.Interactable = null;
+                playerManager.Interactable = null;
+
             }
         }
 
     }
-    public void Interact(PlayerController playerController)
+    public void Interact(PlayerManager playerManager)
     {
         if (TryGetComponent(out DialogueResponseEvents responseEvents) && responseEvents.DialogueObject == dialogueObject)
         {
-            playerController.DialogueUI.AddResponseEvents(responseEvents.Events);
+            playerManager.DialogueUI.AddResponseEvents(responseEvents.Events);
         }
 
-        playerController.DialogueUI.ShowDialogue(dialogueObject);
+        playerManager.DialogueUI.ShowDialogue(dialogueObject);
     }
 }

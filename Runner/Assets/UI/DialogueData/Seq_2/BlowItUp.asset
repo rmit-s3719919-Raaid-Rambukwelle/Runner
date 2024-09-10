@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlowItUp
   m_EditorClassIdentifier: 
   dialogue:
-  - "Phase through it! That's exactly what I thought. \nLet's proceed."
+  - Alright, let's go
   responses: []

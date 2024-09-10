@@ -20,17 +20,16 @@ public class Item : Interactable
 
     void AddToInventory()
     {
-        if (weight + PlayerController.instance.currentInventoryWeight > PlayerController.instance.maxInventoryWeight)
+        if (weight > 100f)
         {
             Debug.Log("Item is too heavy");
             return;
         }
 
-        PlayerController.instance.currentInventoryWeight += weight;
 
-        PlayerController.instance.items.Add(this);
+        PlayerManager.current.inventory.items.Add(this);
         gameObject.SetActive(false);
-        PlayerController.instance.currentInteractable = null;
+        PlayerManager.current.currentInteractable = null;
     }
 
     

@@ -63,4 +63,9 @@ public class ResponseHandler : MonoBehaviour
 
         dialogueUI.ShowDialogue(response.DialogueObject);
     }
+
+    public void test()
+    {
+        Debug.Log("Test");
+    }
 }

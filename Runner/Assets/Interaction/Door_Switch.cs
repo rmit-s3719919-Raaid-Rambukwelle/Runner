@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Door_Switch : Interactable
 {
+    [Header("Switch variables")]
     public GameObject DoorObj;
-
     public bool locked = false;
     public string lockedMessage;
     public string requiredObj;
@@ -20,14 +20,14 @@ public class Door_Switch : Interactable
     {
         if (!active) return;
 
-        if (locked && !PlayerController.instance.SearchInventory(requiredObj))
+        if (locked && !PlayerManager.current.SearchInventory(requiredObj))
         {
-            Debug.Log(lockedMessage);
+            PlayerManager.current.interactText.text = lockedMessage;
             return;
         }
         open = !open;
         animator.SetBool("Open", open);
-
+        
         if (!reactivateOnUse) active = false;
     }
 
