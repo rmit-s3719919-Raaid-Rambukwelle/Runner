@@ -10,8 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
-  m_Name: Yes
+  m_Name: Interactions
   m_EditorClassIdentifier: 
   dialogue:
-  - Great! Please follow me.
-  responses: []
+  - 'At this location I''m told that you, the player,
+
+    will be able to interact
+    with collectable items.'
+  - 'You will have the ability to use some of these
+
+    items later on in the experience.'
+  - Moving forward!
+  responses:
+  - responseText: 'Continue:'
+    dialogueObject: {fileID: 11400000, guid: 36035b9a16ff02e4f92f6b943eceef1d, type: 2}

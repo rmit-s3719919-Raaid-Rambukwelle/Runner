@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Stops player from moving if dialogue is open
-        //if (dialogueUI.IsOpen) return;
+        if (dialogueUI.IsOpen) return;
 
         //Dialogue system
         if (Input.GetKeyDown(KeyCode.E))

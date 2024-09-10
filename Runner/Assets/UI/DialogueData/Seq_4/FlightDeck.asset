@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
+  m_Name: FlightDeck
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'Hmm... It seems we find ourselves at another
+
+    locked door.'
+  - 'But this one appears impassable, even to out
+
+    magical wall-phasing abilities...'
+  - Wait, let me double check...
+  - '*DONK* Hm, nevermind.'
+  - 'I''ve heard rumors that the contents beyond
+
+    this door are of immense value...'
+  - But I suppose you'll just have to wait until the next installment of the prototype!
+  responses:
+  - responseText: Goodbye
+    dialogueObject: {fileID: 11400000, guid: 74d8e600da3d9804db1519156fead071, type: 2}

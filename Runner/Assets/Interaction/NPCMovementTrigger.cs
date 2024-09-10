@@ -18,10 +18,16 @@ public class NPCMovementTrigger : MonoBehaviour
         PlayerController.instance.canMove = true;
     }
 
+    //Used to end prototype
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     // Space bar to activate movement
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             StartMovement();
             Debug.Log("Moving NPC");

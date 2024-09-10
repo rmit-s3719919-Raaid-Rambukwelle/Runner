@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
-  m_Name: Yes
+  m_Name: AtDoor
   m_EditorClassIdentifier: 
   dialogue:
-  - Great! Please follow me.
-  responses: []
+  - Hmm... It appears there is a door obstructing the way. Any ideas on what to do?
+  responses:
+  - responseText: Blow it up?
+    dialogueObject: {fileID: 11400000, guid: 0a5b1a28637d7e040942c5b28cab3048, type: 2}
+  - responseText: '*Cry*'
+    dialogueObject: {fileID: 11400000, guid: a93a62b06e2ac9744917aee619304bdb, type: 2}
