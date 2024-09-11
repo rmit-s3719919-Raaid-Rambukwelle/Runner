@@ -38,8 +38,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _edgeValue: 0.2
-    - _edgeValue2: 0.7
-    - _lineThickness: 2
+    - _edgeValue2: 0.544
+    - _lineThickness: 1.57
     - _normalTreshold: 0
     m_Colors:
     - _black: {r: 0, g: 0, b: 0, a: 0}

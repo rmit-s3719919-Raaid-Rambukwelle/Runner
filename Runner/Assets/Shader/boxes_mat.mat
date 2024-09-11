@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: skinMat
+  m_Name: boxes_mat
   m_Shader: {fileID: -6465566751694194690, guid: bc3235349f6938d4b83a731936f392dc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -23,20 +23,44 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_492ae7eb9d9749e78b0ce9591637449b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bf8c969b6b2b93948b7b67ab1fc4944e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ambientOcclusionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _emissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: 9c8e9fddc17ed2a49a1404e1768a66e0, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _metallicTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _normalsTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _shadowTex:
-        m_Texture: {fileID: 2800000, guid: 3db4addecb53c8d42bb671968edd81cc, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _smoothnessTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -53,26 +77,33 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Light_Probe_Contribution: -0.41
+    - _Light_Probe_Contribution: -0.75
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _lightSmoothness: 1
-    - _lightsSmoothness: 1
+    - _ambientOStrength: 0
+    - _emissionStrength: 0
+    - _hathingFreq: 250
+    - _lightProbeContribution: 7
+    - _lightSmoothness: 0
+    - _metallicStrength: 0
     - _normalStrength: 0
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0
-    - _outlineThickness: 4.73
-    - _shadowStep: 0.373
+    - _outlineNormalsSensitivity: 0
+    - _outlineThickness: 0
+    - _shadowStep: 0.155
+    - _smoothnessStrength: 0
     - _transparency: 0.5
     m_Colors:
-    - _mainColor: {r: 1, g: 0.21226418, b: 0.21226418, a: 0}
+    - _hatchingFromTo: {r: 3.85, g: -6.68, b: 0, a: 0}
+    - _mainColor: {r: 0.5283019, g: 0.49677283, b: 0.28657886, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _shadowIntensity: {r: 0.37, g: 1, b: 0, a: 0}
+    - _shadowIntensity: {r: 0.81, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &5954382613522655232
+--- !u!114 &8612594305208868713
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
