@@ -55,7 +55,7 @@ Material:
     - _outlineDepthSensitivity: 0.301
     - _shadowStep: 0
     m_Colors:
-    - _mainColor: {r: 0.51290494, g: 0.9622642, b: 0.8624066, a: 0}
+    - _mainColor: {r: 0.8867924, g: 0.6225912, b: 0.38204575, a: 0}
     - _shadowColor: {r: 0.256675, g: 0.5283019, b: 0.49309102, a: 0}
     - _shadowIntensity: {r: -0.16, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
