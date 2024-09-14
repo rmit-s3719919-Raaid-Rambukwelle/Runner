@@ -16,4 +16,6 @@ MonoBehaviour:
   - 'I already told you where to go.
 
     Go away now, shoo!'
-  responses: []
+  responses:
+  - responseText: trigger!
+    dialogueObject: {fileID: 11400000, guid: 0c9eef377377801498bd93aacbe14b0c, type: 2}
