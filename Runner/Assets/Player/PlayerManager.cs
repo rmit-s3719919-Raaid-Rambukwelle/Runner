@@ -10,8 +10,12 @@ public class PlayerManager : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
-    [Header("Interactables")]
+    [Header("Keybinds")]
     public KeyCode interactKey;
+    public KeyCode jumpKey;
+
+
+    [Header("Interactables")]
     public float interactRange;
     public float grappleRange;
     public Interactable currentInteractable;
