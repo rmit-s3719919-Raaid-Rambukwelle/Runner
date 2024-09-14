@@ -7,11 +7,6 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager current;
 
-    [Header("Camera")]
-    public Transform holder;
-    public float sensX;
-    public float sensY;
-
     [Header("Movement")]
     public float moveSpeed;
 
@@ -43,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         //Stops player from moving if dialogue is open
         if (dialogueUI.IsOpen) return;
 
@@ -85,6 +81,7 @@ public class PlayerManager : MonoBehaviour
         {
             currentInteractable.Interact();
         }
+        */
     }
 
     public bool SearchInventory(string input)

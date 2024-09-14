@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    [Header("Camera")]
-    public Transform holder;
-    float xRot;
-    float yRot;
+    [Header("References")]
+    public Transform orientation;
 
     Vector3 moveDir;
     Rigidbody rb;
@@ -28,6 +26,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         if (PlayerManager.current.DialogueUI.IsOpen)
         {
             Cursor.lockState = CursorLockMode.Confined;
@@ -37,28 +36,16 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            MoveCharacter();
-            CameraMovement();
         }    
+        */
+        MoveCharacter();
     }
 
     void GetInput()
     {
-        moveDir = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
+        moveDir = orientation.forward * Input.GetAxisRaw("Vertical") + orientation.right * Input.GetAxisRaw("Horizontal");
     }
 
-    void CameraMovement()
-    {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * PlayerManager.current.sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * PlayerManager.current.sensY;
-        yRot += mouseX;
-
-        xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, -90f, 90f);
-
-        transform.rotation = Quaternion.Euler(0, yRot, 0);
-        holder.rotation = Quaternion.Euler(xRot, yRot, 0);
-    }
 
     void MoveCharacter()
     {
