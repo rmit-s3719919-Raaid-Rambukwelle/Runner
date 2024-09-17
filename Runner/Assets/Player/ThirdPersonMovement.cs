@@ -8,10 +8,16 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform orientation;
     public bool limitVelocity = true;
 
+    [Header("Movement")]
+    public float moveSpeed;
+    public float dashSpeed;
+    float speed;
+
     [Header("Dashing")]
     public float dashForce;
     public float dashLimit;
     public float dashCooldown;
+    bool dashing;
     [SerializeField] float dashCount = 3;
     [SerializeField] bool readyToDash = true;
 
@@ -31,6 +37,16 @@ public class ThirdPersonMovement : MonoBehaviour
     Vector3 moveDir;
     Rigidbody rb;
 
+    public MoveState moveState;
+    public enum MoveState
+    {
+        Moving,
+        Dashing,
+        Sliding,
+        Idle,
+        Air
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +60,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         GetInput();
+        StateHandler();
 
         if (grounded)
             rb.drag = groundDrag;
@@ -67,6 +84,27 @@ public class ThirdPersonMovement : MonoBehaviour
         */
         MoveCharacter();
     }
+    void StateHandler()
+    {
+        if (dashing)
+        {
+            moveState = MoveState.Dashing;
+            speed = dashSpeed;
+        }
+        else if (moveDir.magnitude > 0 && grounded)
+        {
+            moveState = MoveState.Moving;
+            speed = moveSpeed;
+        }
+        else if (moveDir.magnitude == 0 && grounded)
+        {
+            moveState = MoveState.Idle;
+        }
+        else
+        {
+            moveState = MoveState.Air;
+        }
+    }
 
     void GetInput()
     {
@@ -82,6 +120,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Input.GetKey(PlayerManager.current.dashKey) && dashCount > 0 && readyToDash)
         {
             readyToDash = false;
+            dashing = true;
             Dash();
             Invoke(nameof(ResetDash), 0.3f);
         }
@@ -91,16 +130,16 @@ public class ThirdPersonMovement : MonoBehaviour
     void MoveCharacter()
     {
         if (grounded)
-            rb.AddForce(moveDir.normalized * PlayerManager.current.moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDir.normalized * speed * 10f, ForceMode.Force);
         else if(!grounded)
-            rb.AddForce(moveDir.normalized * PlayerManager.current.moveSpeed * 10f * airMulti, ForceMode.Force);
+            rb.AddForce(moveDir.normalized * speed * 10f * airMulti, ForceMode.Force);
 
 
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatVel.magnitude > PlayerManager.current.moveSpeed)
+        if (flatVel.magnitude > speed)
         {
-            Vector3 limitedVel = flatVel.normalized * PlayerManager.current.moveSpeed;
+            Vector3 limitedVel = flatVel.normalized * speed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
@@ -128,6 +167,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void ResetDash()
     {
+        dashing = false;
         readyToDash = true;
     }
 
