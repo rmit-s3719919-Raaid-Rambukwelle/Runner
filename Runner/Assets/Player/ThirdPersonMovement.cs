@@ -6,8 +6,14 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     [Header("References")]
     public Transform orientation;
+    public bool limitVelocity = true;
 
-    public float groundDrag;
+    [Header("Dashing")]
+    public float dashForce;
+    public float dashLimit;
+    public float dashCooldown;
+    [SerializeField] float dashCount = 3;
+    [SerializeField] bool readyToDash = true;
 
     [Header("Jumping")]
     public float jumpForce;
@@ -18,6 +24,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("GroundCheck")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public float groundDrag;
     bool grounded;
 
 
@@ -71,6 +78,13 @@ public class ThirdPersonMovement : MonoBehaviour
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
+        if (Input.GetKey(PlayerManager.current.dashKey) && dashCount > 0 && readyToDash)
+        {
+            readyToDash = false;
+            Dash();
+            Invoke(nameof(ResetDash), 0.3f);
+        }
     }
 
 
@@ -95,12 +109,26 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce((transform.up + moveDir.normalized) * jumpForce, ForceMode.Impulse);
     }
 
     void ResetJump()
     {
         readyToJump = true;
+    }
+
+    void Dash()
+    {
+        if (moveDir.magnitude > 0)
+            rb.AddForce((moveDir + transform.up * 0.05f) * dashForce, ForceMode.Impulse);
+        else
+            rb.AddForce((orientation.forward + transform.up * 0.05f) * dashForce, ForceMode.Impulse);
+        dashCount--;
+    }
+
+    void ResetDash()
+    {
+        readyToDash = true;
     }
 
 }
