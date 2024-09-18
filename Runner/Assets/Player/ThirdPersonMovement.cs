@@ -182,7 +182,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             col.transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-            if (!sliding)
+            if (!sliding && moveDir.magnitude > 0)
                 StartSlide();
         }
 
