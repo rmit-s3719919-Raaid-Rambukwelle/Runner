@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public KeyCode interactKey;
     public KeyCode jumpKey;
     public KeyCode dashKey;
+    public KeyCode crouchKey;
 
 
     [Header("Interactables")]
