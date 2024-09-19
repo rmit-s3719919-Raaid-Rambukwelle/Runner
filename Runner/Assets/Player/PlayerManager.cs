@@ -7,12 +7,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager current;
 
-    [Header("Movement")]
-    public float moveSpeed;
 
     [Header("Keybinds")]
     public KeyCode interactKey;
     public KeyCode jumpKey;
+    public KeyCode dashKey;
+    public KeyCode crouchKey;
 
 
     [Header("Interactables")]
