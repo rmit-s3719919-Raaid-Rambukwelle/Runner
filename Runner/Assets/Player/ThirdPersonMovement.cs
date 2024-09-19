@@ -51,11 +51,6 @@ public class ThirdPersonMovement : MonoBehaviour
     RaycastHit slopeHit;
     bool exitingSlope;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.LeftShift;
-    public KeyCode crouchKey = KeyCode.LeftControl;
-
     [Header("Conditions")]
     public bool grounded;
     public bool readyToJump;
@@ -146,7 +141,7 @@ public class ThirdPersonMovement : MonoBehaviour
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(PlayerManager.current.jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -154,7 +149,7 @@ public class ThirdPersonMovement : MonoBehaviour
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
-        if (Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(PlayerManager.current.crouchKey))
         {
             col.transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
@@ -165,7 +160,7 @@ public class ThirdPersonMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(crouchKey))
+        if (Input.GetKeyUp(PlayerManager.current.crouchKey))
         {
             col.transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             if (sliding)
@@ -188,7 +183,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 desiredMoveSpeed = slideSpeed;
 
         }
-        else if (Input.GetKey(crouchKey) && !sliding && grounded) // Crouching
+        else if (Input.GetKey(PlayerManager.current.crouchKey) && !sliding && grounded) // Crouching
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;

@@ -9,10 +9,10 @@ public class PlayerManager : MonoBehaviour
 
 
     [Header("Keybinds")]
-    public KeyCode interactKey;
-    public KeyCode jumpKey;
-    public KeyCode dashKey;
-    public KeyCode crouchKey;
+    public KeyCode interactKey = KeyCode.E;
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode dashKey = KeyCode.LeftShift;
+    public KeyCode crouchKey = KeyCode.LeftControl;
 
 
     [Header("Interactables")]
