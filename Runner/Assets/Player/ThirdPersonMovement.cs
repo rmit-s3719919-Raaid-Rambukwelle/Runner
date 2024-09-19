@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    [Header("References")]
-    public Transform orientation;
-    public GameObject col;
-    public bool limitVelocity = true;
+    [SerializeField] private GameObject[] ui;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -111,8 +108,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
-        if (PlayerManager.current.DialogueUI.IsOpen)
+        //checks to see if any ui element is active
+        bool isAnyUIActive = false;
+        foreach (var uiElement in ui) 
+        {
+            if (uiElement.activeSelf) 
+            {
+                isAnyUIActive = true;
+                break;
+            }
+        }
+
+        //unlocks cursor if ui element is active
+        if (PlayerManager.current.DialogueUI.IsOpen || isAnyUIActive)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
