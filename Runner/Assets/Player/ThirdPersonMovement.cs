@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject[] ui;
+    [Header("References")]
+    public Transform orientation;
+    public GameObject col;
+    public bool limitVelocity = true;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -48,6 +51,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float groundDrag;
     bool grounded;
 
+    [Header("UI")]
+    [SerializeField] private GameObject[] ui;
 
     Vector3 moveDir;
     Rigidbody rb;
@@ -129,11 +134,13 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            MoveCharacter();
+            if (sliding)
+                SlidingMovement();
         }    
-        */
-        MoveCharacter();
-        if (sliding)
-            SlidingMovement();
+        
+
     }
     void StateHandler()
     {
