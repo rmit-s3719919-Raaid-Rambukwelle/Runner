@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform holder;
     float xRot;
     float yRot;
+    [SerializeField] private GameObject[] ui;
 
     Vector3 moveDir;
     Rigidbody rb;
@@ -28,7 +29,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PlayerManager.current.DialogueUI.IsOpen)
+        //checks to see if any ui element is active
+        bool isAnyUIActive = false;
+        foreach (var uiElement in ui) 
+        {
+            if (uiElement.activeSelf) 
+            {
+                isAnyUIActive = true;
+                break;
+            }
+        }
+
+        //unlocks cursor if ui element is active
+        if (PlayerManager.current.DialogueUI.IsOpen || isAnyUIActive)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
