@@ -60,6 +60,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("References")]
     public Transform orientation;
     public GameObject col;
+    public Animator ani;
 
     [Header("UI")]
     [SerializeField] private GameObject[] ui;
@@ -103,6 +104,8 @@ public class ThirdPersonMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+        ani.SetFloat("Velocity", moveDir.magnitude);
     }
 
     private void FixedUpdate()

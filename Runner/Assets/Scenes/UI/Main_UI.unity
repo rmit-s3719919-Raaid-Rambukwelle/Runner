@@ -2173,6 +2173,70 @@ PrefabInstance:
       propertyPath: interactRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 421653097}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 2005051004}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: slideForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: slideSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: crouchSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: orientation
+      value: 
+      objectReference: {fileID: 30066101}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: jumpCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: maxSlideTime
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: slideCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: lerpMultiplier
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: slopeSlideSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: airLerpMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: slopeIncreaseMultiplier
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+      propertyPath: speedIncreaseMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7950927788248689648, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.651
@@ -3510,32 +3574,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260a2e59304adf845ad28559a895c558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 0}
-  col: {fileID: 0}
-  limitVelocity: 1
-  moveSpeed: 0
-  dashSpeed: 0
-  crouchSpeed: 0
+  DebugSpeed: 0
+  DebugDesiredMoveSpeed: 0
+  state: 0
+  walkSpeed: 0
   slideSpeed: 0
-  crouchYScale: 0
-  maxSlideTime: 0
-  slideForce: 0
-  dashForce: 0
-  dashLimit: 0
-  dashCooldown: 0
-  dashCount: 3
-  readyToDash: 1
+  slopeSlideSpeed: 0
+  crouchSpeed: 0
+  lerpMultiplier: 0
+  airLerpMultiplier: 0
+  speedIncreaseMultiplier: 0
+  slopeIncreaseMultiplier: 0
   jumpForce: 0
   jumpCooldown: 0
   airMulti: 0
-  maxSlopeAngle: 0
+  crouchYScale: 0
+  maxSlideTime: 0
+  slideForce: 0
+  slideCooldown: 0
+  slideTimer: 0
+  groundDrag: 0
   playerHeight: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 0
-  groundDrag: 0
+  maxSlopeAngle: 0
+  grounded: 0
+  readyToJump: 0
+  sliding: 0
+  canSlide: 0
+  orientation: {fileID: 0}
+  col: {fileID: 0}
+  ani: {fileID: 0}
   ui: []
-  moveState: 0
 --- !u!114 &560979561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10795,11 +10866,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 306994388457742870, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!4 &1371578451 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 327738978627147516, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
-  m_PrefabInstance: {fileID: 372137044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1374858165
 GameObject:
   m_ObjectHideFlags: 0
@@ -14277,6 +14343,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7752214822410249030, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1 &2005051004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5679885073850927317, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
+  m_PrefabInstance: {fileID: 372137044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006567183
 GameObject:
   m_ObjectHideFlags: 0
@@ -15018,7 +15089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 30066101}
   player: {fileID: 1586919854}
-  playerObj: {fileID: 1371578451}
+  playerObj: {fileID: 421653096}
   rb: {fileID: 1586919858}
   rotationSpeed: 10
 --- !u!1 &2051547911 stripped
