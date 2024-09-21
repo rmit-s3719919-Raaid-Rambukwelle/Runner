@@ -70,36 +70,36 @@ public class animationStateController : MonoBehaviour
 
     private void HandleStrafeWalking()
     {
-        bool isWalking = animator.GetBool(isWalkingHash);  // Check if moving forward
+        bool isWalking = animator.GetBool(isWalkingHash);  
         bool rightPressed = Input.GetKey("d");
         bool leftPressed = Input.GetKey("a");
 
-        // Only trigger strafe walk if NOT moving forward
+        
         if (!isWalking)
         {
-            // Handle strafing to the right
+            
             if (rightPressed)
             {
                 animator.SetBool(isWalkingRightHash, true);
             }
             else if (!rightPressed)
             {
-                animator.SetBool(isWalkingRightHash, false);  // Reset right strafe if 'd' is released
+                animator.SetBool(isWalkingRightHash, false);  
             }
 
-            // Handle strafing to the left
+            
             if (leftPressed)
             {
                 animator.SetBool(isWalkingLeftHash, true);
             }
             else if (!leftPressed)
             {
-                animator.SetBool(isWalkingLeftHash, false);  // Reset left strafe if 'a' is released
+                animator.SetBool(isWalkingLeftHash, false); 
             }
         }
         else
         {
-            // Ensure both strafe animations are reset when moving forward
+            
             animator.SetBool(isWalkingRightHash, false);
             animator.SetBool(isWalkingLeftHash, false);
         }
@@ -109,8 +109,8 @@ public class animationStateController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
 
-        // Set a sensitivity threshold
-        float sensitivityThreshold = 0.1f; // Adjust this value as needed
+        
+        float sensitivityThreshold = 0.1f; 
 
         bool isMoving = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d");
 
@@ -121,12 +121,12 @@ public class animationStateController : MonoBehaviour
             return;
         }
 
-        if (mouseX < -sensitivityThreshold) // Looking left
+        if (mouseX < -sensitivityThreshold)
         {
             animator.SetBool(isLookingLeftHash, true);
             animator.SetBool(isLookingRightHash, false);
         }
-        else if (mouseX > sensitivityThreshold) // Looking right
+        else if (mouseX > sensitivityThreshold)
         {
             animator.SetBool(isLookingRightHash, true);
             animator.SetBool(isLookingLeftHash, false);
