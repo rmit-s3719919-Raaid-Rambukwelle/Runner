@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueActivator : MonoBehaviour, IInteractable
+public class DialogueActivator : PlayerControlHandler, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
 
@@ -18,6 +18,10 @@ public class DialogueActivator : MonoBehaviour, IInteractable
         PlayerManager.current.Interactable = null;
         
         gameObject.SetActive(false);
+        EnablePlayerControls();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,6 +46,11 @@ public class DialogueActivator : MonoBehaviour, IInteractable
     }
     public void Interact(PlayerManager playerManager)
     {
+        DisablePlayerControls();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         if (TryGetComponent(out DialogueResponseEvents responseEvents) && responseEvents.DialogueObject == dialogueObject)
         {
             playerManager.DialogueUI.AddResponseEvents(responseEvents.Events);

@@ -9,7 +9,7 @@ public class SequenceOneController : PlayerControlHandler
     public string animationName;
     public GameObject player;
 
-    private bool sequenceFinished = false;
+    //private bool sequenceFinished = false;
 
     protected override void Start()
     {

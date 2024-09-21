@@ -34,8 +34,7 @@ public class Door_Switch : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        animator = DoorObj.GetComponent<Animator>();
-        
+        animator = DoorObj.GetComponent<Animator>();    
     }
 
 }

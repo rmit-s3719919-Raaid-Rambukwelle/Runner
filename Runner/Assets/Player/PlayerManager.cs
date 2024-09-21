@@ -32,19 +32,17 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI interactText;
     bool updateUI = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         current = this;
         inventory = GetComponent<Inventory>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*
+        
         //Stops player from moving if dialogue is open
-        if (dialogueUI.IsOpen) return;
+        //if (dialogueUI.IsOpen) return;
 
 
 
@@ -85,7 +83,7 @@ public class PlayerManager : MonoBehaviour
         {
             currentInteractable.Interact();
         }
-        */
+        
     }
 
     public bool SearchInventory(string input)
@@ -116,10 +114,12 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    
     IEnumerator HoldUI()
     {
         updateUI = false;
         yield return new WaitForSeconds(2f);
         updateUI = true;
     }
+    
 }
