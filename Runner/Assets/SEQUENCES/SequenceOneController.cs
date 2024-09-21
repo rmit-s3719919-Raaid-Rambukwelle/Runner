@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SequenceOneController : MonoBehaviour
+public class SequenceOneController : PlayerControlHandler
 {
-    public ThirdPersonMovement playerMovementScript;
-    public ThirdPersonCamera playerCameraScript;
 
     public Animator playerAnimator;
     public string animationName;
@@ -13,8 +11,9 @@ public class SequenceOneController : MonoBehaviour
 
     private bool sequenceFinished = false;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         StartCoroutine(PlayOpeningSequence());
     }
 
@@ -35,19 +34,6 @@ public class SequenceOneController : MonoBehaviour
         playerAnimator.SetTrigger("AllowMovement");
 
         EnablePlayerControls();
-        sequenceFinished = true;
-    }
-
-    void DisablePlayerControls() 
-    {
-        playerMovementScript.enabled = false;
-        playerCameraScript.enabled = false;
-    }
-
-    void EnablePlayerControls() 
-    {
-        playerMovementScript.enabled = true;
-        playerCameraScript.enabled = true;
     }
 
     float GetAnimationClipLength(Animator animator, string clipName) 

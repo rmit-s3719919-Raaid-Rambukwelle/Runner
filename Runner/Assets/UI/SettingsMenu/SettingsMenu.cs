@@ -5,6 +5,7 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
+
     [SerializeField] private GameObject settingsMenu;
     private bool isSettingsOpen = false;
 
@@ -28,7 +29,7 @@ public class SettingsMenu : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             isSettingsOpen = !isSettingsOpen;
             OpenSettings();
@@ -41,20 +42,33 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
+
     public void OpenSettings()
     {
         if (isSettingsOpen == true)
         {
             settingsMenu.SetActive(true);
-        } else 
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        } else if (isSettingsOpen == false)
         {
             settingsMenu.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
     public void CloseSettings() 
     {
-        settingsMenu.SetActive(false);
+        isSettingsOpen = false;
+        if(isSettingsOpen == false) 
+        {
+            settingsMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+
     }
 
     public void SetFullScreen(bool isFullScreen)
