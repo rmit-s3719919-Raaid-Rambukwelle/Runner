@@ -28,6 +28,8 @@ public class PlayerManager : MonoBehaviour
     public DialogueUI DialogueUI => dialogueUI;
     public IInteractable Interactable { get; set; }
 
+    [SerializeField] private NPCAreaTrigger[] npcAreaTriggers;
+
     [Header("UI")]
     public TextMeshProUGUI interactText;
     bool updateUI = true;
@@ -44,46 +46,50 @@ public class PlayerManager : MonoBehaviour
         //Stops player from moving if dialogue is open
         //if (dialogueUI.IsOpen) return;
 
-
-
         //Update UI
         if (updateUI)
         {
-            if (Interactable != null)
+            bool canTalk = false;
+
+            foreach (var trigger in npcAreaTriggers) 
+            {
+                if (Interactable != null && trigger.isNPCinTriggerZone()) 
+                {
+                    canTalk = true;
+                    break;
+                }
+            }
+
+            if (canTalk)
             {
                 interactText.text = "E to talk";
             }
-            else if (currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange && currentInteractable.showText && currentInteractable.interactable && !currentInteractable.canGrapple)
-            {
-                interactText.text = currentInteractable.textToShow + " " + currentInteractable.name;
-            }
-            else if (currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange && currentInteractable.showText && currentInteractable.interactable && currentInteractable.canGrapple)
-            {
-                interactText.text = currentInteractable.textToShow + " " + currentInteractable.name;
-            }
             else
-                interactText.text = "";
+                {
+                    interactText.text = ""; 
+                }
         }
 
         //Interactions
         if (Input.GetKeyDown(interactKey))
         {
-            if (Interactable != null)
+
+            foreach (var trigger in npcAreaTriggers) 
             {
-                Interactable.Interact(playerManager: this);
+                if (Interactable != null && trigger.isNPCinTriggerZone()) 
+                {
+                    Interactable.Interact(playerManager: this);
+                    break;
+                }
             }
-            else if (currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.transform.position) <= interactRange && currentInteractable.interactable)
-            {
-                currentInteractable.Interact();
-            }
-            StartCoroutine(HoldUI());
+
         }
 
         if (Input.GetMouseButton(1) && currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange && currentInteractable.interactable)
         {
             currentInteractable.Interact();
         }
-        
+        StartCoroutine(HoldUI());
     }
 
     public bool SearchInventory(string input)

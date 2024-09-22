@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueActivator : PlayerControlHandler, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private bool autoTriggerDialogue = false;
 
 
     public void UpdateDialogueObject(DialogueObject dialogueObject) 
@@ -28,7 +29,13 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out PlayerManager playerManager))
         {
-            playerManager.Interactable = this;
+            if (autoTriggerDialogue) 
+            {
+                TriggerDialogue(playerManager);
+            } else 
+                {
+                    playerManager.Interactable = this;
+                }
         }
     }
 
@@ -39,14 +46,19 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
             if (playerManager.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
                 playerManager.Interactable = null;
-
             }
         }
 
     }
     public void Interact(PlayerManager playerManager)
     {
+        TriggerDialogue(playerManager);
+    }
+
+    public void TriggerDialogue(PlayerManager playerManager) 
+    {
         DisablePlayerControls();
+        autoTriggerDialogue = false;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
