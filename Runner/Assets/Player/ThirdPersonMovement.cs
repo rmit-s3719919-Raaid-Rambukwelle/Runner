@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("Debug")]
     public float DebugSpeed;
     public float DebugDesiredMoveSpeed;
+    public bool allowMovementDebug;
     public MovementState state;
 
     [Header("Speed Values")]
@@ -15,6 +16,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float slideSpeed;
     public float slopeSlideSpeed;
     public float crouchSpeed;
+    public float wallRunSpeed;
     float moveSpeed;
 
     [Header("Movement Multipliers")]
@@ -51,6 +53,27 @@ public class ThirdPersonMovement : MonoBehaviour
     RaycastHit slopeHit;
     bool exitingSlope;
 
+    [Header("Wall Running")]
+    public bool useGravity;
+    public float gravityCounterForce;
+    public LayerMask whatIsWall;
+    public float wallRunForce;
+    public float maxWallRunTime;
+    public float wallCheckDistance;
+    public float minJumpHeight;
+    public float wallJumpUpForce;
+    public float wallJumpSideForce;
+    public float exitWallTime;
+
+    bool exitingWall;
+    float exitWallTimer;
+    float wallRunTimer;
+    RaycastHit leftWallHit;
+    RaycastHit rightWallHit;
+    bool wallLeft;
+    bool wallRight;
+    bool wallrunning;
+
     [Header("Conditions")]
     public bool grounded;
     public bool readyToJump;
@@ -76,6 +99,7 @@ public class ThirdPersonMovement : MonoBehaviour
         walking,
         crouching,
         sliding,
+        wallRun,
         air,
         idle
     }
@@ -87,6 +111,8 @@ public class ThirdPersonMovement : MonoBehaviour
         readyToJump = true;
         canSlide = true;
         startYScale = transform.localScale.y;
+        if (allowMovementDebug)
+            ani.SetTrigger("AllowMovement");
     }
 
     private void Update()
@@ -98,6 +124,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         GetInput();
         SpeedControl();
+        CheckForWall();
+        WallRunHandler();
         StateHandler();
 
         if (grounded)
@@ -105,7 +133,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else
             rb.drag = 0;
 
-        ani.SetFloat("Velocity", moveDir.magnitude);
+        ani.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     private void FixedUpdate()
@@ -136,6 +164,9 @@ public class ThirdPersonMovement : MonoBehaviour
             if (sliding)
                 SlidingMovement();
         }
+
+        if (wallrunning)
+            WallRunningMovement();
 
     }
 
@@ -176,7 +207,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void StateHandler()
     {
-        if (sliding) // Sliding
+        if (wallrunning)
+        {
+            state = MovementState.wallRun;
+            desiredMoveSpeed = wallRunSpeed;
+        }
+        else if (sliding) // Sliding
         {
             state = MovementState.sliding;
 
@@ -199,10 +235,12 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (!grounded) // Jumping
         {
             state = MovementState.air;
+            desiredMoveSpeed = walkSpeed;
         }
         else // Idle
         {
             state = MovementState.idle;
+            desiredMoveSpeed = 0f;
 
         }
 
@@ -218,7 +256,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
         lastDesiredMoveSpeed = desiredMoveSpeed;
     }
-
 
     void MovePlayer()
     {
@@ -236,7 +273,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (!grounded)
             rb.AddForce(moveDir.normalized * moveSpeed * 10f * airMulti, ForceMode.Force);
 
-        rb.useGravity = !OnSlope();
+        if (!wallrunning) rb.useGravity = !OnSlope();
     }
 
     void SpeedControl()
@@ -358,6 +395,99 @@ public class ThirdPersonMovement : MonoBehaviour
             StopSlide();
 
         }
+    }
+
+    void CheckForWall()
+    {
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallCheckDistance, whatIsWall);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallCheckDistance, whatIsWall);
+    }
+
+    bool AboveGround()
+    {
+        return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, whatIsGround);
+    }
+
+    void WallRunHandler()
+    {
+        if ((wallLeft || wallRight) && Input.GetAxisRaw("Vertical") > 0f && AboveGround() && !exitingWall)
+        {
+            if (!wallrunning)
+                StartWallRun();
+            if (wallRunTimer > 0)
+                wallRunTimer -= Time.deltaTime;
+
+            if (wallRunTimer <= 0 && wallrunning)
+            {
+                exitingWall = true;
+                exitWallTimer = exitWallTime;
+            }
+
+            if (Input.GetKeyDown(PlayerManager.current.jumpKey))
+                WallJump();
+        }
+        else if (exitingWall)
+        {
+            if (wallrunning)
+                StopWallRun();
+
+            if (exitWallTimer > 0)
+                exitWallTimer -= Time.deltaTime;
+
+            if (exitWallTimer <= 0)
+                exitingWall = false;
+        }
+        else
+        {
+            if (wallrunning)
+                StopWallRun();
+        }
+    }
+
+    void StartWallRun()
+    {
+        wallrunning = true;
+        wallRunTimer = maxWallRunTime;
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+    }
+
+    void WallRunningMovement()
+    {
+        rb.useGravity = useGravity;
+
+        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+
+        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+
+        if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
+            wallForward = -wallForward;
+
+        rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+
+        if (!(wallLeft && moveDir.x > 0) && !(wallRight && moveDir.x < 0))
+            rb.AddForce(-wallNormal * 100f, ForceMode.Force);
+
+        if (useGravity)
+            rb.AddForce(transform.up * gravityCounterForce, ForceMode.Force);
+    }
+
+    void StopWallRun()
+    {
+        //rb.useGravity = true;
+        wallrunning = false;
+    }
+
+    void WallJump()
+    {
+        exitingWall = true;
+        exitWallTimer = exitWallTime;
+
+        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+
+        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(forceToApply, ForceMode.Impulse);
     }
 
 }
