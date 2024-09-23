@@ -2,18 +2,19 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class DialogueUI : MonoBehaviour
+public class DialogueUI : PlayerControlHandler
 {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private GameObject dialogueBox;
-
     public bool IsOpen { get; private set; }
 
     private ResponseHandler responseHandler;
     private TypeWriter typeWriterEffect;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         CloseDialogueBox();
         responseHandler = GetComponent<ResponseHandler>();
         typeWriterEffect = GetComponent<TypeWriter>();
@@ -24,6 +25,8 @@ public class DialogueUI : MonoBehaviour
         IsOpen = true;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
+
+        DisablePlayerControls();
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -52,7 +55,6 @@ public class DialogueUI : MonoBehaviour
         {
             CloseDialogueBox();
         }
-
     }
 
     private void CloseDialogueBox()
@@ -60,5 +62,13 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+
+        StartCoroutine(EnablePlayerControlsDelay(0.5f));
+    }
+
+    private IEnumerator EnablePlayerControlsDelay(float delay) 
+    {
+        yield return new WaitForSeconds(delay);
+        EnablePlayerControls();
     }
 }

@@ -15,7 +15,6 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
 
     public void DisableDialogue()
     {
-
         PlayerManager.current.Interactable = null;
         
         gameObject.SetActive(false);
@@ -48,7 +47,6 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
                 playerManager.Interactable = null;
             }
         }
-
     }
     public void Interact(PlayerManager playerManager)
     {

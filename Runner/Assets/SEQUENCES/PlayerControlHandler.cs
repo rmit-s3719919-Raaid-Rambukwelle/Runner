@@ -6,11 +6,13 @@ public abstract class PlayerControlHandler : MonoBehaviour
 {
     public ThirdPersonMovement playerMovementScript;
     public ThirdPersonCamera playerCameraScript;
+    public PlayerManager playerManagerScript;
 
     protected virtual void Start()
     {
         playerMovementScript = FindObjectOfType<ThirdPersonMovement>();
         playerCameraScript = FindObjectOfType<ThirdPersonCamera>();
+        playerManagerScript = FindObjectOfType<PlayerManager>();
 
         if (playerMovementScript == null || playerCameraScript == null)
         {
@@ -22,11 +24,13 @@ public abstract class PlayerControlHandler : MonoBehaviour
     {
         playerMovementScript.enabled = false;
         playerCameraScript.enabled = false;
+        playerManagerScript.enabled = false;
     }
 
     protected virtual void EnablePlayerControls() 
     {
         playerMovementScript.enabled = true;
         playerCameraScript.enabled = true;
+        playerManagerScript.enabled = true;
     }
 }

@@ -41,10 +41,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     void Update()
-    {
-        
+    {        
         //Stops player from moving if dialogue is open
-        //if (dialogueUI.IsOpen) return;
+        if (dialogueUI.IsOpen) return;
 
         //Update UI
         if (updateUI)
@@ -101,7 +100,6 @@ public class PlayerManager : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
@@ -119,13 +117,11 @@ public class PlayerManager : MonoBehaviour
             Gizmos.DrawLine(transform.position, currentInteractable.transform.position);
         }
     }
-
     
     IEnumerator HoldUI()
     {
         updateUI = false;
         yield return new WaitForSeconds(2f);
         updateUI = true;
-    }
-    
+    }    
 }

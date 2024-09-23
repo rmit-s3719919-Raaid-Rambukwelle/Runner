@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SequenceOneController : PlayerControlHandler
 {
-
     public Animator playerAnimator;
     public string animationName;
+
     public GameObject player;
+    public GameObject dialogue;
 
     //private bool sequenceFinished = false;
 
@@ -32,6 +33,7 @@ public class SequenceOneController : PlayerControlHandler
         yield return new WaitForSeconds(animationLength);
 
         playerAnimator.SetTrigger("AllowMovement");
+        dialogue.SetActive(true);
 
         EnablePlayerControls();
     }
