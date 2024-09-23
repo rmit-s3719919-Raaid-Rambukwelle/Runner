@@ -5923,6 +5923,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8653624841108411947}
+          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+          m_MethodName: OnPowerSwitchToggled
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - name: No
     onSelectedResponse:
       m_PersistentCalls:
@@ -18495,6 +18507,7 @@ GameObject:
   - component: {fileID: 8653624841108411946}
   - component: {fileID: 4553592320303076189}
   - component: {fileID: 2148604338876543628}
+  - component: {fileID: 8653624841108411947}
   - component: {fileID: 1885015141653999730}
   - component: {fileID: 2923448948358664833}
   m_Layer: 0
@@ -19731,23 +19744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 1e7dff1b0752b404e8924c5d09548762, type: 2}
-  events:
-  - name: Goodbye
-    onSelectedResponse:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1885015141653999730}
-          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
-          m_MethodName: UpdateDialogueObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 74d8e600da3d9804db1519156fead071, type: 2}
-            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  events: []
 --- !u!1 &2926909658909379421
 GameObject:
   m_ObjectHideFlags: 0
@@ -33691,6 +33688,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8653624841108411947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419054899899494268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ba5b6e791fd1d4990f55fd50636eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueActivator: {fileID: 1885015141653999730}
+  defaultDialogue: {fileID: 11400000, guid: 1e7dff1b0752b404e8924c5d09548762, type: 2}
+  updatedDialogue: {fileID: 11400000, guid: d38108f25684f9444b07f45b6eca4843, type: 2}
 --- !u!23 &8653624842123451634
 MeshRenderer:
   m_ObjectHideFlags: 0
