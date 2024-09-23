@@ -7,7 +7,6 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private bool autoTriggerDialogue = false;
 
-
     public void UpdateDialogueObject(DialogueObject dialogueObject) 
     {
         this.dialogueObject = dialogueObject;
@@ -22,16 +21,19 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out PlayerManager playerManager))
         {
-            if (autoTriggerDialogue) 
-            {
-                TriggerDialogue(playerManager);
-            } else 
+                if (autoTriggerDialogue)
+                {
+                    TriggerDialogue(playerManager);
+                }
+                else
                 {
                     playerManager.Interactable = this;
                 }
@@ -67,5 +69,10 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
         }
 
         playerManager.DialogueUI.ShowDialogue(dialogueObject);
+    }
+
+    public void OnDialogueClose() 
+    {
+        autoTriggerDialogue = false;
     }
 }

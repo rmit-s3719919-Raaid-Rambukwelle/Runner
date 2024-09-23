@@ -57,13 +57,18 @@ public class DialogueUI : PlayerControlHandler
         }
     }
 
-    private void CloseDialogueBox()
+    public void CloseDialogueBox()
     {
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
 
         StartCoroutine(EnablePlayerControlsDelay(0.5f));
+
+        if (TryGetComponent(out DialogueActivator dialogueActivator)) 
+        {
+            dialogueActivator.OnDialogueClose();
+        }
     }
 
     private IEnumerator EnablePlayerControlsDelay(float delay) 
