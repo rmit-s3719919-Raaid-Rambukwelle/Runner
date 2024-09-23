@@ -62,4 +62,9 @@ public class NPCAreaTrigger : MonoBehaviour
     {
         return isNpcInZone && isPlayerInZone && readyToTrigger;
     }
+
+    public void Test() 
+    {
+        Debug.Log("If you're reading this, then the dialouge system can handle multiple dialogues");
+    }
 }
