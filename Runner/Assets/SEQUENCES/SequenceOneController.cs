@@ -5,6 +5,7 @@ using UnityEngine;
 public class SequenceOneController : PlayerControlHandler
 {
     public Animator playerAnimator;
+
     public string animationName;
 
     public GameObject player;

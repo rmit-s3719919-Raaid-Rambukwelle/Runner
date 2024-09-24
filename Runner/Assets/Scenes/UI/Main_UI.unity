@@ -1940,6 +1940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1401658323}
+  player: {fileID: 1586919854}
+  detectionRadius: 5
 --- !u!4 &366344042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
@@ -4329,19 +4331,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.3827493
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.9238522
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4349,7 +4351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 225.008
       objectReference: {fileID: 0}
     - target: {fileID: 2756228584563304803, guid: 5e864dee25d141d40bd6bc6ed09a773b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
