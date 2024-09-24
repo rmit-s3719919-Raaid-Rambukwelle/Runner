@@ -5,8 +5,9 @@ using UnityEngine;
 public class SequenceOneController : PlayerControlHandler
 {
     public Animator playerAnimator;
+    public Animator robotAnimator;
 
-    public string animationName;
+    private bool isSequenceActive;
 
     public GameObject player;
     public GameObject dialogue;
@@ -19,32 +20,56 @@ public class SequenceOneController : PlayerControlHandler
         StartCoroutine(PlayOpeningSequence());
     }
 
-    IEnumerator PlayOpeningSequence() 
+    IEnumerator PlayOpeningSequence()
     {
-        DisablePlayerControls();
+        isSequenceActive = true;
 
+        StartCoroutine(PlayerAnimation());
+        StartCoroutine(RobotAnimation());
+        isSequenceActive = false;
+
+        StartCoroutine(StartDialogueSequence(7f));
+
+        yield return null;
+    }
+
+    IEnumerator PlayerAnimation() 
+    {
         playerAnimator.Play("StandingUp");
-
-        float animationSpeed = playerAnimator.GetCurrentAnimatorStateInfo(0).speed;
-
-        // Get the length of the animation and divide by the speed to account for the faster playback
-        float animationLength = GetAnimationClipLength(playerAnimator, "StandingUp") / animationSpeed;
-
-        // Wait for the adjusted length of the animation
+        float animationLength = GetAnimationClipLength(playerAnimator, "StandingUp");
         yield return new WaitForSeconds(animationLength);
 
         playerAnimator.SetTrigger("AllowMovement");
-        dialogue.SetActive(true);
-
         EnablePlayerControls();
     }
 
-    float GetAnimationClipLength(Animator animator, string clipName) 
+    IEnumerator RobotAnimation()
+    {
+        robotAnimator.Play("Standing");
+        float animationLength = GetAnimationClipLength(robotAnimator, "Standing");
+        yield return new WaitForSeconds(animationLength);
+
+        robotAnimator.SetTrigger("AllowMovement");
+    }
+
+    IEnumerator StartDialogueSequence(float delay) 
+    {
+        yield return new WaitForSeconds(delay);
+        dialogue.SetActive(true);
+        Debug.Log("Dialogue started");
+    }
+
+    public bool isSequenceOneActive()
+    {
+        return isSequenceActive;
+    }
+
+    float GetAnimationClipLength(Animator animator, string clipName)
     {
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips) 
+        foreach (AnimationClip clip in clips)
         {
-            if (clip.name == clipName) 
+            if (clip.name == clipName)
             {
                 return clip.length;
             }

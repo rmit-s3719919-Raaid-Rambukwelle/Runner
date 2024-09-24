@@ -21,8 +21,6 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-
     }
 
     private void OnTriggerEnter(Collider other)

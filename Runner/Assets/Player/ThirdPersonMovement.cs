@@ -91,6 +91,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Update()
     {
+
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
 
@@ -148,7 +149,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             readyToJump = false;
 
-            Jump();
+            //Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 

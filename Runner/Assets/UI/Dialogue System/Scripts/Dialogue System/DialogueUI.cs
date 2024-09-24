@@ -14,7 +14,6 @@ public class DialogueUI : PlayerControlHandler
     protected override void Start()
     {
         base.Start();
-
         CloseDialogueBox();
         responseHandler = GetComponent<ResponseHandler>();
         typeWriterEffect = GetComponent<TypeWriter>();
@@ -22,6 +21,13 @@ public class DialogueUI : PlayerControlHandler
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        SequenceOneController sequenceController = FindObjectOfType<SequenceOneController>();
+        if (sequenceController != null && sequenceController.isSequenceOneActive())
+        {
+            // Prevent dialogue if the opening sequence is active
+            return;
+        }
+
         IsOpen = true;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
@@ -63,7 +69,7 @@ public class DialogueUI : PlayerControlHandler
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
 
-        StartCoroutine(EnablePlayerControlsDelay(0.5f));
+        EnablePlayerControls();
 
         if (TryGetComponent(out DialogueActivator dialogueActivator)) 
         {
@@ -71,9 +77,4 @@ public class DialogueUI : PlayerControlHandler
         }
     }
 
-    private IEnumerator EnablePlayerControlsDelay(float delay) 
-    {
-        yield return new WaitForSeconds(delay);
-        EnablePlayerControls();
-    }
 }

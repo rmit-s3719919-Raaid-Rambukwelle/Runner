@@ -8,7 +8,7 @@ public abstract class PlayerControlHandler : MonoBehaviour
     public ThirdPersonCamera playerCameraScript;
     public PlayerManager playerManagerScript;
 
-    protected virtual void Start()
+    protected virtual void Awake() 
     {
         playerMovementScript = FindObjectOfType<ThirdPersonMovement>();
         playerCameraScript = FindObjectOfType<ThirdPersonCamera>();
@@ -19,9 +19,14 @@ public abstract class PlayerControlHandler : MonoBehaviour
             Debug.LogError("Failed to find player movement or camera scripts!");
         }
     }
+    protected virtual void Start()
+    {
+
+    }
 
     protected virtual void DisablePlayerControls() 
     {
+        Debug.Log("DisablePlayerControls called from: " + this.GetType().Name);
         playerMovementScript.enabled = false;
         playerCameraScript.enabled = false;
         playerManagerScript.enabled = false;
@@ -29,6 +34,7 @@ public abstract class PlayerControlHandler : MonoBehaviour
 
     protected virtual void EnablePlayerControls() 
     {
+        Debug.Log("EnablePlayerControls called from: " + this.GetType().Name);
         playerMovementScript.enabled = true;
         playerCameraScript.enabled = true;
         playerManagerScript.enabled = true;
