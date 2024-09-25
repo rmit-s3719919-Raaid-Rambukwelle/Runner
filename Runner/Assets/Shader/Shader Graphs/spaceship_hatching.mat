@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-39368648705004643
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Robot_1
-  m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
+  m_Name: spaceship_hatching
+  m_Shader: {fileID: -6465566751694194690, guid: d10c9241ae57d2a4ca4ba07eb3408416, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,7 +36,11 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_8893f6f290f14ccc8cb6b6d1b6c32a8c_Texture_1_Texture2D:
+    - _SampleTexture2D_492ae7eb9d9749e78b0ce9591637449b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bf8c969b6b2b93948b7b67ab1fc4944e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -36,19 +53,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: 2177450893da691449f829347d686b1e, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _metallicTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _normalTex:
-        m_Texture: {fileID: 2800000, guid: 42452bcc1df061e47a8c089ee529e7bb, type: 3}
+    - _normalsTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _shadowTex:
-        m_Texture: {fileID: 2800000, guid: 3db4addecb53c8d42bb671968edd81cc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _smoothnessTex:
@@ -69,37 +86,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Light_Probe_Contribution: 3
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ambientOcclusionStrength: 0
+    - _ambientOStrength: 0
     - _emissionStrength: 0
+    - _hathingFreq: 305.7
+    - _lightProbeContribution: 7
+    - _lightSmoothness: 1
     - _metallicStrength: 0
-    - _normalStrength: 0.73
+    - _normalStrength: 0
     - _outlineDepthSensitivity: 0
     - _outlineNormalsSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: 0.156
+    - _shadowStep: -1.9
     - _smoothnessStrength: 0
+    - _transparency: 0.5
     m_Colors:
-    - _mainColor: {r: 1, g: 1, b: 1, a: 0}
-    - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _hatchingFromTo: {r: 5.6, g: -8.99, b: 0, a: 0}
+    - _mainColor: {r: 0.4261303, g: 0.5283019, b: 0.49637327, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
-    - _shadowColor: {r: 1, g: 0.6455356, b: 0.07058823, a: 0}
-    - _shadowIntensity: {r: -0.81, g: 1, b: 0, a: 0}
-    - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
+    - _shadowColor: {r: 0, g: 0.09433961, b: 0.001100189, a: 0}
+    - _shadowIntensity: {r: 2, g: 1, b: 0, a: 0}
+    - _shadowTexColor: {r: 0.6484247, g: 0.9622642, b: 0.5401388, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4029417952840714536
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
