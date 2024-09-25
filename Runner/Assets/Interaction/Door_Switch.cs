@@ -9,6 +9,7 @@ public class Door_Switch : Interactable
     public GameObject robot;
 
     public NPCMovementTrigger npcMovementTrigger;
+    public DialogueActivator dialogueActivator;
 
     public bool locked = false;
     public string lockedMessage;
@@ -69,7 +70,7 @@ public class Door_Switch : Interactable
 
         if (!reactivateOnUse) active = false;
 
-        gameObject.SetActive(false);
+        dialogueActivator.DisableDialogue();
     }
 
     private float GetAnimationClipLength(Animator animator, string clipName) 

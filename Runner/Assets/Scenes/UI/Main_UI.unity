@@ -3535,6 +3535,7 @@ MonoBehaviour:
   DoorObj: {fileID: 0}
   robot: {fileID: 0}
   npcMovementTrigger: {fileID: 0}
+  dialogueActivator: {fileID: 0}
   locked: 1
   lockedMessage: I need a new power cell
   requiredObj: power_cell
@@ -8601,6 +8602,7 @@ MonoBehaviour:
   DoorObj: {fileID: 1320713845}
   robot: {fileID: 1401658322}
   npcMovementTrigger: {fileID: 366344039}
+  dialogueActivator: {fileID: 1885015142366984874}
   locked: 0
   lockedMessage: 
   requiredObj: 
@@ -18872,7 +18874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementScript: {fileID: 1586919860}
   playerCameraScript: {fileID: 2048983602}
-  playerManagerScript: {fileID: 0}
+  playerManagerScript: {fileID: 1586919864}
   dialogueObject: {fileID: 11400000, guid: a0238f4a32f68924aa383bdddda500c8, type: 2}
   autoTriggerDialogue: 0
 --- !u!1 &1887818471941975306
@@ -35772,7 +35774,7 @@ Transform:
   m_GameObject: {fileID: 2419054899337471396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.75, y: 2, z: 10}
+  m_LocalPosition: {x: -47, y: 2, z: 10}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -42091,6 +42093,7 @@ MonoBehaviour:
   DoorObj: {fileID: 1478962600}
   robot: {fileID: 1401658322}
   npcMovementTrigger: {fileID: 0}
+  dialogueActivator: {fileID: 0}
   locked: 0
   lockedMessage: 
   requiredObj: 
