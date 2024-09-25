@@ -26,7 +26,7 @@ public abstract class PlayerControlHandler : MonoBehaviour
 
     protected virtual void DisablePlayerControls() 
     {
-        Debug.Log("DisablePlayerControls called from: " + this.GetType().Name);
+        //Debug.Log("DisablePlayerControls called from: " + this.GetType().Name);
         playerMovementScript.enabled = false;
         playerCameraScript.enabled = false;
         playerManagerScript.enabled = false;
@@ -34,7 +34,7 @@ public abstract class PlayerControlHandler : MonoBehaviour
 
     protected virtual void EnablePlayerControls() 
     {
-        Debug.Log("EnablePlayerControls called from: " + this.GetType().Name);
+        //Debug.Log("EnablePlayerControls called from: " + this.GetType().Name);
         playerMovementScript.enabled = true;
         playerCameraScript.enabled = true;
         playerManagerScript.enabled = true;

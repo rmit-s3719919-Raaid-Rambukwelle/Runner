@@ -40,6 +40,8 @@ public class SequenceOneController : PlayerControlHandler
         yield return new WaitForSeconds(animationLength);
 
         playerAnimator.SetTrigger("AllowMovement");
+        Debug.Log("StandingUp animation finished, transitioning to idle.");
+
         EnablePlayerControls();
     }
 
