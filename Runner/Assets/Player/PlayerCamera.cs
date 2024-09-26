@@ -75,4 +75,27 @@ public class PlayerCamera : MonoBehaviour
             gfx.rotation = Quaternion.Lerp(gfx.rotation, toRotation, Time.deltaTime * rotationSpeed);
         }
     }
+
+    public void DoTilt(float endValue)
+    {
+        StopCoroutine(nameof(LerpTilt));
+        StartCoroutine(LerpTilt(endValue));
+    }
+
+    IEnumerator LerpTilt(float endValue)
+    {
+        float t = 0;
+        float d = Mathf.Abs(firstPersonCam.m_Lens.Dutch - endValue);
+        float s = firstPersonCam.m_Lens.Dutch;
+
+        while (t < d)
+        {
+            firstPersonCam.m_Lens.Dutch = Mathf.Lerp(s, endValue, t / d);
+            t += Time.deltaTime * 40f;
+            yield return null;
+        }
+
+        firstPersonCam.m_Lens.Dutch = endValue;
+    }
+
 }

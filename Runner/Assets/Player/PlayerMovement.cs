@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMulti;
+    public float airDrag;
 
     [Header("Scale Values")]
     public float crouchYScale;
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     public GameObject col;
     public Animator ani;
+    public PlayerCamera cam;
 
     [Header("UI")]
     [SerializeField] private GameObject[] ui;
@@ -130,9 +132,12 @@ public class PlayerMovement : MonoBehaviour
         StateHandler();
 
         if (grounded)
+        {
             rb.drag = groundDrag;
+            if (cam.firstPersonCam.m_Lens.Dutch > 0) cam.DoTilt(0f);
+        }
         else
-            rb.drag = 0;
+            rb.drag = airDrag;
 
         ani.SetFloat("Velocity", rb.velocity.magnitude);
     }
@@ -429,19 +434,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (exitingWall)
         {
-            if (wallrunning)
-                StopWallRun();
-
+            cam.DoTilt(0f);
             if (exitWallTimer > 0)
                 exitWallTimer -= Time.deltaTime;
 
             if (exitWallTimer <= 0)
                 exitingWall = false;
+
+            if (wallrunning)
+                StopWallRun();
         }
         else
         {
             if (wallrunning)
+            {
+                cam.DoTilt(0f);
                 StopWallRun();
+            }
         }
     }
 
@@ -450,6 +459,9 @@ public class PlayerMovement : MonoBehaviour
         wallrunning = true;
         wallRunTimer = maxWallRunTime;
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (wallLeft) cam.DoTilt(-5f);
+        if (wallRight) cam.DoTilt(5f);
     }
 
     void WallRunningMovement()
@@ -474,7 +486,6 @@ public class PlayerMovement : MonoBehaviour
 
     void StopWallRun()
     {
-        //rb.useGravity = true;
         wallrunning = false;
     }
 
