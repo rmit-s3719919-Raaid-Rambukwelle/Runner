@@ -7,6 +7,10 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager current;
 
+    [Header("Settings")]
+    public bool thirdPerson;
+    public float sensX;
+    public float sensY;
 
     [Header("Keybinds")]
     public KeyCode interactKey = KeyCode.E;
