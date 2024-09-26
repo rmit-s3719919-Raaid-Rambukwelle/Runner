@@ -30,7 +30,7 @@ public class RobotAnimationController : MonoBehaviour
 
                 if (distanceToPlayer <= detectionRadius) 
                 {
-                    FacePlayer();
+                    //FacePlayer();
                 }
 
             }

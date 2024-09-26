@@ -1942,7 +1942,7 @@ PrefabInstance:
     - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
       propertyPath: col
       value: 
-      objectReference: {fileID: 2005051004}
+      objectReference: {fileID: 0}
     - target: {fileID: 6908593196965787537, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
       propertyPath: jumpForce
       value: 12
@@ -2042,14 +2042,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4933574443352261205, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7950927788248689648, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 421653096}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3094625575327184384, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1586919862}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
 --- !u!1 &379577815
 GameObject:
@@ -2300,6 +2294,190 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7018866036491956272, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1 &407982855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407982862}
+  - component: {fileID: 407982861}
+  - component: {fileID: 407982860}
+  - component: {fileID: 407982859}
+  - component: {fileID: 407982858}
+  - component: {fileID: 407982857}
+  - component: {fileID: 407982856}
+  m_Layer: 0
+  m_Name: NPC_1_Trigger 1.1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &407982856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e50474440fba5a4cbf0d6af24b39e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: e7378e443683fe1498f01f778354655d, type: 2}
+  events:
+  - name: Let's go
+    onSelectedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 366344039}
+          m_TargetAssemblyTypeName: NPCMovementTrigger, Assembly-CSharp
+          m_MethodName: StartMovement
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 407982857}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: DisableDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &407982857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ded9826a82a74459d6b94f7ee6786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 1586919860}
+  playerCameraScript: {fileID: 2048983602}
+  playerManagerScript: {fileID: 1586919864}
+  dialogueObject: {fileID: 11400000, guid: e7378e443683fe1498f01f778354655d, type: 2}
+  autoTriggerDialogue: 1
+--- !u!114 &407982858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleActivation: 1
+  activateDialogue: 1
+  readyToTrigger: 0
+  triggerTag: NPC_1
+  newTargetPosition: {fileID: 6772992453029327326}
+--- !u!65 &407982859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.378296, y: 4, z: 20}
+  m_Center: {x: -2.689148, y: 0, z: 0}
+--- !u!23 &407982860
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8cab5c4ab23c905439bda3c1ac2653a2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &407982861
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &407982862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407982855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -47, y: 2, z: 10}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &408498956
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3489,6 +3667,7 @@ MonoBehaviour:
   newTrigger: {fileID: 0}
   DoorObj: {fileID: 0}
   robot: {fileID: 0}
+  nextTrigger: {fileID: 0}
   npcMovementTrigger: {fileID: 0}
   dialogueActivator: {fileID: 0}
   locked: 1
@@ -8480,6 +8659,7 @@ MonoBehaviour:
   newTrigger: {fileID: 887225432912911986}
   DoorObj: {fileID: 1320713845}
   robot: {fileID: 1401658322}
+  nextTrigger: {fileID: 407982855}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015142366984874}
   locked: 0
@@ -9026,35 +9206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260a2e59304adf845ad28559a895c558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &1586919862
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430214084}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1586919864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5927878563819026550, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
   m_PrefabInstance: {fileID: 372137044}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430214084}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb790f181fa5804882e831ddc583c1b, type: 3}
@@ -18005,7 +18162,7 @@ GameObject:
   - component: {fileID: 7811438693719869777}
   - component: {fileID: 4525968758110294779}
   - component: {fileID: 146833711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fd_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41966,6 +42123,7 @@ MonoBehaviour:
   newTrigger: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
+  nextTrigger: {fileID: 0}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015141653999730}
   locked: 0
@@ -43927,6 +44085,7 @@ SceneRoots:
   - {fileID: 129187190}
   - {fileID: 691289320}
   - {fileID: 6772992452514326698}
+  - {fileID: 407982862}
   - {fileID: 6772992453029327326}
   - {fileID: 932322867}
   - {fileID: 6772992453629993586}

@@ -7,6 +7,7 @@ public class Door_Switch : Interactable
     [Header("Switch variables")]
     public GameObject DoorObj;
     public GameObject robot;
+    public GameObject nextTrigger;
 
     public NPCMovementTrigger npcMovementTrigger;
     public DialogueActivator dialogueActivator;
@@ -62,9 +63,10 @@ public class Door_Switch : Interactable
 
         doorAnimator.SetTrigger("OpenTrigger");
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
 
-        npcMovementTrigger.StartMovement();
+        //npcMovementTrigger.StartMovement();
+        nextTrigger.SetActive(true);
 
         robot.transform.rotation = originalRotation;
 
