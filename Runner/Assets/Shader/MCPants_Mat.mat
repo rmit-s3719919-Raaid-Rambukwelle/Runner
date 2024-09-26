@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MCPants_Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
+  m_Parent: {fileID: 2100000, guid: 7084f4f42ae42c940a0215a6431a24af, type: 2}
+  m_ModifiedSerializedProperties: 2
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ambientOcclusionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mainTex:
+        m_Texture: {fileID: 2800000, guid: ee058e9ba764f904daa6f4438e73d651, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalTex:
+        m_Texture: {fileID: 2800000, guid: 1ba70a39cfbf83749a3dbb44bcd504db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _shadowTex:
+        m_Texture: {fileID: 2800000, guid: 3db4addecb53c8d42bb671968edd81cc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Light_Probe_Contribution: 1
+    - _ambientOcclusionStrength: 0
+    - _emissionStrength: 0
+    - _metallicStrength: 0
+    - _normalStrength: 0.46
+    - _shadowStep: 0.16
+    - _smoothnessStrength: 0
+    m_Colors:
+    - _shadowIntensity: {r: 0.19, g: 1, b: 0, a: 0}
+    - _shadowTexColor: {r: 0.25649697, g: 0.41509432, b: 0.25649697, a: 0}
+    - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &2605847913659388030
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

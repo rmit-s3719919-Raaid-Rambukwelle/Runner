@@ -22,11 +22,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: metalMat
   m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 2100000, guid: 7c9dc93aeb04f5143b7a17d4e83ff7b6, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -36,18 +36,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_8893f6f290f14ccc8cb6b6d1b6c32a8c_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ambientOcclusionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _emissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _mainTex:
         m_Texture: {fileID: 2800000, guid: 9c8e9fddc17ed2a49a1404e1768a66e0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -64,41 +52,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _smoothnessTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _Light_Probe_Contribution: 7.09
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _ambientOcclusionStrength: 0
-    - _emissionStrength: 0
     - _metallicStrength: 0.685
     - _normalStrength: 1
     - _outlineDepthSensitivity: 0.854
     - _outlineNormalsSensitivity: 0.68
     - _outlineThickness: 1.42
     - _shadowStep: -1.9
-    - _smoothnessStrength: 0
     m_Colors:
-    - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
-    - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _shadowIntensity: {r: 0.84, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 1, g: 1, b: 1, a: 0}
-    - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

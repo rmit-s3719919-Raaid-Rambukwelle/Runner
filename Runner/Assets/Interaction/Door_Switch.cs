@@ -6,15 +6,22 @@ public class Door_Switch : Interactable
 {
     [Header("Switch variables")]
     public GameObject DoorObj;
+    public GameObject robot;
+    public GameObject nextTrigger;
+
+    public NPCMovementTrigger npcMovementTrigger;
+    public DialogueActivator dialogueActivator;
+
     public bool locked = false;
     public string lockedMessage;
     public string requiredObj;
     public bool reactivateOnUse;
-    Animator animator;
+    public Animator doorAnimator;
 
-    bool open = false;
+    private Quaternion originalRotation;
+
     bool active = true;
-    
+
 
     public override void Interact()
     {
@@ -25,17 +32,59 @@ public class Door_Switch : Interactable
             PlayerManager.current.interactText.text = lockedMessage;
             return;
         }
-        open = !open;
-        animator.SetBool("Open", open);
-        
-        if (!reactivateOnUse) active = false;
+
+        StartCoroutine(PlayAnimationSequence());
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private IEnumerator PlayAnimationSequence() 
     {
-        animator = DoorObj.GetComponent<Animator>();
-        
+        originalRotation = robot.transform.rotation;
+
+        //robot face door
+        Vector3 targetDirection = DoorObj.transform.position - robot.transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        // smooth rotation
+        float rotationSpeed = 5f;
+        while(Quaternion.Angle(robot.transform.rotation, targetRotation) > 0.1f) 
+        {
+            robot.transform.rotation = Quaternion.Slerp(robot.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        Animator robotAnimator = robot.GetComponent<Animator>();
+        robotAnimator.SetTrigger("EnterCodeTrigger");
+
+        float enterCodeLength = GetAnimationClipLength(robotAnimator, "EnterCode");
+        Debug.Log("Robot animation length: " + enterCodeLength);
+        yield return new WaitForSeconds(enterCodeLength);
+
+        Debug.Log("Robot animation finished. Now opening the door.");
+
+        doorAnimator.SetTrigger("OpenTrigger");
+
+        yield return new WaitForSeconds(1f);
+
+        //npcMovementTrigger.StartMovement();
+        nextTrigger.SetActive(true);
+
+        robot.transform.rotation = originalRotation;
+
+        if (!reactivateOnUse) active = false;
+
+        dialogueActivator.DisableDialogue();
     }
 
+    private float GetAnimationClipLength(Animator animator, string clipName) 
+    {
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips) 
+        {
+            if (clip.name == clipName) 
+            {
+                return clip.length;
+            }
+        }
+        return 0;
+    }
 }

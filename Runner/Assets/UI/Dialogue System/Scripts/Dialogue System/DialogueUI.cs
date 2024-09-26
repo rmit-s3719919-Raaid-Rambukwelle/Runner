@@ -2,18 +2,18 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class DialogueUI : MonoBehaviour
+public class DialogueUI : PlayerControlHandler
 {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private GameObject dialogueBox;
-
     public bool IsOpen { get; private set; }
 
     private ResponseHandler responseHandler;
     private TypeWriter typeWriterEffect;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         CloseDialogueBox();
         responseHandler = GetComponent<ResponseHandler>();
         typeWriterEffect = GetComponent<TypeWriter>();
@@ -21,9 +21,18 @@ public class DialogueUI : MonoBehaviour
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        SequenceOneController sequenceController = FindObjectOfType<SequenceOneController>();
+        if (sequenceController != null && sequenceController.isSequenceOneActive())
+        {
+            // Prevent dialogue if the opening sequence is active
+            return;
+        }
+
         IsOpen = true;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
+
+        DisablePlayerControls();
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -52,13 +61,20 @@ public class DialogueUI : MonoBehaviour
         {
             CloseDialogueBox();
         }
-
     }
 
-    private void CloseDialogueBox()
+    public void CloseDialogueBox()
     {
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+
+        EnablePlayerControls();
+
+        if (TryGetComponent(out DialogueActivator dialogueActivator)) 
+        {
+            dialogueActivator.OnDialogueClose();
+        }
     }
+
 }
