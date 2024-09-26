@@ -63,7 +63,7 @@ public class Door_Switch : Interactable
 
         doorAnimator.SetTrigger("OpenTrigger");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         //npcMovementTrigger.StartMovement();
         nextTrigger.SetActive(true);
