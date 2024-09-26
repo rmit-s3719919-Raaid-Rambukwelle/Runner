@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,15 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [Header("References")]
-    public GameObject firstPersonCam;
-    public GameObject thirdPersonCam;
+    public CinemachineVirtualCamera firstPersonCam;
+    public CinemachineFreeLook thirdPersonCam;
     public Transform orientation;
     public Transform player;
+
+    [Header("First Person")]
+    public Transform cameraHolder;
+
+    [Header("Third Person")]
     public Transform gfx;
     public Rigidbody rb;
     public float rotationSpeed;
@@ -25,14 +31,14 @@ public class PlayerCamera : MonoBehaviour
     {
         if (PlayerManager.current.thirdPerson)
         {
-            firstPersonCam.SetActive(false);
-            thirdPersonCam.SetActive(true);
+            firstPersonCam.Priority = 10;
+            thirdPersonCam.Priority = 20;
             ThirdPersonCamera();
         }
         else
         {
-            firstPersonCam.SetActive(true);
-            thirdPersonCam.SetActive(false);
+            firstPersonCam.Priority = 20;
+            thirdPersonCam.Priority = 10;
             FirstPersonCamera();
         }
 
@@ -49,8 +55,8 @@ public class PlayerCamera : MonoBehaviour
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -60f, 60f);
 
-        //transform.rotation = Quaternion.Euler(xRot, yRot, 0);
-        orientation.rotation = Quaternion.Euler(xRot, yRot, 0);
+        cameraHolder.rotation = Quaternion.Euler(xRot, yRot, 0);
+        orientation.rotation = Quaternion.Euler(0, yRot, 0);
 
     }
 

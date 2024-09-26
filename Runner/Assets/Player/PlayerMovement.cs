@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         {
             readyToJump = false;
 
-            //Jump();
+            Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
