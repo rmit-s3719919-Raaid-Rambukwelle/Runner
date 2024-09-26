@@ -8250,7 +8250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6834305444823611240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.04647969, y: -0.00000006376754, z: 0.000000003463716, w: 0.9989193}
   m_LocalPosition: {x: 0.0000005364416, y: -0.0000004523179, z: 0.0000002821802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10039,7 +10039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6454883449269503305
 Transform:
   m_ObjectHideFlags: 0
@@ -10797,9 +10797,9 @@ MonoBehaviour:
   DebugDesiredMoveSpeed: 0
   allowMovementDebug: 1
   state: 0
-  walkSpeed: 10
+  walkSpeed: 20
   slideSpeed: 25
-  slopeSlideSpeed: 30
+  slopeSlideSpeed: 45
   crouchSpeed: 3
   wallRunSpeed: 12
   lerpMultiplier: 20
@@ -10810,7 +10810,7 @@ MonoBehaviour:
   jumpCooldown: 0.25
   airMulti: 0.4
   crouchYScale: 0.5
-  maxSlideTime: 1.4
+  maxSlideTime: 0.6
   slideForce: 0.5
   slideCooldown: 0.1
   slideTimer: 0
@@ -11081,7 +11081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb790f181fa5804882e831ddc583c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thirdPerson: 1
+  thirdPerson: 0
   sensX: 400
   sensY: 400
   interactKey: 101
