@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class PlayerControlHandler : MonoBehaviour
 {
-    public ThirdPersonMovement playerMovementScript;
-    public ThirdPersonCamera playerCameraScript;
+    public PlayerMovement playerMovementScript;
+    public PlayerCamera playerCameraScript;
     public PlayerManager playerManagerScript;
 
     protected virtual void Awake() 
     {
-        playerMovementScript = FindObjectOfType<ThirdPersonMovement>();
-        playerCameraScript = FindObjectOfType<ThirdPersonCamera>();
+        playerMovementScript = FindObjectOfType<PlayerMovement>();
+        playerCameraScript = FindObjectOfType<PlayerCamera>();
         playerManagerScript = FindObjectOfType<PlayerManager>();
 
         if (playerMovementScript == null || playerCameraScript == null)

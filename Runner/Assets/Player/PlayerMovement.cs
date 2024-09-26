@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Debug")]
     public float DebugSpeed;
