@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMulti;
+    public float airDrag;
 
     [Header("Scale Values")]
     public float crouchYScale;
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     public GameObject col;
     public Animator ani;
+    public PlayerCamera cam;
 
     [Header("UI")]
     [SerializeField] private GameObject[] ui;
@@ -123,16 +125,22 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        GetInput();
-        SpeedControl();
-        CheckForWall();
-        WallRunHandler();
-        StateHandler();
+        if (PlayerManager.current.canMove)
+        {
+            GetInput();
+            SpeedControl();
+            CheckForWall();
+            WallRunHandler();
+            StateHandler();
+        }
 
         if (grounded)
+        {
             rb.drag = groundDrag;
+            if (cam.firstPersonCam.m_Lens.Dutch > 0) cam.DoTilt(0f);
+        }
         else
-            rb.drag = 0;
+            rb.drag = airDrag;
 
         ani.SetFloat("Velocity", rb.velocity.magnitude);
     }
@@ -150,7 +158,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //unlocks cursor if ui element is active
         if (PlayerManager.current.DialogueUI.IsOpen || isAnyUIActive)
         {
             Cursor.lockState = CursorLockMode.Confined;
@@ -160,15 +167,28 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
-            MovePlayer();
-            if (sliding)
-                SlidingMovement();
         }
 
-        if (wallrunning)
-            WallRunningMovement();
+            if (!PlayerManager.current.running)
+            {
+                // State 1: Scavenger
+                MovePlayer();
+            }
+            else
+            {
+                // State 2: Runner
+                MovePlayer();
+                if (sliding)
+                {
+                    SlidingMovement();
+                }
 
+                if (wallrunning)
+                {
+                    WallRunningMovement();
+                }
+            }
+        
     }
 
     void GetInput()
@@ -176,91 +196,120 @@ public class PlayerMovement : MonoBehaviour
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(PlayerManager.current.jumpKey) && readyToJump && grounded)
+        if (PlayerManager.current.running)
         {
-            readyToJump = false;
-
-            Jump();
-            Invoke(nameof(ResetJump), jumpCooldown);
-        }
-
-        if (Input.GetKeyDown(PlayerManager.current.crouchKey))
-        {
-            col.transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-
-            if (moveDir.magnitude > 0f && !sliding && grounded && canSlide)
+            if (Input.GetKey(PlayerManager.current.jumpKey) && readyToJump && grounded)
             {
-                StartSlide();
+                readyToJump = false;
+                Jump();
+                Invoke(nameof(ResetJump), jumpCooldown);
+            }
+
+            if (Input.GetKeyDown(PlayerManager.current.crouchKey))
+            {
+                col.transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+                rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+                if (moveDir.magnitude > 0f && !sliding && grounded && canSlide)
+                {
+                    StartSlide();
+                }
+            }
+
+            if (Input.GetKeyUp(PlayerManager.current.crouchKey))
+            {
+                col.transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+                if (sliding)
+                {
+                    StopSlide();
+                }
             }
         }
-
-        if (Input.GetKeyUp(PlayerManager.current.crouchKey))
-        {
-            col.transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-            if (sliding)
-            {
-                StopSlide();
-            }
-        }
-
     }
 
     void StateHandler()
     {
-        if (wallrunning)
+        // State 1: Scavenger (only walking)
+        if (!PlayerManager.current.running) 
         {
-            state = MovementState.wallRun;
-            desiredMoveSpeed = wallRunSpeed;
-        }
-        else if (sliding) // Sliding
-        {
-            state = MovementState.sliding;
+            // walking or idle
+            if (moveDir.magnitude > 0 && grounded) // Walking
+            {
+                state = MovementState.walking;
+                desiredMoveSpeed = walkSpeed;
+            }
+            else // idle
+            {
+                state = MovementState.idle;
+                desiredMoveSpeed = 0f;
+            }
 
-            if (OnSlope() && rb.velocity.y < 0.1f)
-                desiredMoveSpeed = slopeSlideSpeed;
-            else
-                desiredMoveSpeed = slideSpeed;
+            // disable advanced movement
+            sliding = false;
+            wallrunning = false;
 
-        }
-        else if (Input.GetKey(PlayerManager.current.crouchKey) && !sliding && grounded) // Crouching
-        {
-            state = MovementState.crouching;
-            desiredMoveSpeed = crouchSpeed;
-        }
-        else if (grounded && !sliding && moveDir.magnitude > 0) // Walking
-        {
-            state = MovementState.walking;
-            desiredMoveSpeed = walkSpeed;
-        }
-        else if (!grounded) // Jumping
-        {
-            state = MovementState.air;
-            desiredMoveSpeed = walkSpeed;
-        }
-        else // Idle
-        {
-            state = MovementState.idle;
-            desiredMoveSpeed = 0f;
-
-        }
-
-
-        if (desiredMoveSpeed < moveSpeed && moveSpeed != 0f && Mathf.Abs(lastDesiredMoveSpeed - desiredMoveSpeed) > 10f)
-        {
-            Debug.Log(Mathf.Abs(lastDesiredMoveSpeed - desiredMoveSpeed));
-            StopAllCoroutines();
-            StartCoroutine(SmoothLerpMovement());
-        }
-        else
             moveSpeed = desiredMoveSpeed;
+        }
+        else // State 2: Runner (full movement)
+        {
+            if (wallrunning)
+            {
+                state = MovementState.wallRun;
+                desiredMoveSpeed = wallRunSpeed;
+            }
+            else if (sliding) // sliding
+            {
+                state = MovementState.sliding;
 
-        lastDesiredMoveSpeed = desiredMoveSpeed;
+                if (OnSlope() && rb.velocity.y < 0.1f)
+                    desiredMoveSpeed = slopeSlideSpeed;
+                else
+                    desiredMoveSpeed = slideSpeed;
+            }
+            else if (Input.GetKey(PlayerManager.current.crouchKey) && !sliding && grounded) // Crouching
+            {
+                state = MovementState.crouching;
+                desiredMoveSpeed = crouchSpeed;
+            }
+            else if (grounded && moveDir.magnitude > 0) // walking
+            {
+                state = MovementState.walking;
+                desiredMoveSpeed = walkSpeed;
+            }
+            else if (!grounded) // jumping
+            {
+                state = MovementState.air;
+                desiredMoveSpeed = walkSpeed;
+            }
+            else // idle
+            {
+                state = MovementState.idle;
+                desiredMoveSpeed = 0f;
+            }
+
+            // Keep the movement speed consistent
+            if (desiredMoveSpeed < moveSpeed && moveSpeed != 0f && Mathf.Abs(lastDesiredMoveSpeed - desiredMoveSpeed) > 10f)
+            {
+                StopAllCoroutines();
+                StartCoroutine(SmoothLerpMovement());
+            }
+            else
+            {
+                moveSpeed = desiredMoveSpeed;
+            }
+
+            lastDesiredMoveSpeed = desiredMoveSpeed;
+        }
     }
 
     void MovePlayer()
     {
+        if (!PlayerManager.current.canMove) return;
+
         moveDir = orientation.forward * vInput + orientation.right * hInput;
+        //Debug.Log("MovePlayer called. hInput: " + hInput + " vInput: " + vInput + " moveDir: " + moveDir);
+
+
         if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopeMoveDir(moveDir) * moveSpeed * 20f, ForceMode.Force);
@@ -429,19 +478,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (exitingWall)
         {
-            if (wallrunning)
-                StopWallRun();
-
+            cam.DoTilt(0f);
             if (exitWallTimer > 0)
                 exitWallTimer -= Time.deltaTime;
 
             if (exitWallTimer <= 0)
                 exitingWall = false;
+
+            if (wallrunning)
+                StopWallRun();
         }
         else
         {
             if (wallrunning)
+            {
+                cam.DoTilt(0f);
                 StopWallRun();
+            }
         }
     }
 
@@ -450,6 +503,9 @@ public class PlayerMovement : MonoBehaviour
         wallrunning = true;
         wallRunTimer = maxWallRunTime;
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (wallLeft) cam.DoTilt(-5f);
+        if (wallRight) cam.DoTilt(5f);
     }
 
     void WallRunningMovement()
@@ -474,7 +530,6 @@ public class PlayerMovement : MonoBehaviour
 
     void StopWallRun()
     {
-        //rb.useGravity = true;
         wallrunning = false;
     }
 

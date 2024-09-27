@@ -23,6 +23,11 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
         Cursor.visible = false;
     }
 
+    public void CannotInteract() 
+    {
+        PlayerManager.current.Interactable = null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out PlayerManager playerManager))

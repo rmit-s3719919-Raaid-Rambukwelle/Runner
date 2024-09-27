@@ -18,6 +18,8 @@ public class PlayerCamera : MonoBehaviour
     public Transform gfx;
     public Rigidbody rb;
     public float rotationSpeed;
+    float xStartSense;
+    float yStartSense;
 
     float xRot, yRot;
 
@@ -25,24 +27,30 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        xStartSense = thirdPersonCam.m_XAxis.m_MaxSpeed;
+        yStartSense = thirdPersonCam.m_YAxis.m_MaxSpeed;
     }
 
     void Update()
     {
-        if (PlayerManager.current.thirdPerson)
-        {
-            firstPersonCam.Priority = 10;
-            thirdPersonCam.Priority = 20;
-            ThirdPersonCamera();
-        }
-        else
-        {
-            firstPersonCam.Priority = 20;
-            thirdPersonCam.Priority = 10;
-            FirstPersonCamera();
-        }
+        thirdPersonCam.m_XAxis.m_MaxSpeed = PlayerManager.current.canMove ? xStartSense : 0f;
+        thirdPersonCam.m_YAxis.m_MaxSpeed = PlayerManager.current.canMove ? yStartSense : 0f;
 
-
+        if (PlayerManager.current.canMove)
+        {
+            if (PlayerManager.current.thirdPerson)
+            {
+                firstPersonCam.Priority = 10;
+                thirdPersonCam.Priority = 20;
+                ThirdPersonCamera();
+            }
+            else
+            {
+                firstPersonCam.Priority = 20;
+                thirdPersonCam.Priority = 10;
+                FirstPersonCamera();
+            }
+        }
     }
 
     void FirstPersonCamera()
@@ -75,4 +83,27 @@ public class PlayerCamera : MonoBehaviour
             gfx.rotation = Quaternion.Lerp(gfx.rotation, toRotation, Time.deltaTime * rotationSpeed);
         }
     }
+
+    public void DoTilt(float endValue)
+    {
+        StopCoroutine(nameof(LerpTilt));
+        StartCoroutine(LerpTilt(endValue));
+    }
+
+    IEnumerator LerpTilt(float endValue)
+    {
+        float t = 0;
+        float d = Mathf.Abs(firstPersonCam.m_Lens.Dutch - endValue);
+        float s = firstPersonCam.m_Lens.Dutch;
+
+        while (t < d)
+        {
+            firstPersonCam.m_Lens.Dutch = Mathf.Lerp(s, endValue, t / d);
+            t += Time.deltaTime * 40f;
+            yield return null;
+        }
+
+        firstPersonCam.m_Lens.Dutch = endValue;
+    }
+
 }
