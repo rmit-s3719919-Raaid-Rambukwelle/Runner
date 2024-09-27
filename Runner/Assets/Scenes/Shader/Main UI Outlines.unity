@@ -2543,11 +2543,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7074513515996712570, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
   m_PrefabInstance: {fileID: 372137044}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &421653096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6325747919084436705, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
-  m_PrefabInstance: {fileID: 372137044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &421653097 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1754019394453018358, guid: 5a428e4f4d3c1a94391b8173e4d1d361, type: 3}
@@ -3683,6 +3678,7 @@ MonoBehaviour:
   newTrigger: {fileID: 0}
   DoorObj: {fileID: 0}
   robot: {fileID: 0}
+  nextTrigger: {fileID: 0}
   npcMovementTrigger: {fileID: 0}
   dialogueActivator: {fileID: 0}
   locked: 1
@@ -8822,6 +8818,7 @@ MonoBehaviour:
   newTrigger: {fileID: 887225432912911986}
   DoorObj: {fileID: 1320713845}
   robot: {fileID: 1401658322}
+  nextTrigger: {fileID: 0}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015142366984874}
   locked: 0
@@ -12038,9 +12035,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e3228e2a12c8f489a7ed1106db81c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstPersonCam: {fileID: 0}
+  thirdPersonCam: {fileID: 0}
   orientation: {fileID: 30066101}
   player: {fileID: 1586919854}
-  playerObj: {fileID: 421653096}
+  cameraHolder: {fileID: 0}
+  gfx: {fileID: 0}
   rb: {fileID: 1586919858}
   rotationSpeed: 10
 --- !u!64 &2051547915
@@ -42285,6 +42285,7 @@ MonoBehaviour:
   newTrigger: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
+  nextTrigger: {fileID: 0}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015141653999730}
   locked: 0
