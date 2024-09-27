@@ -14812,7 +14812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425730017805921321}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016774025, y: -0.0000001520115, z: 0.000000051264216, w: 0.99985933}
+  m_LocalRotation: {x: 0.01677398, y: -0.00000021053408, z: 0.00000006652307, w: 0.99985933}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16914,7 +16914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7632556660822458213}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006523674, y: -0.00000023758041, z: 0.00000008528685, w: 0.9999787}
+  m_LocalRotation: {x: -0.0065237056, y: -0.00000020674749, z: 0.00000006260078, w: 0.9999787}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18539,7 +18539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8367556763147763491}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.23699543, y: 0.14425589, z: -0.03560953, w: 0.960081}
+  m_LocalRotation: {x: -0.23697683, y: 0.14475858, z: -0.035733573, w: 0.9600053}
   m_LocalPosition: {x: -0.0000030994415, y: 0.86482143, z: 6.616617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35360,7 +35360,7 @@ MonoBehaviour:
   orientation: {fileID: 7469515214164040843}
   player: {fileID: 7950927787948652452}
   cameraHolder: {fileID: 537011863}
-  gfx: {fileID: 6325747918714167477}
+  gfx: {fileID: 7074513515624616494}
   rb: {fileID: 3251271390591725275}
   rotationSpeed: 10
 --- !u!1 &5393432911933363053
@@ -36812,8 +36812,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135284376890239604}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.029717118, y: 0.00047034048, z: -0.0002297395, w: 0.9995582}
-  m_LocalPosition: {x: -0.0065553105, y: 0.0000013414543, z: 0.0000025515078}
+  m_LocalRotation: {x: -0.029717147, y: -0.00000023449988, z: 0.00000006473872, w: 0.9995584}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38001,6 +38001,7 @@ MonoBehaviour:
   jumpKey: 32
   dashKey: 304
   crouchKey: 306
+  grappleKey: 324
   interactRange: 3
   grappleRange: 25
   currentInteractable: {fileID: 0}
@@ -41551,6 +41552,7 @@ MonoBehaviour:
   DebugSpeed: 0
   DebugDesiredMoveSpeed: 0
   allowMovementDebug: 0
+  testPrefab: {fileID: 0}
   state: 0
   walkSpeed: 4
   slideSpeed: 15
@@ -41588,6 +41590,15 @@ MonoBehaviour:
   wallJumpUpForce: 0
   wallJumpSideForce: 0
   exitWallTime: 0
+  lr: {fileID: 0}
+  cameraPoint: {fileID: 0}
+  gunTip: {fileID: 0}
+  whatIsGrappleable:
+    serializedVersion: 2
+    m_Bits: 0
+  maxGrappleDistance: 0
+  grappleDelayTime: 0
+  grappleCD: 0
   grounded: 0
   readyToJump: 0
   sliding: 0

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float DebugSpeed;
     public float DebugDesiredMoveSpeed;
     public bool allowMovementDebug;
+    public GameObject testPrefab;
     public MovementState state;
 
     [Header("Speed Values")]
@@ -66,6 +67,20 @@ public class PlayerMovement : MonoBehaviour
     public float wallJumpSideForce;
     public float exitWallTime;
 
+    [Header("Grappling")]
+    public LineRenderer lr;
+    public Transform cameraPoint;
+    public Transform gunTip;
+    public LayerMask whatIsGrappleable;
+    public float maxGrappleDistance;
+    public float grappleDelayTime;
+    public float overshootY;
+    public bool freeze;
+    Vector3 grapplePoint;
+    public float grappleCD;
+    float grappleCDTimer;
+    bool grappling;
+
     bool exitingWall;
     float exitWallTimer;
     float wallRunTimer;
@@ -80,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
     public bool readyToJump;
     public bool sliding;
     public bool canSlide;
+    public bool activeGrapple;
 
     [Header("References")]
     public Transform orientation;
@@ -98,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     public enum MovementState
     {
+        freeze,
         walking,
         crouching,
         sliding,
@@ -134,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
             StateHandler();
         }
 
-        if (grounded)
+        if (grounded && !activeGrapple)
         {
             rb.drag = groundDrag;
             if (cam.firstPersonCam.m_Lens.Dutch > 0) cam.DoTilt(0f);
@@ -224,6 +241,13 @@ public class PlayerMovement : MonoBehaviour
                     StopSlide();
                 }
             }
+
+            if (Input.GetKeyDown(PlayerManager.current.grappleKey))
+            {
+                StartGrapple();
+            }
+
+            if (grappleCDTimer > 0) grappleCDTimer -= Time.deltaTime;
         }
     }
 
@@ -252,7 +276,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else // State 2: Runner (full movement)
         {
-            if (wallrunning)
+            if (freeze)
+            {
+                state = MovementState.freeze;
+                moveSpeed = 0f;
+                rb.velocity = Vector3.zero;
+            }
+            else if (wallrunning)
             {
                 state = MovementState.wallRun;
                 desiredMoveSpeed = wallRunSpeed;
@@ -304,6 +334,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        if (activeGrapple) return;
         if (!PlayerManager.current.canMove) return;
 
         moveDir = orientation.forward * vInput + orientation.right * hInput;
@@ -328,6 +359,8 @@ public class PlayerMovement : MonoBehaviour
 
     void SpeedControl()
     {
+        if (activeGrapple) return;
+
         if (OnSlope() && !exitingSlope)
         {
             if (rb.velocity.magnitude > moveSpeed)
@@ -544,6 +577,118 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);
+    }
+
+    void JumpToPosition(Vector3 targetPos,  float t)
+    {
+        activeGrapple = true;
+        velocityToSet = CalculateJumpVelocity(transform.position, targetPos, t);
+        Invoke(nameof(SetVelocity), 0.1f);
+
+        Invoke(nameof(ResetRestrictions), 3f);
+    }
+
+    Vector3 velocityToSet;
+
+    void SetVelocity()
+    {
+        enableMovementOnNextTouch = true;
+        rb.velocity = velocityToSet;
+    }
+    
+    void ResetRestrictions()
+    {
+        activeGrapple = false;
+    }
+
+    public void GrappleCollide()
+    {
+        if (enableMovementOnNextTouch)
+        {
+            enableMovementOnNextTouch = false;
+            ResetRestrictions();
+
+            StopGrapple();
+        }
+    }
+
+
+    private void LateUpdate()
+    {
+        if (grappling)
+            lr.SetPosition(0, gunTip.position);
+    }
+
+    bool enableMovementOnNextTouch;
+
+    void StartGrapple()
+    {
+        if (grappleCDTimer > 0) return;
+
+        grappling = true;
+        freeze = true;
+
+        RaycastHit grappleHit;
+
+        if (Physics.Raycast(cameraPoint.position, cameraPoint.forward, out grappleHit, maxGrappleDistance, whatIsGrappleable))
+        {
+            grapplePoint = grappleHit.point;
+            Invoke(nameof(GrappleMovement), grappleDelayTime);
+            //Debug.Log("Hit Grapple Point: + " + grappleHit.collider.name);
+        }
+        else
+        {
+            grapplePoint = cameraPoint.position + cameraPoint.forward * maxGrappleDistance;
+            Invoke(nameof(StopGrapple), grappleDelayTime);
+            //Instantiate(testPrefab, grapplePoint, Quaternion.identity);
+            //Debug.Log("Missed Grapple Point: + " + grappleHit);
+        }
+
+        lr.enabled = true;
+        lr.SetPosition(1, grapplePoint);
+    }
+
+    void GrappleMovement()
+    {
+        freeze = false;
+
+        Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
+
+        float grapplePointRelYPos = grapplePoint.y - lowestPoint.y;
+        float highestPointOnArc = grapplePointRelYPos + overshootY;
+
+        if (grapplePointRelYPos < 0) highestPointOnArc = overshootY;
+
+        JumpToPosition(grapplePoint, highestPointOnArc);
+        Invoke(nameof(StopGrapple), 0.5f);
+    }
+
+    void StopGrapple()
+    {
+        freeze = false;
+        grappling = false;
+
+        grappleCDTimer = grappleCD;
+
+        lr.enabled = false;
+    }
+
+    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        float g = Physics.gravity.y;
+        float dy = endPoint.y - startPoint.y;
+        Vector3 dxz = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+        Vector3 vy = Vector3.up * MathF.Sqrt(-2 * g * trajectoryHeight);
+        Vector3 vxz = dxz / (MathF.Sqrt(-2 * trajectoryHeight / g) + MathF.Sqrt(2 * (dy - trajectoryHeight) / g));
+
+        return vy + vxz;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, orientation.right, Color.red, wallCheckDistance); // Right Wall Check
+        Debug.DrawRay(transform.position, -orientation.right, Color.red, wallCheckDistance); // Left Wall Check
     }
 
 }

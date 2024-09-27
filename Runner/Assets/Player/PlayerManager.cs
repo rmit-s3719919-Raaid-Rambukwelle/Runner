@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode dashKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    public KeyCode grappleKey = KeyCode.Mouse1;
 
 
     [Header("Interactables")]
