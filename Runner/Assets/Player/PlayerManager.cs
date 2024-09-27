@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager current;
 
     [Header("Settings")]
+    public bool running;
     public bool thirdPerson;
     public float sensX;
     public float sensY;
