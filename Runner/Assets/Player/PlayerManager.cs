@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Settings")]
     public bool running;
+    public bool canMove;
     public bool thirdPerson;
     public float sensX;
     public float sensY;

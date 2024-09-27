@@ -18,6 +18,8 @@ public class PlayerCamera : MonoBehaviour
     public Transform gfx;
     public Rigidbody rb;
     public float rotationSpeed;
+    float xStartSense;
+    float yStartSense;
 
     float xRot, yRot;
 
@@ -25,24 +27,30 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        xStartSense = thirdPersonCam.m_XAxis.m_MaxSpeed;
+        yStartSense = thirdPersonCam.m_YAxis.m_MaxSpeed;
     }
 
     void Update()
     {
-        if (PlayerManager.current.thirdPerson)
-        {
-            firstPersonCam.Priority = 10;
-            thirdPersonCam.Priority = 20;
-            ThirdPersonCamera();
-        }
-        else
-        {
-            firstPersonCam.Priority = 20;
-            thirdPersonCam.Priority = 10;
-            FirstPersonCamera();
-        }
+        thirdPersonCam.m_XAxis.m_MaxSpeed = PlayerManager.current.canMove ? xStartSense : 0f;
+        thirdPersonCam.m_YAxis.m_MaxSpeed = PlayerManager.current.canMove ? yStartSense : 0f;
 
-
+        if (PlayerManager.current.canMove)
+        {
+            if (PlayerManager.current.thirdPerson)
+            {
+                firstPersonCam.Priority = 10;
+                thirdPersonCam.Priority = 20;
+                ThirdPersonCamera();
+            }
+            else
+            {
+                firstPersonCam.Priority = 20;
+                thirdPersonCam.Priority = 10;
+                FirstPersonCamera();
+            }
+        }
     }
 
     void FirstPersonCamera()

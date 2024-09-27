@@ -23,7 +23,7 @@ public class SequenceOneController : PlayerControlHandler
     IEnumerator PlayOpeningSequence()
     {
         isSequenceActive = true;
-
+        DisablePlayerControls();
         StartCoroutine(PlayerAnimation());
         StartCoroutine(RobotAnimation());
         isSequenceActive = false;
@@ -42,7 +42,6 @@ public class SequenceOneController : PlayerControlHandler
         playerAnimator.SetTrigger("AllowMovement");
         Debug.Log("StandingUp animation finished, transitioning to idle.");
 
-        EnablePlayerControls();
     }
 
     IEnumerator RobotAnimation()

@@ -125,11 +125,14 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        GetInput();
-        SpeedControl();
-        CheckForWall();
-        WallRunHandler();
-        StateHandler();
+        if (PlayerManager.current.canMove)
+        {
+            GetInput();
+            SpeedControl();
+            CheckForWall();
+            WallRunHandler();
+            StateHandler();
+        }
 
         if (grounded)
         {
@@ -301,6 +304,8 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        if (!PlayerManager.current.canMove) return;
+
         moveDir = orientation.forward * vInput + orientation.right * hInput;
         //Debug.Log("MovePlayer called. hInput: " + hInput + " vInput: " + vInput + " moveDir: " + moveDir);
 

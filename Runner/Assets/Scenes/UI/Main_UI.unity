@@ -13053,7 +13053,7 @@ GameObject:
   - component: {fileID: 364647531601020553}
   - component: {fileID: 8967110668395367781}
   - component: {fileID: 2107524750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_cell_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13838,7 +13838,7 @@ GameObject:
   - component: {fileID: 6873418993968998124}
   - component: {fileID: 2123252292562816146}
   - component: {fileID: 950255313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14015,7 +14015,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 20
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 32058032}
   m_Follow: {fileID: 7950927787948652452}
@@ -14039,7 +14039,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1
+    Value: 0.64
     m_SpeedMode: 0
     m_MaxSpeed: 4
     m_AccelTime: 0.1
@@ -14063,7 +14063,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 72.85
     m_SpeedMode: 0
     m_MaxSpeed: 450
     m_AccelTime: 0.1
@@ -14342,7 +14342,7 @@ GameObject:
   - component: {fileID: 3399081163950729521}
   - component: {fileID: 3625864530167232457}
   - component: {fileID: 600759633}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14812,8 +14812,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425730017805921321}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000014305119, y: -7.6627485e-13, z: -0.0000035762785}
+  m_LocalRotation: {x: 0.016774025, y: -0.0000001520115, z: 0.000000051264216, w: 0.99985933}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14989,7 +14989,7 @@ GameObject:
   - component: {fileID: 1733676416499388068}
   - component: {fileID: 4782649094098435631}
   - component: {fileID: 721174822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15038,7 +15038,7 @@ GameObject:
   - component: {fileID: 1737716481118823306}
   - component: {fileID: 5373875740868182280}
   - component: {fileID: 1814699926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16064,7 +16064,7 @@ GameObject:
   - component: {fileID: 7205073517841516140}
   - component: {fileID: 2518351896862855879}
   - component: {fileID: 7205073517841516141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16083,7 +16083,7 @@ GameObject:
   - component: {fileID: 7205073517255796987}
   - component: {fileID: 2518351897349241936}
   - component: {fileID: 1123703945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16133,7 +16133,7 @@ GameObject:
   - component: {fileID: 5115654692429923634}
   - component: {fileID: 19745408351540382}
   - component: {fileID: 523279309}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16914,8 +16914,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7632556660822458213}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000014305119, y: -7.6627485e-13, z: -0.0000035762785}
+  m_LocalRotation: {x: -0.006523674, y: -0.00000023758041, z: 0.00000008528685, w: 0.9999787}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17665,7 +17665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -3}
+  m_FollowOffset: {x: 0, y: 3.56352, z: -6.259008}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -17685,7 +17685,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 72.85
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -18255,7 +18255,7 @@ GameObject:
   - component: {fileID: 8088595802274378171}
   - component: {fileID: 9150577912746239943}
   - component: {fileID: 789321945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18312,7 +18312,7 @@ GameObject:
   - component: {fileID: 8978594918178140352}
   - component: {fileID: 4104367407834707490}
   - component: {fileID: 410179405}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18380,7 +18380,7 @@ GameObject:
   - component: {fileID: 8584298971339516243}
   - component: {fileID: 8395363252512719143}
   - component: {fileID: 171159244}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18539,8 +18539,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8367556763147763491}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000035062936, y: -0.00000016858739, z: 0.000000004377655, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.23699543, y: 0.14425589, z: -0.03560953, w: 0.960081}
+  m_LocalPosition: {x: -0.0000030994415, y: 0.86482143, z: 6.616617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18600,7 +18600,7 @@ GameObject:
   - component: {fileID: 224241556881534383}
   - component: {fileID: 9167181786644399954}
   - component: {fileID: 453250146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18748,7 +18748,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -18988,7 +18988,7 @@ GameObject:
   - component: {fileID: 7218893324860747638}
   - component: {fileID: 5412628452283498745}
   - component: {fileID: 357099261}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19065,7 +19065,7 @@ GameObject:
   - component: {fileID: 7894296475300711339}
   - component: {fileID: 1375537087385191214}
   - component: {fileID: 7894296475300711340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19084,7 +19084,7 @@ GameObject:
   - component: {fileID: 5913030111138798098}
   - component: {fileID: 4370704967859709424}
   - component: {fileID: 226595250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19295,7 +19295,7 @@ GameObject:
   - component: {fileID: 3556692923310839286}
   - component: {fileID: 3160439735782193526}
   - component: {fileID: 232623904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19609,7 +19609,7 @@ GameObject:
   - component: {fileID: 7811438693719869777}
   - component: {fileID: 4525968758110294779}
   - component: {fileID: 146833711}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: fd_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19651,7 +19651,7 @@ GameObject:
   - component: {fileID: 2738343249978565875}
   - component: {fileID: 3502434546664263753}
   - component: {fileID: 1547346151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19748,7 +19748,7 @@ GameObject:
   - component: {fileID: 2496429488115658194}
   - component: {fileID: 4176179177075814096}
   - component: {fileID: 356328476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19767,7 +19767,7 @@ GameObject:
   - component: {fileID: 2496429488669066053}
   - component: {fileID: 4176179177560670279}
   - component: {fileID: 4176179177560670280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20403,7 +20403,7 @@ GameObject:
   - component: {fileID: 7567837517986818113}
   - component: {fileID: 8119176685419583452}
   - component: {fileID: 726485914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20627,7 +20627,7 @@ GameObject:
   - component: {fileID: 7776619801261285293}
   - component: {fileID: 3120246888878847927}
   - component: {fileID: 135174690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21158,7 +21158,7 @@ GameObject:
   - component: {fileID: 1891936591526354123}
   - component: {fileID: 738005433304504727}
   - component: {fileID: 196702475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.r.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21343,7 +21343,7 @@ GameObject:
   - component: {fileID: 5443271093047772853}
   - component: {fileID: 9166728975569622706}
   - component: {fileID: 425117642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.l.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21967,7 +21967,7 @@ GameObject:
   - component: {fileID: 8879265174592460951}
   - component: {fileID: 7618295466916553559}
   - component: {fileID: 53018386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21986,7 +21986,7 @@ GameObject:
   - component: {fileID: 5404645889444017229}
   - component: {fileID: 2783534280912648072}
   - component: {fileID: 1345910187}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.l.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22101,7 +22101,7 @@ GameObject:
   - component: {fileID: 5850628336959911925}
   - component: {fileID: 3470954282455642917}
   - component: {fileID: 468958711}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22120,7 +22120,7 @@ GameObject:
   - component: {fileID: 4023660015847123091}
   - component: {fileID: 1537079773533702218}
   - component: {fileID: 133661318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22815,7 +22815,7 @@ GameObject:
   - component: {fileID: 804677116311415866}
   - component: {fileID: 292900499530617587}
   - component: {fileID: 327433306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23974,7 +23974,7 @@ GameObject:
   - component: {fileID: 7462843968429565384}
   - component: {fileID: 7974096082462694143}
   - component: {fileID: 1279001360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23993,7 +23993,7 @@ GameObject:
   - component: {fileID: 7462843967943904095}
   - component: {fileID: 7974096081977504872}
   - component: {fileID: 8467770199981609295}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24012,7 +24012,7 @@ GameObject:
   - component: {fileID: 5620795992598914446}
   - component: {fileID: 5594176031505710207}
   - component: {fileID: 869847572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24839,7 +24839,7 @@ GameObject:
   - component: {fileID: 5633194089481784444}
   - component: {fileID: 1880240870389837782}
   - component: {fileID: 1912550747}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25643,7 +25643,7 @@ GameObject:
   - component: {fileID: 37775304063801870}
   - component: {fileID: 2053045047783463181}
   - component: {fileID: 348154132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25704,7 +25704,7 @@ GameObject:
   - component: {fileID: 649927625467045558}
   - component: {fileID: 5297038796730442962}
   - component: {fileID: 1489760605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26539,7 +26539,7 @@ GameObject:
   - component: {fileID: 6624749867944130678}
   - component: {fileID: 8959154642814444211}
   - component: {fileID: 1999544730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26722,7 +26722,7 @@ GameObject:
   - component: {fileID: 4372875301340509069}
   - component: {fileID: 8785295966183924329}
   - component: {fileID: 322573384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26999,7 +26999,7 @@ GameObject:
   - component: {fileID: 6095245017592967551}
   - component: {fileID: 7789042675862954068}
   - component: {fileID: 535130274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28121,7 +28121,7 @@ GameObject:
   - component: {fileID: 2150778284210859243}
   - component: {fileID: 1152376285892235798}
   - component: {fileID: 2120742811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28195,7 +28195,7 @@ GameObject:
   - component: {fileID: 687891640331516228}
   - component: {fileID: 9024755394672942278}
   - component: {fileID: 1147009768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_cell_wall.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28386,7 +28386,7 @@ GameObject:
   - component: {fileID: 6757802162425793899}
   - component: {fileID: 586239588852505559}
   - component: {fileID: 1913750410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_cell_wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29116,7 +29116,7 @@ GameObject:
   - component: {fileID: 8175890529744620937}
   - component: {fileID: 6167162555394735298}
   - component: {fileID: 1411887723}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29135,7 +29135,7 @@ GameObject:
   - component: {fileID: 341860100795937437}
   - component: {fileID: 2118801199903807424}
   - component: {fileID: 621147622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.l.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29266,7 +29266,7 @@ GameObject:
   - component: {fileID: 884171031867844373}
   - component: {fileID: 5637693663888079567}
   - component: {fileID: 1239310710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29476,7 +29476,7 @@ GameObject:
   - component: {fileID: 5526490601471853853}
   - component: {fileID: 6879627009789901147}
   - component: {fileID: 1051601030}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32078,7 +32078,7 @@ GameObject:
   - component: {fileID: 8499966853439636094}
   - component: {fileID: 4993260013212176273}
   - component: {fileID: 68902883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32189,7 +32189,7 @@ GameObject:
   - component: {fileID: 8592371141317063309}
   - component: {fileID: 2186143692287794300}
   - component: {fileID: 2088205194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32625,7 +32625,7 @@ GameObject:
   - component: {fileID: 5066451152974246898}
   - component: {fileID: 195311331922027037}
   - component: {fileID: 2113243984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34123,7 +34123,7 @@ GameObject:
   - component: {fileID: 5554616506670388172}
   - component: {fileID: 4456797088864069788}
   - component: {fileID: 602617106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34339,7 +34339,7 @@ GameObject:
   - component: {fileID: 7183798987295018090}
   - component: {fileID: 3597971516006759443}
   - component: {fileID: 2107463017}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34698,7 +34698,7 @@ GameObject:
   - component: {fileID: 1845494090742888280}
   - component: {fileID: 534370962852435744}
   - component: {fileID: 721949478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34866,7 +34866,7 @@ GameObject:
   - component: {fileID: 5649598461577982341}
   - component: {fileID: 5516171869390114552}
   - component: {fileID: 1747029484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35086,7 +35086,7 @@ GameObject:
   - component: {fileID: 6946866715669303054}
   - component: {fileID: 6490138598591704950}
   - component: {fileID: 6946866715669303055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35543,7 +35543,7 @@ GameObject:
   - component: {fileID: 7150326025015428946}
   - component: {fileID: 7986064004919308596}
   - component: {fileID: 238934350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35755,7 +35755,7 @@ MonoBehaviour:
   m_CollideAgainst:
     serializedVersion: 2
     m_Bits: 1024
-  m_IgnoreTag: 
+  m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -35797,7 +35797,7 @@ GameObject:
   - component: {fileID: 6212185115980814044}
   - component: {fileID: 269568217882394766}
   - component: {fileID: 505074942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36086,7 +36086,7 @@ GameObject:
   - component: {fileID: 8061364886506358674}
   - component: {fileID: 4123125606412408095}
   - component: {fileID: 1932114985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.l.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36450,7 +36450,7 @@ GameObject:
   - component: {fileID: 1752464700260303040}
   - component: {fileID: 802842669003521371}
   - component: {fileID: 1544999018}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.r.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36812,8 +36812,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135284376890239604}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000014305119, y: -7.6627485e-13, z: -0.0000035762785}
+  m_LocalRotation: {x: -0.029717118, y: 0.00047034048, z: -0.0002297395, w: 0.9995582}
+  m_LocalPosition: {x: -0.0065553105, y: 0.0000013414543, z: 0.0000025515078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37090,7 +37090,7 @@ GameObject:
   - component: {fileID: 4689597680737240356}
   - component: {fileID: 5701513260825199650}
   - component: {fileID: 1102420664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37125,7 +37125,7 @@ GameObject:
   - component: {fileID: 7248574809606565203}
   - component: {fileID: 1069526109003488620}
   - component: {fileID: 637366150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37502,7 +37502,7 @@ GameObject:
   - component: {fileID: 1601829114067913392}
   - component: {fileID: 2493719707435706525}
   - component: {fileID: 844324724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37581,7 +37581,7 @@ GameObject:
   - component: {fileID: 4061478677832005897}
   - component: {fileID: 6134734448893225127}
   - component: {fileID: 732431305}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37993,6 +37993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: 0
+  canMove: 0
   thirdPerson: 1
   sensX: 0
   sensY: 0
@@ -38022,7 +38023,7 @@ GameObject:
   - component: {fileID: 1415134255407171950}
   - component: {fileID: 4159688928200075972}
   - component: {fileID: 2060861979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38713,7 +38714,7 @@ GameObject:
   - component: {fileID: 683344184789526343}
   - component: {fileID: 7653896449212706521}
   - component: {fileID: 1209594649}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_cell_wall.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39130,7 +39131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -3}
+  m_FollowOffset: {x: 0, y: 3.56352, z: -6.259008}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -39150,7 +39151,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 72.85
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -39506,7 +39507,7 @@ GameObject:
   - component: {fileID: 6148810755372736399}
   - component: {fileID: 872024282952703533}
   - component: {fileID: 689316901}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39526,7 +39527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6, z: -3}
+  m_FollowOffset: {x: 0, y: 3.56352, z: -6.259008}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -39546,7 +39547,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 72.85
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -40132,7 +40133,7 @@ GameObject:
   - component: {fileID: 5527837429882141643}
   - component: {fileID: 9150199800751425192}
   - component: {fileID: 1649134927}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40414,7 +40415,7 @@ GameObject:
   - component: {fileID: 5548885214620977154}
   - component: {fileID: 6529889692143439625}
   - component: {fileID: 314921547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40448,8 +40449,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8603018886559540575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000004984886, y: 0.7071069, z: -0.000000049848865, w: 0.70710677}
-  m_LocalPosition: {x: -60.901, y: 2.54, z: 9.915}
+  m_LocalRotation: {x: 0.19283538, y: 0.57646644, z: -0.14230046, w: 0.78118604}
+  m_LocalPosition: {x: -66.88171, y: 4.85352, z: 8.06938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40885,7 +40886,7 @@ GameObject:
   - component: {fileID: 466218202074027289}
   - component: {fileID: 2191154540705785881}
   - component: {fileID: 1367310111}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41350,7 +41351,7 @@ GameObject:
   - component: {fileID: 2758055570030661077}
   - component: {fileID: 2759000452121397744}
   - component: {fileID: 2119798266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42397,7 +42398,7 @@ GameObject:
   - component: {fileID: 4083716593358414889}
   - component: {fileID: 601929962505929112}
   - component: {fileID: 7811910086943860795}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43212,7 +43213,7 @@ GameObject:
   - component: {fileID: 773175619179392655}
   - component: {fileID: 8968889615778053811}
   - component: {fileID: 975238493}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43365,7 +43366,7 @@ GameObject:
   - component: {fileID: 217592188997513509}
   - component: {fileID: 1633815323129819871}
   - component: {fileID: 140257282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43620,7 +43621,7 @@ GameObject:
   - component: {fileID: 1444851397629912336}
   - component: {fileID: 8519998330093132403}
   - component: {fileID: 905154555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43921,7 +43922,7 @@ GameObject:
   - component: {fileID: 7370205078242282183}
   - component: {fileID: 790561870148650988}
   - component: {fileID: 1517063315}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44354,7 +44355,7 @@ GameObject:
   - component: {fileID: 5620657961217938884}
   - component: {fileID: 3114510284943163191}
   - component: {fileID: 920252690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44461,7 +44462,7 @@ GameObject:
   - component: {fileID: 1483563037249787154}
   - component: {fileID: 5082335128183685909}
   - component: {fileID: 1594900675}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44554,7 +44555,7 @@ GameObject:
   - component: {fileID: 7962612867125394035}
   - component: {fileID: 6860993132963847615}
   - component: {fileID: 534639051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45275,7 +45276,7 @@ GameObject:
   - component: {fileID: 3433466479135358373}
   - component: {fileID: 2628467791105861470}
   - component: {fileID: 1072021949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45397,7 +45398,7 @@ GameObject:
   - component: {fileID: 4820475228524560715}
   - component: {fileID: 5356794788820513339}
   - component: {fileID: 1258203456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45529,7 +45530,7 @@ GameObject:
   - component: {fileID: 7596653972969636796}
   - component: {fileID: 2607508635017239430}
   - component: {fileID: 984923987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45631,7 +45632,7 @@ GameObject:
   - component: {fileID: 4484099248449859065}
   - component: {fileID: 2748578999290178274}
   - component: {fileID: 325439610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45817,7 +45818,7 @@ GameObject:
   - component: {fileID: 8129448066582630855}
   - component: {fileID: 7248310833654833727}
   - component: {fileID: 1261478499}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46024,7 +46025,7 @@ GameObject:
   - component: {fileID: 475210763982891011}
   - component: {fileID: 188112679882316903}
   - component: {fileID: 598695657}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46933,7 +46934,7 @@ GameObject:
   - component: {fileID: 640883923811932303}
   - component: {fileID: 5008004590188418751}
   - component: {fileID: 934459944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47116,7 +47117,7 @@ GameObject:
   - component: {fileID: 1643261283753418649}
   - component: {fileID: 7082172808361695326}
   - component: {fileID: 276277018}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_bend_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47265,7 +47266,7 @@ GameObject:
   - component: {fileID: 4262478280086246818}
   - component: {fileID: 2739826241899266950}
   - component: {fileID: 522654324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.l.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47646,7 +47647,7 @@ GameObject:
   - component: {fileID: 6792889160000447373}
   - component: {fileID: 2903700277037397060}
   - component: {fileID: 1709473354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48359,7 +48360,7 @@ Transform:
   m_GameObject: {fileID: 8099331428090863558}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000107133, y: 0.00000005960465, z: -3.4731159e-15, w: 1}
-  m_LocalPosition: {x: 3.0000005, y: 4.75, z: 0.00000023841858}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49042,7 +49043,7 @@ GameObject:
   - component: {fileID: 1731050060449226751}
   - component: {fileID: 5374194912859163487}
   - component: {fileID: 718216656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_front_walls.r.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49360,7 +49361,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 20
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1066602857}
   m_Follow: {fileID: 537011863}
@@ -50014,7 +50015,7 @@ GameObject:
   - component: {fileID: 44575237444074910}
   - component: {fileID: 4442150673209531849}
   - component: {fileID: 1080138629}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50428,7 +50429,7 @@ GameObject:
   - component: {fileID: 4202745069842720987}
   - component: {fileID: 7082176848054744956}
   - component: {fileID: 1452270021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50485,7 +50486,7 @@ GameObject:
   - component: {fileID: 1642058454580522982}
   - component: {fileID: 3682669517761454121}
   - component: {fileID: 295314856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50833,7 +50834,7 @@ GameObject:
   - component: {fileID: 9056909411811780755}
   - component: {fileID: 8857481891267327588}
   - component: {fileID: 1754921426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_corner_walls.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50941,7 +50942,7 @@ GameObject:
   - component: {fileID: 2147537193734065262}
   - component: {fileID: 1659585177898358095}
   - component: {fileID: 2111189859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: half_cell_wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50968,7 +50969,7 @@ GameObject:
   - component: {fileID: 200006650234936323}
   - component: {fileID: 6053675316861764917}
   - component: {fileID: 635130059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door_cell_wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51029,7 +51030,7 @@ GameObject:
   - component: {fileID: 3487190406159489530}
   - component: {fileID: 4661947409611739787}
   - component: {fileID: 1649765969}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hall_cell_walls.r.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51512,7 +51513,7 @@ GameObject:
   - component: {fileID: 1664745828006836289}
   - component: {fileID: 4500320213801254500}
   - component: {fileID: 614739710}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cell_pillar_walls.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
