@@ -9082,7 +9082,7 @@ MonoBehaviour:
   orientation: {fileID: 6629855081181428747}
   player: {fileID: 6196856469720831780}
   cameraHolder: {fileID: 1442019919}
-  gfx: {fileID: 7809633890735439925}
+  gfx: {fileID: 6450647930343649966}
   rb: {fileID: 1636531284863913563}
   rotationSpeed: 10
 --- !u!4 &5408678077907601584
@@ -10795,7 +10795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: 1
-  thirdPerson: 0
+  canMove: 0
+  thirdPerson: 1
   sensX: 400
   sensY: 400
   interactKey: 101

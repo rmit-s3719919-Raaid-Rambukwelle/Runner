@@ -15,7 +15,7 @@ public class PlayerCamera : MonoBehaviour
     public Transform cameraHolder;
 
     [Header("Third Person")]
-    public Transform gfx;
+    public GameObject gfx;
     public Rigidbody rb;
     public float rotationSpeed;
     float xStartSense;
@@ -40,12 +40,14 @@ public class PlayerCamera : MonoBehaviour
         {
             if (PlayerManager.current.thirdPerson)
             {
+                StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 0f));
                 firstPersonCam.Priority = 10;
                 thirdPersonCam.Priority = 20;
                 ThirdPersonCamera();
             }
             else
             {
+                StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 1.75f));
                 firstPersonCam.Priority = 20;
                 thirdPersonCam.Priority = 10;
                 FirstPersonCamera();
@@ -80,7 +82,7 @@ public class PlayerCamera : MonoBehaviour
         if (inputDir != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(inputDir, Vector3.up);
-            gfx.rotation = Quaternion.Lerp(gfx.rotation, toRotation, Time.deltaTime * rotationSpeed);
+            gfx.transform.rotation = Quaternion.Lerp(gfx.transform.rotation, toRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
@@ -104,6 +106,12 @@ public class PlayerCamera : MonoBehaviour
         }
 
         firstPersonCam.m_Lens.Dutch = endValue;
+    }
+
+    IEnumerator switchGfx(bool setter, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gfx.SetActive(setter);
     }
 
 }
