@@ -15,4 +15,6 @@ MonoBehaviour:
   dialogue:
   - That did it!
   - After you..
-  responses: []
+  responses:
+  - responseText: Continue.
+    dialogueObject: {fileID: 0}

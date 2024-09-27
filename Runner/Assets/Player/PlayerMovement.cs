@@ -302,7 +302,7 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         moveDir = orientation.forward * vInput + orientation.right * hInput;
-        Debug.Log("MovePlayer called. hInput: " + hInput + " vInput: " + vInput + " moveDir: " + moveDir);
+        //Debug.Log("MovePlayer called. hInput: " + hInput + " vInput: " + vInput + " moveDir: " + moveDir);
 
 
         if (OnSlope() && !exitingSlope)

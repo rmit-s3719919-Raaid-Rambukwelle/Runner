@@ -4951,6 +4951,219 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3270225426942898677, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1 &793346534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793346543}
+  - component: {fileID: 793346542}
+  - component: {fileID: 793346541}
+  - component: {fileID: 793346540}
+  - component: {fileID: 793346539}
+  - component: {fileID: 793346537}
+  - component: {fileID: 793346536}
+  - component: {fileID: 793346535}
+  m_Layer: 0
+  m_Name: NPC_1_Trigger4.1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &793346535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2c1eb74c68f01419c200fa4c024e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0
+  canGrapple: 0
+  showText: 0
+  textToShow: 
+  updateNPCDialogue: 0
+  newTrigger: {fileID: 0}
+  DoorObj: {fileID: 6255691704675499892}
+  robot: {fileID: 1401658322}
+  nextTrigger: {fileID: 0}
+  npcMovementTrigger: {fileID: 366344039}
+  dialogueActivator: {fileID: 793346537}
+  locked: 0
+  lockedMessage: 
+  requiredObj: 
+  reactivateOnUse: 0
+  doorAnimator: {fileID: 1478962602}
+--- !u!114 &793346536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e50474440fba5a4cbf0d6af24b39e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 19b7059688d83d14c9a2a7a1cf16e58b, type: 2}
+  events:
+  - name: 
+    onSelectedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 366344039}
+          m_TargetAssemblyTypeName: NPCMovementTrigger, Assembly-CSharp
+          m_MethodName: StartMovement
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 793346537}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: DisableDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &793346537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ded9826a82a74459d6b94f7ee6786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 0}
+  playerCameraScript: {fileID: 0}
+  playerManagerScript: {fileID: 0}
+  dialogueObject: {fileID: 11400000, guid: 19b7059688d83d14c9a2a7a1cf16e58b, type: 2}
+  autoTriggerDialogue: 1
+--- !u!114 &793346539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleActivation: 1
+  activateDialogue: 1
+  readyToTrigger: 0
+  triggerTag: NPC_1
+  newTargetPosition: {fileID: 1913608092}
+--- !u!65 &793346540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12, y: 4, z: 20}
+  m_Center: {x: -4, y: 0, z: 0}
+--- !u!23 &793346541
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8cab5c4ab23c905439bda3c1ac2653a2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &793346542
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &793346543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793346534}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 53.5, y: 1.943, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &794966462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,9 +6013,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 932322863}
-          m_TargetAssemblyTypeName: NPCAreaTrigger, Assembly-CSharp
-          m_MethodName: Test
+        - m_Target: {fileID: 8653624841108411949}
+          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+          m_MethodName: OnPowerSwitchToggled
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5812,9 +6025,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 8653624841108411947}
-          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-          m_MethodName: OnPowerSwitchToggled
+        - m_Target: {fileID: 932322862}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: DisableDialogue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5881,8 +6094,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 4, z: 13.941631}
-  m_Center: {x: 0, y: 0, z: -4.9708157}
+  m_Size: {x: 20, y: 4, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &932322865
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5942,7 +6155,7 @@ Transform:
   m_GameObject: {fileID: 932322860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.984, y: 1.943, z: 11.193}
+  m_LocalPosition: {x: -10.5, y: 2, z: 10}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -22412,7 +22625,7 @@ GameObject:
   - component: {fileID: 8653624841108411946}
   - component: {fileID: 4553592320303076189}
   - component: {fileID: 2148604338876543628}
-  - component: {fileID: 8653624841108411947}
+  - component: {fileID: 8653624841108411949}
   - component: {fileID: 1885015141653999730}
   - component: {fileID: 2923448948358664833}
   - component: {fileID: 8653624841108411948}
@@ -24726,6 +24939,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1885015142366984874}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: CannotInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2923448948358664833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24747,6 +24972,18 @@ MonoBehaviour:
         - m_Target: {fileID: 8653624841108411948}
           m_TargetAssemblyTypeName: Door_Switch, Assembly-CSharp
           m_MethodName: Interact
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1885015141653999730}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: CannotInteract
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -31461,8 +31698,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 4, z: 13.941631}
-  m_Center: {x: 0, y: 0, z: -4.9708157}
+  m_Size: {x: 20, y: 4, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &4554471127603717815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40953,7 +41190,7 @@ Transform:
   m_GameObject: {fileID: 2419054899831504080}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.984, y: 1.943, z: 11.193}
+  m_LocalPosition: {x: -10.5, y: 2, z: 10}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -48604,17 +48841,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 2419054899831504080}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1885015140784825310}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: DisableDialogue
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!23 &8653624841108411946
 MeshRenderer:
@@ -48658,21 +48895,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8653624841108411947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419054899899494268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ba5b6e791fd1d4990f55fd50636eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueActivator: {fileID: 1885015141653999730}
-  defaultDialogue: {fileID: 11400000, guid: 1e7dff1b0752b404e8924c5d09548762, type: 2}
-  updatedDialogue: {fileID: 11400000, guid: d38108f25684f9444b07f45b6eca4843, type: 2}
 --- !u!114 &8653624841108411948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48693,7 +48915,7 @@ MonoBehaviour:
   newTrigger: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
-  nextTrigger: {fileID: 0}
+  nextTrigger: {fileID: 793346534}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015141653999730}
   locked: 0
@@ -48701,6 +48923,21 @@ MonoBehaviour:
   requiredObj: 
   reactivateOnUse: 0
   doorAnimator: {fileID: 1478962602}
+--- !u!114 &8653624841108411949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419054899899494268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ba5b6e791fd1d4990f55fd50636eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueActivator: {fileID: 1885015141653999730}
+  defaultDialogue: {fileID: 11400000, guid: 1e7dff1b0752b404e8924c5d09548762, type: 2}
+  updatedDialogue: {fileID: 11400000, guid: d38108f25684f9444b07f45b6eca4843, type: 2}
 --- !u!23 &8653624842123451634
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51390,6 +51627,7 @@ SceneRoots:
   - {fileID: 6772992453029327326}
   - {fileID: 932322867}
   - {fileID: 6772992453629993586}
+  - {fileID: 793346543}
   - {fileID: 81529645}
   - {fileID: 1812922858}
   - {fileID: 610451721}

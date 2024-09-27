@@ -65,7 +65,6 @@ public class Door_Switch : Interactable
 
         yield return new WaitForSeconds(1f);
 
-        //npcMovementTrigger.StartMovement();
         nextTrigger.SetActive(true);
 
         robot.transform.rotation = originalRotation;
