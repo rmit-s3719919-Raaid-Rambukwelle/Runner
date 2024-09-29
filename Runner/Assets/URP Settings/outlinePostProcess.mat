@@ -37,9 +37,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _edgeValue: 0.292
-    - _edgeValue2: 0.3
-    - _lineThickness: 0.57
+    - _edgeValue: 0.175
+    - _edgeValue2: 0.189
+    - _lineThickness: 0.6
     - _normalTreshold: 0
     m_Colors:
     - _black: {r: 0, g: 0, b: 0, a: 0}
