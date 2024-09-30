@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float slopeSlideSpeed;
     public float crouchSpeed;
     public float wallRunSpeed;
+    public float climbSpeed;
     float moveSpeed;
 
     [Header("Movement Multipliers")]
@@ -54,6 +55,18 @@ public class PlayerMovement : MonoBehaviour
     public float maxSlopeAngle;
     RaycastHit slopeHit;
     bool exitingSlope;
+
+    [Header("Climbing")]
+    public float climbLiftSpeed;
+    public float maxClimbTime;
+    float climbTimer;
+    bool climbing;
+    public float climbDetectionLength;
+    public float sphereCastRadius;
+    public float maxWallLookAngle;
+    float wallLookAngle;
+    RaycastHit frontWallHit;
+    bool wallFront;
 
     [Header("Wall Running")]
     public bool useGravity;
@@ -119,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
         crouching,
         sliding,
         wallRun,
+        climbing,
         air,
         idle
     }
@@ -146,8 +160,10 @@ public class PlayerMovement : MonoBehaviour
         {
             GetInput();
             SpeedControl();
-            CheckForWall();
+            SideWallCheck();
+            FrontWallCheck();
             WallRunHandler();
+            ClimbingHandler();
             StateHandler();
         }
 
@@ -195,15 +211,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 // State 2: Runner
                 MovePlayer();
-                if (sliding)
-                {
-                    SlidingMovement();
-                }
 
-                if (wallrunning)
-                {
-                    WallRunningMovement();
-                }
+                if (sliding)                
+                    SlidingMovement();                
+
+                if (wallrunning)                
+                    WallRunningMovement();                
+
+                if (climbing)
+                    ClimbingMovement();
             }
         
     }
@@ -281,6 +297,11 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.freeze;
                 moveSpeed = 0f;
                 rb.velocity = Vector3.zero;
+            }
+            else if (climbing)
+            {
+                state = MovementState.climbing;
+                desiredMoveSpeed = climbSpeed;
             }
             else if (wallrunning)
             {
@@ -480,7 +501,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void CheckForWall()
+    void SideWallCheck()
     {
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallCheckDistance, whatIsWall);
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallCheckDistance, whatIsWall);
@@ -683,6 +704,43 @@ public class PlayerMovement : MonoBehaviour
         Vector3 vxz = dxz / (MathF.Sqrt(-2 * trajectoryHeight / g) + MathF.Sqrt(2 * (dy - trajectoryHeight) / g));
 
         return vy + vxz;
+    }
+
+    void FrontWallCheck()
+    {
+        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, climbDetectionLength, whatIsWall);
+        wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
+        if (grounded) climbTimer = maxClimbTime;
+    }
+
+    void ClimbingHandler()
+    {
+        if (wallFront && Input.GetKey(KeyCode.W) && Input.GetKey(PlayerManager.current.jumpKey) && wallLookAngle < maxWallLookAngle)
+        {
+            if (!climbing && climbTimer > 0) StartClimbing();
+
+            if (climbTimer > 0) climbTimer -= Time.deltaTime;
+            if (climbTimer < 0) StopClimbing();
+        }
+        else
+        {
+            if (climbing) StopClimbing();
+        }    
+    }
+
+    void StartClimbing()
+    {
+        climbing = true;
+    }
+
+    void ClimbingMovement()
+    {
+        rb.velocity = new Vector3(0f, climbLiftSpeed, 0f);
+    }
+
+    void StopClimbing()
+    {
+        climbing = false;
     }
 
     private void OnDrawGizmos()
