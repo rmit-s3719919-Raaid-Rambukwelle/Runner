@@ -41,7 +41,6 @@ public class SequenceOneController : PlayerControlHandler
 
         playerAnimator.SetTrigger("AllowMovement");
         Debug.Log("StandingUp animation finished, transitioning to idle.");
-
     }
 
     IEnumerator RobotAnimation()

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: At core
   m_EditorClassIdentifier: 
   dialogue:
-  - at core
+  - it can't be...
+  - An empire AI Core
+  - You need to return this to your family. There isn't time to explain...
   responses:
   - responseText: Continue.
     dialogueObject: {fileID: 0}
