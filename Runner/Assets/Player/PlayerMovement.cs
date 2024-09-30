@@ -384,6 +384,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (OnSlope() && !exitingSlope)
         {
+            Debug.Log("OnSlope");
             if (rb.velocity.magnitude > moveSpeed)
                 rb.velocity = rb.velocity.normalized * moveSpeed;
         }
@@ -417,6 +418,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.8f))
         {
+            if (slopeHit.transform.CompareTag("Player")) return false;
+
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             return angle < maxSlopeAngle && angle != 0;
         }
