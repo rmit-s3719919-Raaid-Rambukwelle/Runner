@@ -10,4 +10,9 @@ public class GrappleCollision : MonoBehaviour
     {
         pm.GrappleCollide();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        pm.GrappleCollide();
+    }
 }
