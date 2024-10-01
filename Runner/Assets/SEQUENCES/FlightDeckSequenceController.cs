@@ -9,6 +9,8 @@ public class FlightDeckSequenceController : MonoBehaviour
     [SerializeField] private Animator robotAnimator;
 
     [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private Item theCore;
+
 
     public void StartSequence() 
     {
@@ -19,6 +21,11 @@ public class FlightDeckSequenceController : MonoBehaviour
     {
         Debug.Log("Beginning Animation");
         StartCoroutine(RobotAnimation());
+
+        if (theCore != null) 
+        {
+            theCore.interactable = true;
+        }
         yield return null;
     }
 
