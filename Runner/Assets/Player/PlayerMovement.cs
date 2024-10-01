@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         if (grounded && !activeGrapple)
         {
             rb.drag = groundDrag;
-            if (cam.firstPersonCam.m_Lens.Dutch > 0) cam.DoTilt(0f);
+            if (cam.firstPersonCam.m_Lens.Dutch > 0 && PlayerManager.current.running) cam.DoTilt(0f);
         }
         else
             rb.drag = airDrag;

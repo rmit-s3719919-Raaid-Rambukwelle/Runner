@@ -21,16 +21,14 @@ public abstract class Interactable : MonoBehaviour
     [Header("Additional Interactions")]
     public PlayableDirector playableDirector;
 
-    private void OnMouseEnter()
-    {
-        //Debug.Log("Hovered over " + gameObject.name);
-        PlayerManager.current.currentInteractable = this;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerManager.current.currentInteractable = this;
     }
 
-    private void OnMouseExit()
+    private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("Hovered left " + gameObject.name);
         if (PlayerManager.current.currentInteractable == this)
             PlayerManager.current.currentInteractable = null;
     }
