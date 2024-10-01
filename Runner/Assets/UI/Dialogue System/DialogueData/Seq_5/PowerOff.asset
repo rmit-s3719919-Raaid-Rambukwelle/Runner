@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
-  m_Name: Seq2_Continue
+  m_Name: PowerOff
   m_EditorClassIdentifier: 
   dialogue:
-  - Come back to me when you're ready to move on.
-  responses: []
+  - In order to remove the core, I need to deactive the control. But without the
+    correct authorisation, all power will be redirected into the controls
+  - goodbye
+  responses:
+  - responseText: Goodbye
+    dialogueObject: {fileID: 0}
