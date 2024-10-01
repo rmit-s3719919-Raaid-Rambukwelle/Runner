@@ -54,10 +54,10 @@ Material:
     - _normalStrength: 0
     - _outlineDepthSensitivity: 0.301
     - _outlineNormalsSensitivity: 0
-    - _shadowStep: 0
+    - _shadowStep: 0.328
     m_Colors:
     - _mainColor: {r: 0.43516377, g: 0.67346025, b: 0.7264151, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _shadowIntensity: {r: -0.16, g: 1, b: 0, a: 0}
+    - _shadowIntensity: {r: 0.82, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

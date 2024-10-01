@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Robot_1
-  m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
+  m_Name: shadows
+  m_Shader: {fileID: -6465566751694194690, guid: bc3235349f6938d4b83a731936f392dc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,39 +23,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_8893f6f290f14ccc8cb6b6d1b6c32a8c_Texture_1_Texture2D:
+    - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9acce6cffff048478c6ba287ec0c7db2_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ambientOcclusionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _emissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: 2177450893da691449f829347d686b1e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _metallicTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normalTex:
-        m_Texture: {fileID: 2800000, guid: 42452bcc1df061e47a8c089ee529e7bb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _shadowTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _smoothnessTex:
+    - _shadowTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -73,28 +53,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Light_Probe_Contribution: 3
+    - _Light_Probe_Contribution: -1.8
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ambientOcclusionStrength: 0
-    - _emissionStrength: 0
-    - _metallicStrength: 0
-    - _normalStrength: 0.73
+    - _lightSmoothness: 1
+    - _normalStrength: 0
     - _outlineDepthSensitivity: 0
-    - _outlineNormalsSensitivity: 0
+    - _outlineNormalSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: 0.156
-    - _smoothnessStrength: 0
+    - _shadowStep: -1.9
+    - _transparency: 0.5
     m_Colors:
     - _mainColor: {r: 1, g: 1, b: 1, a: 0}
-    - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _shadowIntensity: {r: -0.81, g: 1, b: 0, a: 0}
-    - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
+    - _shadowIntensity: {r: 0.18, g: 1, b: 0, a: 0}
+    - _shadowTexColor: {r: 1, g: 1, b: 1, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4029417952840714536
+--- !u!114 &218042166777716602
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
