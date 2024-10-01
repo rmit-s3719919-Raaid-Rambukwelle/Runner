@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _shadowTex:
-        m_Texture: {fileID: 2800000, guid: 3db4addecb53c8d42bb671968edd81cc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -50,7 +50,7 @@ Material:
     - _smoothnessStrength: 0
     m_Colors:
     - _shadowIntensity: {r: 0.19, g: 1, b: 0, a: 0}
-    - _shadowTexColor: {r: 0.25649697, g: 0.41509432, b: 0.25649697, a: 0}
+    - _shadowTexColor: {r: 0.04922665, g: 0.11949676, b: 0.04922665, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2605847913659388030
