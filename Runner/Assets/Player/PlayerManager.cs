@@ -79,7 +79,11 @@ public class PlayerManager : MonoBehaviour
         //Interactions
         if (Input.GetKeyDown(interactKey))
         {
-            if (currentInteractable.interactable) currentInteractable.Interact();
+            if (currentInteractable != null)
+            {
+                if (currentInteractable.interactable)
+                    currentInteractable.Interact();
+            }
             foreach (var trigger in npcAreaTriggers) 
             {
                 if (Interactable != null && trigger.isNPCinTriggerZone()) 
