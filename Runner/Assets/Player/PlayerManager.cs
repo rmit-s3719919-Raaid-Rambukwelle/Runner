@@ -27,6 +27,9 @@ public class PlayerManager : MonoBehaviour
     public float grappleRange;
     public Interactable currentInteractable;
 
+    [Header("Respawning")]
+    public Transform currentRespawnPoint;
+
     [Header("Inventory")]
     public Inventory inventory;
 
@@ -41,9 +44,12 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI interactText;
     bool updateUI = true;
 
+    PlayerMovement pm;
+
     void Start()
     {
         current = this;
+        pm = GetComponent<PlayerMovement>();
         inventory = GetComponent<Inventory>();
     }
 
@@ -112,6 +118,11 @@ public class PlayerManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void Respawn()
+    {  
+        pm.Respawn();
     }
 
     private void OnDrawGizmos()

@@ -752,4 +752,10 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(transform.position, -orientation.right, Color.red, wallCheckDistance); // Left Wall Check
     }
 
+    public void Respawn()
+    {
+        rb.velocity = Vector3.zero;
+        transform.position = PlayerManager.current.currentRespawnPoint.position;
+    }
+
 }
