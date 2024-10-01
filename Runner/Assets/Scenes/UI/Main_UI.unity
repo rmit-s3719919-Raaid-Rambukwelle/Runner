@@ -2283,6 +2283,7 @@ MonoBehaviour:
   textToShow: E to pickup
   updateNPCDialogue: 0
   newTrigger: {fileID: 0}
+  playableDirector: {fileID: 0}
   itemName: Red Keycard
   itemDesc: Red Keycard
   itemImage: {fileID: 0}
@@ -4000,6 +4001,7 @@ MonoBehaviour:
   textToShow: E to interact with
   updateNPCDialogue: 1
   newTrigger: {fileID: 0}
+  playableDirector: {fileID: 0}
   DoorObj: {fileID: 0}
   robot: {fileID: 0}
   nextTrigger: {fileID: 0}
@@ -5532,6 +5534,7 @@ MonoBehaviour:
   textToShow: 
   updateNPCDialogue: 0
   newTrigger: {fileID: 0}
+  playableDirector: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 0}
@@ -6506,17 +6509,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6772992453702517685, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
   m_PrefabInstance: {fileID: 1613052132}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &925527744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1885015141726523829, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
-  m_PrefabInstance: {fileID: 1613052132}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ded9826a82a74459d6b94f7ee6786d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &926262381
 GameObject:
   m_ObjectHideFlags: 3
@@ -7817,6 +7809,7 @@ MonoBehaviour:
   textToShow: Right click to grapple
   updateNPCDialogue: 0
   newTrigger: {fileID: 0}
+  playableDirector: {fileID: 0}
   itemName: Power cell
   itemDesc: Power cell
   itemImage: {fileID: 0}
@@ -9331,6 +9324,7 @@ MonoBehaviour:
   textToShow: 
   updateNPCDialogue: 0
   newTrigger: {fileID: 887225432912911986}
+  playableDirector: {fileID: 0}
   DoorObj: {fileID: 1320713845}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 407982855}
@@ -10105,7 +10099,7 @@ PrefabInstance:
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 925527744}
+      objectReference: {fileID: 1168676045975434717}
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -10120,7 +10114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisableDialogue
+      value: StartSequence
       objectReference: {fileID: 0}
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -10128,7 +10122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueActivator, Assembly-CSharp
+      value: FlightDeckSequenceController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2923448948288598854, guid: e3571775f4bc3b248a6c602e91d005ae, type: 3}
       propertyPath: events.Array.data[0].onSelectedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -11699,6 +11693,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1754019394086423202}
   robotAnimator: {fileID: 1401658323}
   playableDirector: {fileID: 412216326}
+  theCore: {fileID: 5398696144843540603}
 --- !u!64 &1863516925
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15899,7 +15894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425730017805921321}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2079906, y: -0.018040631, z: -0.0016104509, w: 0.9779632}
+  m_LocalRotation: {x: 0.20799057, y: -0.018040631, z: -0.0016104507, w: 0.9779632}
   m_LocalPosition: {x: 0.00000046861177, y: -0.0000063406587, z: -0.00000691357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18628,8 +18623,9 @@ GameObject:
   - component: {fileID: 5398696144843540602}
   - component: {fileID: 1005883811226139867}
   - component: {fileID: 311847582383088172}
+  - component: {fileID: 5398696144843540603}
   m_Layer: 0
-  m_Name: pPlatonic3
+  m_Name: TheCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26472,7 +26468,6 @@ Transform:
   - {fileID: 4464599558916101036}
   - {fileID: 7646980100687175462}
   - {fileID: 6750918712888423969}
-  - {fileID: 5398696144843540602}
   - {fileID: 8668826021534614491}
   - {fileID: 2762194820981971136}
   - {fileID: 1256282439281303580}
@@ -36519,13 +36514,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168676045975434717}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0074159205, y: 0.10684801, z: -0.01911784}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 93.23253, y: 3.1883204, z: -0.1960637}
+  m_LocalScale: {x: 9.625, y: 9.625, z: 9.625}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2989402325037872474}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5398696144843540603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168676045975434717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c6a8ee1684f6245a03a875a60482ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0
+  canGrapple: 0
+  showText: 0
+  textToShow: E to interact
+  updateNPCDialogue: 0
+  newTrigger: {fileID: 0}
+  playableDirector: {fileID: 412216326}
+  itemName: AI Core
+  itemDesc: 
+  itemImage: {fileID: 0}
+  itemID: 
+  weight: 0
 --- !u!33 &5404645889444017229
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42646,6 +42665,7 @@ MonoBehaviour:
   slopeSlideSpeed: 30
   crouchSpeed: 2
   wallRunSpeed: 0
+  climbSpeed: 0
   lerpMultiplier: 20
   airLerpMultiplier: 1
   speedIncreaseMultiplier: 1.5
@@ -42665,6 +42685,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   maxSlopeAngle: 50
+  climbLiftSpeed: 0
+  maxClimbTime: 0
+  climbDetectionLength: 0
+  sphereCastRadius: 0
+  maxWallLookAngle: 0
   useGravity: 0
   gravityCounterForce: 0
   whatIsWall:
@@ -50015,6 +50040,7 @@ MonoBehaviour:
   textToShow: 
   updateNPCDialogue: 0
   newTrigger: {fileID: 0}
+  playableDirector: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 793346534}
@@ -52736,6 +52762,7 @@ SceneRoots:
   - {fileID: 610451721}
   - {fileID: 379932500}
   - {fileID: 1193507796}
+  - {fileID: 5398696144843540602}
   - {fileID: 618832382}
   - {fileID: 543450653041968572}
   - {fileID: 7950927787948652452}

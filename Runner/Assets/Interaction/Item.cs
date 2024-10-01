@@ -16,6 +16,10 @@ public class Item : Interactable
     public override void Interact()
     {
         AddToInventory();
+        if (newTrigger != null) 
+        {
+            PlayCutscene();
+        }
     }
 
     void AddToInventory()
@@ -30,7 +34,5 @@ public class Item : Interactable
         PlayerManager.current.inventory.items.Add(this);
         gameObject.SetActive(false);
         PlayerManager.current.currentInteractable = null;
-    }
-
-    
+    }   
 }
