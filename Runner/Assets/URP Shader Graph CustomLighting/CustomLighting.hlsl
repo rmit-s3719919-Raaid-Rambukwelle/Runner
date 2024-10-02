@@ -1,6 +1,9 @@
 #ifndef CUSTOM_LIGHTING_INCLUDED
 #define CUSTOM_LIGHTING_INCLUDED
 
+#pragma multi_compile _ADDITIONAL_LIGHTS
+#pragma multi_compile _ADDITIONAL_LIGHT_SHADOWS
+
 // @Cyanilux | https://github.com/Cyanilux/URP_ShaderGraphCustomLighting
 // Note this version of the package assumes v12+ due to usage of "Branch on Input Connection" node
 // For older versions, see branches on github repo!

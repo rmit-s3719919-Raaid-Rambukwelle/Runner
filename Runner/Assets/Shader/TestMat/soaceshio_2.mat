@@ -56,11 +56,11 @@ Material:
     - _outlineDepthSensitivity: 0
     - _outlineNormalsSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: 0.407
+    - _shadowStep: 0.252
     - _smoothnessStrength: 0.168
     m_Colors:
     - _mainColor: {r: 0.43943575, g: 0.745283, b: 0.7335197, a: 0}
-    - _shadowColor: {r: 0.09433961, g: 0.054712527, b: 0.03337486, a: 0}
-    - _shadowIntensity: {r: 3.99, g: 1.99, b: 0, a: 0}
+    - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _shadowIntensity: {r: -5.35, g: 1.99, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
