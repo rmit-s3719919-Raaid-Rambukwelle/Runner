@@ -11,10 +11,26 @@ public class FlightDeckSequenceController : MonoBehaviour
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private Item theCore;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject runnerSpawn;
+
 
     public void StartSequence() 
     {
         StartCoroutine(PlayFlightDeckSequence());
+    }
+
+    public void StartTransition() 
+    {
+        StartCoroutine(PlayTransitionSequence());
+    }
+
+    IEnumerator PlayTransitionSequence() 
+    {
+        //StartCoroutine(PlayerAnimation());
+        PlayCutscene();
+
+        yield return null;
     }
 
     IEnumerator PlayFlightDeckSequence() 
@@ -24,6 +40,7 @@ public class FlightDeckSequenceController : MonoBehaviour
 
         if (theCore != null) 
         {
+            Debug.Log("The core is active");
             theCore.interactable = true;
         }
         yield return null;
@@ -31,12 +48,10 @@ public class FlightDeckSequenceController : MonoBehaviour
 
     IEnumerator PlayerAnimation() 
     {
-        playerAnimator.Play("FallingDown");
-        float animationLength = GetAnimationClipLength(playerAnimator, "StandingUp");
+        playerAnimator.SetTrigger("takenCore");
+        float animationLength = GetAnimationClipLength(playerAnimator, "Fall");
         yield return new WaitForSeconds(animationLength);
-
-        playerAnimator.SetTrigger("AllowMovement");
-        Debug.Log("StandingUp animation finished, transitioning to idle.");
+        //Debug.Log("StandingUp animation finished, transitioning to idle.");
     }
 
     IEnumerator RobotAnimation()
@@ -44,9 +59,7 @@ public class FlightDeckSequenceController : MonoBehaviour
         robotAnimator.SetTrigger("ButtonTrigger");
         //robotAnimator.Play("PushButton");
         float animationLength = GetAnimationClipLength(robotAnimator, "PushButton");
-        yield return new WaitForSeconds(animationLength);
-
-        
+        yield return new WaitForSeconds(animationLength);    
     }
 
     float GetAnimationClipLength(Animator animator, string clipName)
@@ -60,5 +73,18 @@ public class FlightDeckSequenceController : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public void PlayCutscene()
+    {
+        if (playableDirector != null)
+        {
+            playableDirector.Play();
+        }
+    }
+
+    public void MovePlayer() 
+    {
+        player.transform.position = runnerSpawn.transform.position;
     }
 }

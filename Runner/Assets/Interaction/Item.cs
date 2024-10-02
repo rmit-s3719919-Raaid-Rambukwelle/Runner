@@ -11,14 +11,14 @@ public class Item : Interactable
     public string itemID;
 
     public float weight;
-
+    public FlightDeckSequenceController flightDeckSequenceController;
 
     public override void Interact()
     {
         AddToInventory();
         if (newTrigger != null) 
         {
-            PlayCutscene();
+            flightDeckSequenceController.StartTransition();
         }
     }
 

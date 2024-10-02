@@ -88,7 +88,7 @@ public class PlayerManager : MonoBehaviour
             if (currentInteractable != null)
             {
                 if (currentInteractable.interactable)
-                    currentInteractable.Interact();
+                    currentInteractable.Interact(); 
             }
             foreach (var trigger in npcAreaTriggers) 
             {

@@ -18,10 +18,6 @@ public abstract class Interactable : MonoBehaviour
     public bool updateNPCDialogue;
     public GameObject newTrigger;
 
-    [Header("Additional Interactions")]
-    public PlayableDirector playableDirector;
-
-
     private void OnTriggerEnter(Collider other)
     {
         PlayerManager.current.currentInteractable = this;
@@ -31,13 +27,5 @@ public abstract class Interactable : MonoBehaviour
     {
         if (PlayerManager.current.currentInteractable == this)
             PlayerManager.current.currentInteractable = null;
-    }
-
-    public void PlayCutscene() 
-    {
-        if (playableDirector != null) 
-        {
-            playableDirector.Play();
-        }
     }
 }
