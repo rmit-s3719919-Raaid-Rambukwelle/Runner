@@ -21,7 +21,7 @@ public class PlayerCamera : MonoBehaviour
     float xStartSense;
     float yStartSense;
 
-    float xRot, yRot;
+    float xRot, yRot = 180f;
 
     private void Start()
     {
@@ -42,13 +42,13 @@ public class PlayerCamera : MonoBehaviour
             {
                 StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 0f));
                 firstPersonCam.Priority = 10;
-                thirdPersonCam.Priority = 20;
+                thirdPersonCam.Priority = 40;
                 ThirdPersonCamera();
             }
             else
             {
                 StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 1.75f));
-                firstPersonCam.Priority = 20;
+                firstPersonCam.Priority = 40;
                 thirdPersonCam.Priority = 10;
                 FirstPersonCamera();
             }

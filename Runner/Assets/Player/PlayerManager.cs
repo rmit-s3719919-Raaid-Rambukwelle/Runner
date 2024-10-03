@@ -127,6 +127,12 @@ public class PlayerManager : MonoBehaviour
         return false;
     }
 
+    public void SwapPerspective()
+    {
+        thirdPerson = !thirdPerson;
+        running = !running;
+    }
+
     public void Respawn()
     {  
         pm.Respawn();
