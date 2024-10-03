@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public KeyCode dashKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
     public KeyCode grappleKey = KeyCode.Mouse1;
+    public KeyCode transitionKey = KeyCode.Slash;
 
 
     [Header("Interactables")]
@@ -57,6 +58,12 @@ public class PlayerManager : MonoBehaviour
     {        
         //Stops player from moving if dialogue is open
         if (dialogueUI.IsOpen) return;
+
+        if (Input.GetKeyDown(transitionKey))
+        {
+            thirdPerson = !thirdPerson;
+            running = !running;
+        }
 
         //Update UI
         if (updateUI)

@@ -294,9 +294,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (freeze)
             {
-                state = MovementState.freeze;
-                moveSpeed = 0f;
-                rb.velocity = Vector3.zero;
+                state = MovementState.freeze;                
+                rb.velocity *= 0.98f;
             }
             else if (climbing)
             {
@@ -355,7 +354,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        if (activeGrapple) return;
+        //if (activeGrapple) return;
         if (!PlayerManager.current.canMove) return;
 
         moveDir = orientation.forward * vInput + orientation.right * hInput;
