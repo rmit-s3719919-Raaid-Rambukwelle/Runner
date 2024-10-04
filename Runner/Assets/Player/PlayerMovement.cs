@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Speed Values")]
     public float walkSpeed;
+    public float runnerSpeed;
     public float slideSpeed;
     public float slopeSlideSpeed;
     public float crouchSpeed;
@@ -324,7 +325,7 @@ public class PlayerMovement : MonoBehaviour
             else if (grounded && moveDir.magnitude > 0) // walking
             {
                 state = MovementState.walking;
-                desiredMoveSpeed = walkSpeed;
+                desiredMoveSpeed = runnerSpeed;
             }
             else if (!grounded) // jumping
             {

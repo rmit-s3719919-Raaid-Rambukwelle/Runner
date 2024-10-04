@@ -6,6 +6,8 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private bool autoTriggerDialogue = false;
+    public bool showText;
+    public string popupText;
 
     public void UpdateDialogueObject(DialogueObject dialogueObject) 
     {
@@ -14,8 +16,8 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
 
     public void DisableDialogue()
     {
+        PlayerManager.current.UpdatePopupText(" ");
         PlayerManager.current.Interactable = null;
-        
         gameObject.SetActive(false);
         EnablePlayerControls();
 
@@ -39,6 +41,8 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
                 else
                 {
                     playerManager.Interactable = this;
+                    if (showText)
+                        playerManager.UpdatePopupText(popupText);
                 }
         }
     }
@@ -50,12 +54,16 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
             if (playerManager.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
             {
                 playerManager.Interactable = null;
+                if (showText)
+                    playerManager.UpdatePopupText(" ");
             }
         }
     }
     public void Interact(PlayerManager playerManager)
     {
         TriggerDialogue(playerManager);
+
+        PlayerManager.current.UpdatePopupText(" ");
     }
 
     public void TriggerDialogue(PlayerManager playerManager) 
@@ -77,5 +85,11 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
     public void OnDialogueClose() 
     {
         autoTriggerDialogue = false;
+    }
+
+    public void DisableText()
+    {
+        PlayerManager.current.UpdatePopupText(" ");
+        showText = false;
     }
 }

@@ -65,30 +65,6 @@ public class PlayerManager : MonoBehaviour
             running = !running;
         }
 
-        //Update UI
-        if (updateUI)
-        {
-            bool canTalk = false;
-
-            foreach (var trigger in npcAreaTriggers) 
-            {
-                if (Interactable != null && trigger.isNPCinTriggerZone()) 
-                {
-                    canTalk = true;
-                    break;
-                }
-            }
-
-            if (canTalk)
-            {
-                interactText.text = "E to talk";
-            }
-            else
-                {
-                    interactText.text = ""; 
-                }
-        }
-
         //Interactions
         if (Input.GetKeyDown(interactKey))
         {
@@ -125,6 +101,11 @@ public class PlayerManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void UpdatePopupText(string input)
+    {
+        interactText.text = input;
     }
 
     public void SwapPerspective()
