@@ -4,35 +4,24 @@ using UnityEngine;
 
 public class Item : Interactable
 {
+    [Header("Item variables")]
     public string itemName;
     public string itemDesc;
     public Sprite itemImage;
-
     public string itemID;
-
-    public float weight;
-    public FlightDeckSequenceController flightDeckSequenceController;
+    public bool canGrapple;
 
     public override void Interact()
     {
         AddToInventory();
-        if (newTrigger != null) 
-        {
-            flightDeckSequenceController.StartTransition();
-        }
     }
 
-    void AddToInventory()
+    public void AddToInventory()
     {
-        if (weight > 100f)
-        {
-            Debug.Log("Item is too heavy");
-            return;
-        }
-
-
+        if (showText)
+            PlayerManager.current.UpdatePopupText(" ");
         PlayerManager.current.inventory.items.Add(this);
-        gameObject.SetActive(false);
         PlayerManager.current.currentInteractable = null;
+        gameObject.SetActive(false);
     }   
 }

@@ -2,37 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door_Switch : Interactable
+public class Door_Switch : MonoBehaviour
 {
     [Header("Switch variables")]
     public GameObject DoorObj;
     public GameObject robot;
     public GameObject nextTrigger;
+    public Animator doorAnimator;
 
+    [Header("Dialogue variables")]
     public NPCMovementTrigger npcMovementTrigger;
     public DialogueActivator dialogueActivator;
 
-    public bool locked = false;
-    public string lockedMessage;
-    public string requiredObj;
-    public bool reactivateOnUse;
-    public Animator doorAnimator;
-
     private Quaternion originalRotation;
 
-    bool active = true;
 
-
-    public override void Interact()
+    public void Interact()
     {
-        if (!active) return;
-
-        if (locked && !PlayerManager.current.SearchInventory(requiredObj))
-        {
-            PlayerManager.current.interactText.text = lockedMessage;
-            return;
-        }
-
         StartCoroutine(PlayAnimationSequence());
     }
 
@@ -68,8 +54,6 @@ public class Door_Switch : Interactable
         nextTrigger.SetActive(true);
 
         robot.transform.rotation = originalRotation;
-
-        if (!reactivateOnUse) active = false;
 
         dialogueActivator.DisableDialogue();
     }

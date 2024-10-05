@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Speed Values")]
     public float walkSpeed;
+    public float runnerSpeed;
     public float slideSpeed;
     public float slopeSlideSpeed;
     public float crouchSpeed;
@@ -93,6 +94,17 @@ public class PlayerMovement : MonoBehaviour
     public float grappleCD;
     float grappleCDTimer;
     bool grappling;
+    RaycastHit grappleHit;
+
+    [Header("Grapple Animation")]
+    public int quality;
+    public float damper;
+    public float strength;
+    public float velocity;
+    public float waveCount;
+    public float waveHeight;
+    Spring spring;
+    public AnimationCurve affectCurve;
 
     bool exitingWall;
     float exitWallTimer;
@@ -138,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        spring = new Spring();
+        spring.SetTarget(0);
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
@@ -323,7 +337,7 @@ public class PlayerMovement : MonoBehaviour
             else if (grounded && moveDir.magnitude > 0) // walking
             {
                 state = MovementState.walking;
-                desiredMoveSpeed = walkSpeed;
+                desiredMoveSpeed = runnerSpeed;
             }
             else if (!grounded) // jumping
             {
@@ -634,11 +648,37 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void LateUpdate()
     {
-        if (grappling)
-            lr.SetPosition(0, gunTip.position);
+        if (!grappling)
+        {
+            spring.Reset();
+            if (lr.positionCount > 0)
+                lr.positionCount = 0;
+            return;
+        }
+
+        if (lr.positionCount == 0)
+        {
+            spring.SetVelocity(velocity);
+            lr.positionCount = quality + 1;
+        }
+
+        spring.SetDamper(damper);
+        spring.SetStrength(strength);
+        spring.update(Time.deltaTime);
+
+        var up = Quaternion.LookRotation(grapplePoint - gunTip.position).normalized * Vector3.up;
+
+
+
+        for (int i = 0; i < quality + 1; i++)
+        {
+            var delta = i / (float)quality;
+            var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value * affectCurve.Evaluate(delta);
+
+            lr.SetPosition(i, Vector3.Lerp(gunTip.position, grapplePoint, delta) + offset);
+        }
     }
 
     bool enableMovementOnNextTouch;
@@ -650,7 +690,7 @@ public class PlayerMovement : MonoBehaviour
         grappling = true;
         freeze = true;
 
-        RaycastHit grappleHit;
+        
 
         if (Physics.Raycast(cameraPoint.position, cameraPoint.forward, out grappleHit, maxGrappleDistance, whatIsGrappleable))
         {
@@ -667,7 +707,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         lr.enabled = true;
-        lr.SetPosition(1, grapplePoint);
     }
 
     void GrappleMovement()
@@ -744,11 +783,6 @@ public class PlayerMovement : MonoBehaviour
         climbing = false;
     }
 
-    private void OnDrawGizmos()
-    {
-        Debug.DrawRay(transform.position, orientation.right, Color.red, wallCheckDistance); // Right Wall Check
-        Debug.DrawRay(transform.position, -orientation.right, Color.red, wallCheckDistance); // Left Wall Check
-    }
 
     public void Respawn()
     {

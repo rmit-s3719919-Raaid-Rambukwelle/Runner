@@ -17,4 +17,4 @@ MonoBehaviour:
   - Don't worry, i'll open it
   responses:
   - responseText: Continue
-    dialogueObject: {fileID: 11400000, guid: 0a5b1a28637d7e040942c5b28cab3048, type: 2}
+    dialogueObject: {fileID: 0}
