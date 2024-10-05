@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spring : MonoBehaviour
+public class Spring
 {
     float strength;
     float damper;

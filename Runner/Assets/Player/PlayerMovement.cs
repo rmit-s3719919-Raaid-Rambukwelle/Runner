@@ -668,7 +668,7 @@ public class PlayerMovement : MonoBehaviour
         spring.SetStrength(strength);
         spring.update(Time.deltaTime);
 
-        var up = Quaternion.LookRotation(grapplePoint - gunTip.position).normalized * Vector3.up;
+        var up = Quaternion.LookRotation(grappleHit.point - gunTip.position).normalized * Vector3.up;
 
 
 
@@ -677,7 +677,7 @@ public class PlayerMovement : MonoBehaviour
             var delta = i / (float)quality;
             var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value * affectCurve.Evaluate(delta);
 
-            lr.SetPosition(i, Vector3.Lerp(gunTip.position, grapplePoint, delta) + offset);
+            lr.SetPosition(i, Vector3.Lerp(gunTip.position, grappleHit.point, delta) + offset);
         }
     }
 

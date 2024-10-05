@@ -27,14 +27,12 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        xStartSense = thirdPersonCam.m_XAxis.m_MaxSpeed;
-        yStartSense = thirdPersonCam.m_YAxis.m_MaxSpeed;
     }
 
     void Update()
     {
-        thirdPersonCam.m_XAxis.m_MaxSpeed = PlayerManager.current.canMove ? xStartSense : 0f;
-        thirdPersonCam.m_YAxis.m_MaxSpeed = PlayerManager.current.canMove ? yStartSense : 0f;
+        thirdPersonCam.m_XAxis.m_MaxSpeed = PlayerManager.current.canMove ? PlayerManager.current.tpSensX : 0f;
+        thirdPersonCam.m_YAxis.m_MaxSpeed = PlayerManager.current.canMove ? PlayerManager.current.tpSensY : 0f;
 
         if (PlayerManager.current.canMove)
         {

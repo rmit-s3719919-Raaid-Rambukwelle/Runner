@@ -11,8 +11,13 @@ public class PlayerManager : MonoBehaviour
     public bool running;
     public bool canMove;
     public bool thirdPerson;
+
+    [Header("Sensitivity")]
     public float sensX;
     public float sensY;
+    public float tpSensX;
+    public float tpSensY;
+
 
     [Header("Keybinds")]
     public KeyCode interactKey = KeyCode.E;

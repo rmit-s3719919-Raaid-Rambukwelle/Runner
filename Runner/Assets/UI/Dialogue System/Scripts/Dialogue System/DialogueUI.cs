@@ -50,7 +50,7 @@ public class DialogueUI : PlayerControlHandler
 
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
+            yield return new WaitUntil( () => (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(PlayerManager.current.interactKey)) );
         }
 
         if (dialogueObject.HasResponses)
