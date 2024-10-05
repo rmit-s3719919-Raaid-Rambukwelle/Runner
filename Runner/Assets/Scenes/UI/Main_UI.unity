@@ -3878,7 +3878,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1066602857}
-  - {fileID: 208775377}
   m_Father: {fileID: 7950927787948652452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &545795569
@@ -8533,7 +8532,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 208775377}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1246678057
 MeshRenderer:
@@ -44307,11 +44306,12 @@ MonoBehaviour:
   testPrefab: {fileID: 0}
   state: 0
   walkSpeed: 3.5
-  slideSpeed: 15
+  runnerSpeed: 18
+  slideSpeed: 22
   slopeSlideSpeed: 30
   crouchSpeed: 2
-  wallRunSpeed: 0
-  climbSpeed: 0
+  wallRunSpeed: 18
+  climbSpeed: 1
   lerpMultiplier: 20
   airLerpMultiplier: 1
   speedIncreaseMultiplier: 1.5
@@ -44348,8 +44348,8 @@ MonoBehaviour:
   wallJumpUpForce: 18
   wallJumpSideForce: 20
   exitWallTime: 0.2
-  lr: {fileID: 208775378}
-  cameraPoint: {fileID: 208775377}
+  lr: {fileID: 0}
+  cameraPoint: {fileID: 0}
   gunTip: {fileID: 1246678056}
   whatIsGrappleable:
     serializedVersion: 2
@@ -44359,6 +44359,18 @@ MonoBehaviour:
   overshootY: 2
   freeze: 0
   grappleCD: 0.5
+  quality: 0
+  damper: 0
+  strength: 0
+  velocity: 0
+  waveCount: 0
+  waveHeight: 0
+  affectCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   grounded: 0
   readyToJump: 0
   sliding: 0
@@ -55693,3 +55705,4 @@ SceneRoots:
   - {fileID: 63968230}
   - {fileID: 1405627547}
   - {fileID: 412216327}
+  - {fileID: 1246678056}
