@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     bool exitingSlope;
 
     [Header("Climbing")]
+    public Transform feetPos;
     public float climbLiftSpeed;
     public float maxClimbTime;
     float climbTimer;
@@ -396,7 +397,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (OnSlope() && !exitingSlope)
         {
-            Debug.Log("OnSlope");
             if (rb.velocity.magnitude > moveSpeed)
                 rb.velocity = rb.velocity.normalized * moveSpeed;
         }
@@ -668,16 +668,16 @@ public class PlayerMovement : MonoBehaviour
         spring.SetStrength(strength);
         spring.update(Time.deltaTime);
 
-        var up = Quaternion.LookRotation(grappleHit.point - gunTip.position).normalized * Vector3.up;
+        var up = Quaternion.LookRotation(grapplePoint - gunTip.position).normalized * Vector3.up;
 
+        lr.SetPosition(0, gunTip.position);
 
-
-        for (int i = 0; i < quality + 1; i++)
+        for (int i = 1; i < quality + 1; i++)
         {
             var delta = i / (float)quality;
             var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value * affectCurve.Evaluate(delta);
 
-            lr.SetPosition(i, Vector3.Lerp(gunTip.position, grappleHit.point, delta) + offset);
+            lr.SetPosition(i, Vector3.Lerp(gunTip.position, grapplePoint, delta) + offset);
         }
     }
 
@@ -748,7 +748,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FrontWallCheck()
     {
-        wallFront = Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, climbDetectionLength, whatIsWall);
+        wallFront = Physics.SphereCast(feetPos.position, sphereCastRadius, orientation.forward, out frontWallHit, climbDetectionLength, whatIsWall);
         wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
         if (grounded) climbTimer = maxClimbTime;
     }
