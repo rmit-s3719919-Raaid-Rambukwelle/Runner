@@ -124,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDir;
     Rigidbody rb;
 
-
     public enum MovementState
     {
         freeze,
@@ -756,5 +755,4 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.zero;
         transform.position = PlayerManager.current.currentRespawnPoint.position;
     }
-
 }
