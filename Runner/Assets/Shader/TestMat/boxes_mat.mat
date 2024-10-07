@@ -31,6 +31,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9acce6cffff048478c6ba287ec0c7db2_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -96,7 +100,7 @@ Material:
     - _outlineNormalSensitivity: 0
     - _outlineNormalsSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: 0.155
+    - _shadowStep: -0.051
     - _smoothnessStrength: 0
     - _transparency: 0.5
     m_Colors:
@@ -105,7 +109,7 @@ Material:
     - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _shadowIntensity: {r: 0.81, g: 1, b: 0, a: 0}
+    - _shadowIntensity: {r: 1.48, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
