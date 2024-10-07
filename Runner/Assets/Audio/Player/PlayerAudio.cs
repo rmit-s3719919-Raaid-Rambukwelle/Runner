@@ -6,11 +6,11 @@ public class PlayerAudio : MonoBehaviour
 {
     [Header("Footsteps")]
     public AudioClip[] walkSounds;
-    private AudioSource footstepSource;
+    public AudioSource footstepSource;
 
     private void Awake()
     {
-        footstepSource = GetComponent<AudioSource>();
+        //footstepSource = GetComponent<AudioSource>();
     }
 
     public void PlayWalkSound() 
