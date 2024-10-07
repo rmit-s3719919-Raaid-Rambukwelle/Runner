@@ -85,12 +85,12 @@ Material:
     - _outlineDepthSensitivity: 0
     - _outlineNormalsSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: -1.9
+    - _shadowStep: 0.638
     - _smoothnessStrength: 0
     - _transparency: 0.5
     m_Colors:
     - _hatchingFromTo: {r: 3.85, g: -6.68, b: 0, a: 0}
-    - _mainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _mainColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0.09433961, b: 0.001100189, a: 0}
     - _shadowIntensity: {r: 2, g: 1, b: 0, a: 0}
