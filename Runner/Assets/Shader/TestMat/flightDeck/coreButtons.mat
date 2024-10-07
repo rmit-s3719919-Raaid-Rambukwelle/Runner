@@ -173,7 +173,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _mainColor: {r: 0.15036489, g: 0.2506272, b: 0.2924528, a: 0}
+    - _mainColor: {r: 0.19588822, g: 0.3686931, b: 0.5849056, a: 0}
     - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}

@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Light_Probe_Contribution: -3.91
+    - _Light_Probe_Contribution: 1
     - _metallicStrength: 0.643
     - _normalStrength: 0
     - _outlineDepthSensitivity: 0
@@ -59,7 +59,7 @@ Material:
     - _shadowStep: 0.572
     - _smoothnessStrength: 0.168
     m_Colors:
-    - _mainColor: {r: 0.43943575, g: 0.745283, b: 0.7335197, a: 0}
+    - _mainColor: {r: 0.2284176, g: 0.4055339, b: 0.5566038, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _shadowIntensity: {r: 3.04, g: 1.36, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}

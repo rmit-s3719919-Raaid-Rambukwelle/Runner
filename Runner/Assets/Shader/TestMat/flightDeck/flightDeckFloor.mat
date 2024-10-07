@@ -131,7 +131,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Light_Probe_Contribution: 1.21
+    - _Light_Probe_Contribution: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
