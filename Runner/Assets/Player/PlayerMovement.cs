@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     bool exitingSlope;
 
     [Header("Climbing")]
+    public LayerMask whatIsClimbingWall;
     public Transform feetPos;
     public float climbLiftSpeed;
     public float maxClimbTime;
@@ -748,7 +749,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FrontWallCheck()
     {
-        wallFront = Physics.SphereCast(feetPos.position, sphereCastRadius, orientation.forward, out frontWallHit, climbDetectionLength, whatIsWall);
+        wallFront = Physics.SphereCast(feetPos.position, sphereCastRadius, orientation.forward, out frontWallHit, climbDetectionLength, whatIsClimbingWall);
         wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
         if (grounded) climbTimer = maxClimbTime;
     }
