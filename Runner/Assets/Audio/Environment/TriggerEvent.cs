@@ -13,6 +13,7 @@ public class TriggerEvent : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             audioSource.PlayOneShot(audioClip);
+            GetComponent<Collider>().enabled = false;
         }
     }
 }
