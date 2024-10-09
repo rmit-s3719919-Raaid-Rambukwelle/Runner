@@ -22,6 +22,12 @@ public class Item : Interactable
             PlayerManager.current.UpdatePopupText(" ");
         PlayerManager.current.inventory.items.Add(this);
         PlayerManager.current.currentInteractable = null;
+
+        if (deactivateObjects)
+            StartCoroutine(deactivateObjectsInScript());
+
+        if (activateObjects)
+            StartCoroutine(activateObjectsInScript());
         gameObject.SetActive(false);
     }   
 }

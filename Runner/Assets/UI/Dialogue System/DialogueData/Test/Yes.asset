@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Yes
   m_EditorClassIdentifier: 
   dialogue:
-  - Great! Please follow me.
+  - Good, we need to get going.
   responses: []

@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Looting
   m_EditorClassIdentifier: 
   dialogue:
-  - This looks intereseting... maybe there's something of value hidden among these
-    crates.
-  - Might be worth have a look around.
-  - Come back to me when you're ready to move on.
+  - We're almost at the flight deck, but it might be worth looking around.
+  - One of these rooms must have a generator in it.
+  - See if you can't restore the power.
   responses:
   - responseText: Continue...
     dialogueObject: {fileID: 11400000, guid: 10936bc69c9211647a4e13bad816f753, type: 2}

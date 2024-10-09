@@ -10,10 +10,12 @@ public class Scene_Interaction : Interactable
     public string lockedMessage;
     public string requiredObj;
 
-    [Header("Animation")]
-    public bool useAnimation;
-    public string animationString;
-    public Animator ani;
+
+
+
+    [Header("Audio")]
+    public bool playAudio;
+    public PlayerAudio ap;
 
     public override void Interact()
     {
@@ -29,5 +31,18 @@ public class Scene_Interaction : Interactable
 
         if (useAnimation)
             ani.SetBool(animationString, true);
+
+        if (playAudio)
+            ap.PlayActionSound();
+
+        if (deactivateObjects)
+            StartCoroutine(deactivateObjectsInScript());
+
+        if (activateObjects)
+            StartCoroutine(activateObjectsInScript());
+
+        PlayerManager.current.UpdatePopupText(" ");
     }
+
+
 }

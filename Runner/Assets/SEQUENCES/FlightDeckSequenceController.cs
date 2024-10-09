@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class FlightDeckSequenceController : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
-    [SerializeField] private Animator robotAnimator;
+    [SerializeField] public Animator robotAnimator;
 
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private Item theCore;
@@ -62,7 +62,7 @@ public class FlightDeckSequenceController : MonoBehaviour
         yield return new WaitForSeconds(animationLength);    
     }
 
-    float GetAnimationClipLength(Animator animator, string clipName)
+    public float GetAnimationClipLength(Animator animator, string clipName)
     {
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips)

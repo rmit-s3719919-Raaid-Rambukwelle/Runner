@@ -40,12 +40,12 @@ public class AmbianceManager : MonoBehaviour
 
         while (elapsedTime < fadeDuration) 
         {
-            Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
+            //Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
             audioSource.volume = Mathf.Lerp(maxVolume, 0f, elapsedTime / fadeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
+        //Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
         audioSource.volume = 0f;
         StartCoroutine(FadeIn());
     }

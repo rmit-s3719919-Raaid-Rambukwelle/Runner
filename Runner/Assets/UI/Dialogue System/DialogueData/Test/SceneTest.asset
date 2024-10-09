@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: SceneTest
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Hello! You are entering: RUNNER prototype.
+  - 'Hey, that was close, we barely made it through
 
 
-    (Press ''Space'' to continue)'
-  - 'If you''re seeing this, it means the dialogue system worked!
+    (Press ''E'' or click anywhere
+    to continue)'
+  - 'The corridor collapsed behind us, no going back now.
 
 '
-  - Are you ready to continue?
+  - Are you injured?
   responses:
-  - responseText: Yes
+  - responseText: I'm alright
     dialogueObject: {fileID: 11400000, guid: a40acd8bcf5c33a4385ddd6ace7aef47, type: 2}
-  - responseText: No
+  - responseText: I'm hurt
     dialogueObject: {fileID: 11400000, guid: 0b28b04578997ba4ca8d011d7a1632c3, type: 2}

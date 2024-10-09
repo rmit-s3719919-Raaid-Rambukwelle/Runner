@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AtDoor
   m_EditorClassIdentifier: 
   dialogue:
-  - A closed door.
-  - Don't worry, i'll open it
+  - The doors locked, luckily the backup generator is still working.
+  - I'll get this door open
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PowerOn
   m_EditorClassIdentifier: 
   dialogue:
-  - Hmm... another locked door.
-  - Let's hope that generator is connected.
+  - The flight deck is just beyond this door.
+  - With power restored, I can open the door, but be careful
   responses:
   - responseText: Continue...
     dialogueObject: {fileID: 0}

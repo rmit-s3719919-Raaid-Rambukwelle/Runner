@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: No
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Did you reall think you had a choice?
-
-    Please Follow me.'
+  - Hopefully the injury isn't too severe
+  - We still need to press on.
   responses: []

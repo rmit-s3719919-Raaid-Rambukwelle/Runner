@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: PowerOff
   m_EditorClassIdentifier: 
   dialogue:
-  - In order to remove the core, I need to deactive the control. But without the
-    correct authorisation, all power will be redirected into the controls
-  - goodbye
+  - The core is protect by shielding, I'll have to plug in directly into the controls.
+  - You grab the core, while I keep the shield open.
   responses:
-  - responseText: Goodbye
+  - responseText: Alright
     dialogueObject: {fileID: 0}

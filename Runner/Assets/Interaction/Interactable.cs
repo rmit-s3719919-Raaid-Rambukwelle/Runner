@@ -13,7 +13,20 @@ public abstract class Interactable : MonoBehaviour
     public bool showText;
     public string textToShow;
 
+    [Header("Animation")]
+    public bool useAnimation;
+    public string animationString;
+    public Animator ani;
 
+    [Header("Deactivate Objects")]
+    public bool deactivateObjects;
+    public float delayBetweenDeactivation;
+    public GameObject[] objsToDeactivate;
+
+    [Header("Activate Objects")]
+    public bool activateObjects;
+    public float delayBetweenActivation;
+    public GameObject[] objsToActivate;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,5 +51,23 @@ public abstract class Interactable : MonoBehaviour
     {
         interactable = true;
         showText = true;
+    }
+
+    protected IEnumerator deactivateObjectsInScript()
+    {
+        foreach (var obj in objsToDeactivate)
+        {
+            obj.SetActive(false);
+            yield return new WaitForSeconds(delayBetweenDeactivation);
+        }
+    }
+
+    protected IEnumerator activateObjectsInScript()
+    {
+        foreach (var obj in objsToActivate)
+        {
+            obj.SetActive(true);
+            yield return new WaitForSeconds(delayBetweenActivation);
+        }
     }
 }

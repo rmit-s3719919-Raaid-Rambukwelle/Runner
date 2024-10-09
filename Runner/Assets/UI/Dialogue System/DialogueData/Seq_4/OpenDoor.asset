@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: OpenDoor
   m_EditorClassIdentifier: 
   dialogue:
-  - That did it!
-  - After you..
+  - Alright, follow behind me.
   responses:
   - responseText: Continue.
     dialogueObject: {fileID: 0}

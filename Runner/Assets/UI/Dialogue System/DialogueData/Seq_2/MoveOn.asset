@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: MoveOn
   m_EditorClassIdentifier: 
   dialogue:
-  - Are you ready to move on?
+  - The powers running, good work.
   responses:
-  - responseText: Yes
-    dialogueObject: {fileID: 11400000, guid: 33d959a2636d912469cc6a2fb0a7e906, type: 2}
-  - responseText: No
-    dialogueObject: {fileID: 11400000, guid: f44ce5df93d850c4e800d67ffe942fa8, type: 2}
+  - responseText: Continue
+    dialogueObject: {fileID: 0}
