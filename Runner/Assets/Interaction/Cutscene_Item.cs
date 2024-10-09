@@ -14,7 +14,7 @@ public class Cutscene_Item : Item
         {
             flightDeckSequenceController.StartSequence();
             float animationLength = flightDeckSequenceController.GetAnimationClipLength(flightDeckSequenceController.robotAnimator, "PushButton");
-            Invoke(nameof(StartCutscene), animationLength + 1f);
+            Invoke(nameof(StartCutscene), animationLength + 2f);
             
         }
     }
