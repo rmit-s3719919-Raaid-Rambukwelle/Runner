@@ -13,6 +13,7 @@ public class FlightDeckSequenceController : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject runnerSpawn;
+    [SerializeField] private GameObject coreShielding;
 
 
     public void StartSequence() 
@@ -58,8 +59,12 @@ public class FlightDeckSequenceController : MonoBehaviour
     {
         robotAnimator.SetTrigger("ButtonTrigger");
         //robotAnimator.Play("PushButton");
-        float animationLength = GetAnimationClipLength(robotAnimator, "PushButton");
-        yield return new WaitForSeconds(animationLength);    
+        float animationLength = GetAnimationClipLength(robotAnimator, "DeskInteract");
+        yield return new WaitForSeconds(animationLength);
+
+        // Disables shield object, can change this to fade out once transparent mats are figured out
+        coreShielding.SetActive(false);
+
     }
 
     public float GetAnimationClipLength(Animator animator, string clipName)
@@ -79,6 +84,7 @@ public class FlightDeckSequenceController : MonoBehaviour
     {
         if (playableDirector != null)
         {
+            robotAnimator.SetTrigger("ShockTrigger");
             playableDirector.Play();
         }
     }

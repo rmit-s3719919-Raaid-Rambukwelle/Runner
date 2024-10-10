@@ -12,10 +12,7 @@ public class Cutscene_Item : Item
         AddToInventory();
         if (newTrigger != null)
         {
-            flightDeckSequenceController.StartSequence();
-            float animationLength = flightDeckSequenceController.GetAnimationClipLength(flightDeckSequenceController.robotAnimator, "PushButton");
-            Invoke(nameof(StartCutscene), animationLength + 2f);
-            
+            StartCutscene();            
         }
     }
 
