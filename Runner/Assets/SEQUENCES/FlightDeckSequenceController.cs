@@ -85,8 +85,14 @@ public class FlightDeckSequenceController : MonoBehaviour
         if (playableDirector != null)
         {
             robotAnimator.SetTrigger("ShockTrigger");
-            playableDirector.Play();
+            float animationLength = GetAnimationClipLength(robotAnimator, "Shocked");
+            Invoke(nameof(PlayScene), animationLength / 2f);
         }
+    }
+
+    void PlayScene()
+    {
+        playableDirector.Play();
     }
 
     public void MovePlayer() 
