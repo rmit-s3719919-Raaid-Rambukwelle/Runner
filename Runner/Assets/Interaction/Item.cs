@@ -19,7 +19,8 @@ public class Item : Interactable
 
     private void Start()
     {
-        disableGrapple();
+        if (canGrapple)
+            disableGrapple();
     }
 
     public override void Interact()

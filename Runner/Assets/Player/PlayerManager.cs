@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public bool running;
     public bool canMove;
     public bool thirdPerson;
+    [HideInInspector] public float moveSpeed;
 
     [Header("Sensitivity")]
     public float sensX;

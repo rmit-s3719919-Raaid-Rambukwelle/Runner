@@ -11,6 +11,14 @@ public class PlayerCamera : MonoBehaviour
     public Transform orientation;
     public Transform player;
 
+    [Header("Noise Profiles")]
+    public NoiseSettings headBobProfile;
+    public NoiseSettings shakeProfile;
+
+    [Header("Screen Shake")]
+    public float amp;
+    public float freq;
+
     [Header("First Person")]
     public Transform cameraHolder;
 
@@ -21,6 +29,7 @@ public class PlayerCamera : MonoBehaviour
     float xStartSense;
     float yStartSense;
 
+    bool shaking;
     float xRot, yRot = 180f;
 
     private void Start()
@@ -31,6 +40,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        
         thirdPersonCam.m_XAxis.m_MaxSpeed = PlayerManager.current.canMove ? PlayerManager.current.tpSensX : 0f;
         thirdPersonCam.m_YAxis.m_MaxSpeed = PlayerManager.current.canMove ? PlayerManager.current.tpSensY : 0f;
 
@@ -49,6 +59,17 @@ public class PlayerCamera : MonoBehaviour
                 firstPersonCam.Priority = 40;
                 thirdPersonCam.Priority = 10;
                 FirstPersonCamera();
+                if (!shaking && new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).magnitude > 0)
+                {
+                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1;
+                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1;
+                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = headBobProfile;
+                }
+                else
+                {
+                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+                }
             }
         }
     }
@@ -110,6 +131,39 @@ public class PlayerCamera : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         gfx.SetActive(setter);
+    }
+
+    public void ActivateScreenShake()
+    {
+        shaking = true;
+        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
+        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = amp;
+        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = shakeProfile;
+
+        thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
+        thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amp;
+
+        thirdPersonCam.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
+        thirdPersonCam.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amp;
+
+        thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
+        thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amp;
+    }
+
+    public void DeactivateScreenShake()
+    {
+        shaking = false;
+        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+
+        thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+        thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+
+        thirdPersonCam.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+        thirdPersonCam.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+
+        thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+        thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
     }
 
 }

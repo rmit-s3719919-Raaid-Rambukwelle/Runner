@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Speed Values")]
     public float walkSpeed;
+    public float jogSpeed;
     public float runnerSpeed;
     public float slideSpeed;
     public float slopeSlideSpeed;
@@ -165,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        PlayerManager.current.moveSpeed = new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
 
@@ -291,7 +292,10 @@ public class PlayerMovement : MonoBehaviour
             if (moveDir.magnitude > 0 && grounded) // Walking
             {
                 state = MovementState.walking;
-                desiredMoveSpeed = walkSpeed;
+                if (Input.GetKey(PlayerManager.current.dashKey))
+                    desiredMoveSpeed = jogSpeed;
+                else
+                    desiredMoveSpeed = walkSpeed;
             }
             else // idle
             {
