@@ -20,6 +20,4 @@ public class Cutscene_Item : Item
     {
         flightDeckSequenceController.StartTransition();
     }
-
-
 }
