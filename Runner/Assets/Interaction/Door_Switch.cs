@@ -49,7 +49,7 @@ public class Door_Switch : MonoBehaviour
 
         doorAnimator.SetTrigger("OpenTrigger");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
 
         nextTrigger.SetActive(true);
 
