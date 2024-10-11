@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: No
   m_EditorClassIdentifier: 
   dialogue:
-  - Hopefully the injury isn't too severe
   - We still need to press on.
   responses: []

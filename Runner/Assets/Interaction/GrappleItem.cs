@@ -8,7 +8,7 @@ public class GrappleItem : MonoBehaviour
 
     public void EnableGrapple() 
     {
-        item.itemGrapple();
+        //item.ItemGrapple();
     }
 
 }

@@ -15,13 +15,8 @@ public class Item : Interactable
     public LineRenderer lr;
     public Transform grappleHand;
     public Transform target;
+    public AnimationClip clip;
 
-
-    private void Start()
-    {
-        if (canGrapple)
-            disableGrapple();
-    }
 
     public override void Interact()
     {
@@ -35,45 +30,34 @@ public class Item : Interactable
         PlayerManager.current.inventory.items.Add(this);
         PlayerManager.current.currentInteractable = null;
 
+
+
+        if (canGrapple)        
+            ItemGrapple();
+        
+
+        playerAni.CrossFade(animationString, 0f);
+        Invoke(nameof(DisableItem), 1.2f);
+
         if (deactivateObjects)
             StartCoroutine(deactivateObjectsInScript());
 
         if (activateObjects)
             StartCoroutine(activateObjectsInScript());
-
-        if (canGrapple)
-        {
-            // disable after time
-        }
-        else
-            gameObject.SetActive(false);
     }
 
-    void disableGrapple()
+
+    void DisableItem()
     {
-        lr.startWidth = 0f;
-        lr.endWidth = 0f;
+        gameObject.SetActive(false);
     }
 
-    public void itemGrapple()
+    public void ItemGrapple()
     {
-        lr.startWidth = 0.1f;
-        lr.endWidth = 0.1f;
+        lr.positionCount = 0;
+        lr.positionCount = 2;
         lr.SetPosition(0, grappleHand.position);
-        lr.SetPosition(1, target.position);
-
-        float d = 0f;
-        ani.CrossFade("Grapple", 0.2f);
-        AnimationClip[] clips = ani.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips)
-        {
-            if (clip.name == "Grapple")
-            {
-                d = clip.length;
-            }
-        }
-        Invoke(nameof(disableGrapple), d);
+        lr.SetPosition(1, target.position);          
     }
-
 }
 

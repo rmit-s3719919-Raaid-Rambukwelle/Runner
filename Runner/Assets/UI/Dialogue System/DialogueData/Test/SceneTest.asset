@@ -25,5 +25,5 @@ MonoBehaviour:
   responses:
   - responseText: I'm alright
     dialogueObject: {fileID: 11400000, guid: a40acd8bcf5c33a4385ddd6ace7aef47, type: 2}
-  - responseText: I'm hurt
+  - responseText: I'll live
     dialogueObject: {fileID: 11400000, guid: 0b28b04578997ba4ca8d011d7a1632c3, type: 2}

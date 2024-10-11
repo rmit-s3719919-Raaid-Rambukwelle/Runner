@@ -10,12 +10,14 @@ public class Scene_Interaction : Interactable
     public string lockedMessage;
     public string requiredObj;
 
-
-
+    [Header("Object Animation")]
+    public bool useAnimation;
+    public string objAnimationString;
+    public Animator objAni;
 
     [Header("Audio")]
     public bool playAudio;
-    public PlayerAudio ap;
+    public CueSound ap;
 
     public override void Interact()
     {
@@ -29,11 +31,13 @@ public class Scene_Interaction : Interactable
 
         if (deactivateOnUse) interactable = false;
 
+        playerAni.CrossFade(animationString, 0f);
+
         if (useAnimation)
-            ani.SetBool(animationString, true);
+            Invoke(nameof(StartAnimation), 1.5f);
 
         if (playAudio)
-            ap.PlayActionSound();
+            ap.PlayAllSounds();
 
         if (deactivateObjects)
             StartCoroutine(deactivateObjectsInScript());
@@ -42,6 +46,11 @@ public class Scene_Interaction : Interactable
             StartCoroutine(activateObjectsInScript());
 
         PlayerManager.current.UpdatePopupText(" ");
+    }
+
+    void StartAnimation()
+    {
+        objAni.SetBool(objAnimationString, true);
     }
 
 

@@ -13,10 +13,9 @@ public abstract class Interactable : MonoBehaviour
     public bool showText;
     public string textToShow;
 
-    [Header("Animation")]
-    public bool useAnimation;
+    [Header("Player Animation")]
     public string animationString;
-    public Animator ani;
+    public Animator playerAni;
 
     [Header("Deactivate Objects")]
     public bool deactivateObjects;
@@ -57,8 +56,8 @@ public abstract class Interactable : MonoBehaviour
     {
         foreach (var obj in objsToDeactivate)
         {
-            obj.SetActive(false);
             yield return new WaitForSeconds(delayBetweenDeactivation);
+            obj.SetActive(false);
         }
     }
 
@@ -66,8 +65,8 @@ public abstract class Interactable : MonoBehaviour
     {
         foreach (var obj in objsToActivate)
         {
-            obj.SetActive(true);
             yield return new WaitForSeconds(delayBetweenActivation);
+            obj.SetActive(true);
         }
     }
 }
