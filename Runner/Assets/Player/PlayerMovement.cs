@@ -167,6 +167,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerManager.current.moveSpeed = new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
+        ani.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
+
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
 
@@ -191,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = airDrag;
 
-        ani.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     private void FixedUpdate()
@@ -218,25 +219,26 @@ public class PlayerMovement : MonoBehaviour
             Cursor.visible = false;
         }
 
-            if (!PlayerManager.current.running)
-            {
-                // State 1: Scavenger
-                MovePlayer();
-            }
-            else
-            {
-                // State 2: Runner
-                MovePlayer();
+        if (!PlayerManager.current.running)
+        {
+            // State 1: Scavenger
+            MovePlayer();
+            ani.SetBool("jogging", Input.GetKey(PlayerManager.current.dashKey));
+        }
+        else
+        {
+            // State 2: Runner
+            MovePlayer();
 
-                if (sliding)                
-                    SlidingMovement();                
+            if (sliding)                
+                SlidingMovement();                
 
-                if (wallrunning)                
-                    WallRunningMovement();                
+            if (wallrunning)                
+                WallRunningMovement();                
 
-                if (climbing)
-                    ClimbingMovement();
-            }
+            if (climbing)
+                ClimbingMovement();
+        }
         
     }
 
