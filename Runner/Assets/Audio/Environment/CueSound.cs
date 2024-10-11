@@ -5,7 +5,7 @@ using UnityEngine;
 public class CueSound : MonoBehaviour
 {
     public List<AudioSource> audioSources;
-    // Update is called once per frame
+    public PlayerCamera playerCamera;
 
     public void PlaySoundByIndex(int index) 
     {
@@ -37,5 +37,14 @@ public class CueSound : MonoBehaviour
         {
             source.Stop();
         }
+    }
+
+    public IEnumerator CameraShake() 
+    {
+        playerCamera.ActivateScreenShake();
+
+        yield return new WaitForSeconds(2f);
+
+        playerCamera.DeactivateScreenShake();
     }
 }

@@ -386,6 +386,13 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 2
+    functionName: CameraShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
     functionName: PlaySoundByIndex
     data: 
     objectReferenceParameter: {fileID: 0}
