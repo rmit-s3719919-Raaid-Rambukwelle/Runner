@@ -7,7 +7,7 @@ public class EmergencyPowerLightManager : MonoBehaviour
     public List<Light> spotLights;
     public List<Light> pointLights;
 
-    public float maxIntensity = 5.5f;
+    public float maxIntensity = 15f;
     public float fadeDuration = 1f;
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,9 @@ public class EmergencyPowerLightManager : MonoBehaviour
     {
         while (true) 
         {
-            yield return StartCoroutine(SpotLightFadeIntensity(5f, maxIntensity));
+            yield return StartCoroutine(SpotLightFadeIntensity(13f, maxIntensity));
 
-            yield return StartCoroutine(SpotLightFadeIntensity(maxIntensity, 5f));
+            yield return StartCoroutine(SpotLightFadeIntensity(maxIntensity, 13f));
         }
     }
 

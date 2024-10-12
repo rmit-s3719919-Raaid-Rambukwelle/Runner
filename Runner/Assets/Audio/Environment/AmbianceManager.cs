@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class AmbianceManager : MonoBehaviour
 {
-    public AudioClip ambientClip;
+    public AudioClip ScavnengerAmbience;
+    public AudioClip flightDeckAmbience;
     public AudioSource audioSource;
     public float fadeDuration = 5f;
     public float maxVolume = 0.15f;
 
     void Start()
     {
-        audioSource.clip = ambientClip;
+        audioSource.clip = ScavnengerAmbience;
         audioSource.volume = 0;
         audioSource.loop = true;
         audioSource.Play();
 
         StartCoroutine(FadeIn());
+    }
+
+    public void ChangeAmbience() 
+    {
+        StartCoroutine(ChangeAmbientClip());
+    }
+
+    public IEnumerator ChangeAmbientClip() 
+    {
+        yield return StartCoroutine(FadeOut());
+        yield return new WaitForSeconds(1f);
+        audioSource.clip = flightDeckAmbience;
+        audioSource.Play();
     }
 
     private IEnumerator FadeIn() 
