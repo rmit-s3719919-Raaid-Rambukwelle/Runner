@@ -34,9 +34,9 @@ public class Item : Interactable
 
         if (canGrapple)        
             ItemGrapple();
-        
 
-        playerAni.CrossFade(animationString, 0f);
+
+        playerAni.SetTrigger(triggerString);
         Invoke(nameof(DisableItem), 1.2f);
 
         if (deactivateObjects)

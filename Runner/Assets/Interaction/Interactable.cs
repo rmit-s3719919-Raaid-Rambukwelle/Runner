@@ -14,7 +14,7 @@ public abstract class Interactable : MonoBehaviour
     public string textToShow;
 
     [Header("Player Animation")]
-    public string animationString;
+    public string triggerString;
     public Animator playerAni;
 
     [Header("Deactivate Objects")]

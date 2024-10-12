@@ -31,7 +31,7 @@ public class Scene_Interaction : Interactable
 
         if (deactivateOnUse) interactable = false;
 
-        playerAni.CrossFade(animationString, 0f);
+        playerAni.SetTrigger(triggerString);
 
         if (useAnimation)
             Invoke(nameof(StartAnimation), 1.5f);
