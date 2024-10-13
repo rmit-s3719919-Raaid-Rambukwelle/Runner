@@ -2038,16 +2038,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  canGrapple: 0
   showText: 1
   textToShow: E to pickup
-  updateNPCDialogue: 0
-  newTrigger: {fileID: 0}
+  useAnimation: 0
+  animationString: 
+  ani: {fileID: 0}
+  deactivateObjects: 0
+  delayBetweenDeactivation: 0
+  objsToDeactivate: []
+  activateObjects: 0
+  delayBetweenActivation: 0
+  objsToActivate: []
   itemName: Red Keycard
   itemDesc: Red Keycard
   itemImage: {fileID: 0}
   itemID: red_keycard
-  weight: 0
+  canGrapple: 0
 --- !u!65 &379932497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2303,6 +2309,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 5927878564056376354}
   dialogueObject: {fileID: 11400000, guid: e7378e443683fe1498f01f778354655d, type: 2}
   autoTriggerDialogue: 1
+  showText: 0
+  popupText: 
 --- !u!114 &407982858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2657,6 +2665,111 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7731758913296444692, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1001 &504171453
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0686369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.362
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7711593031769508352, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -7594077028999122691, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3155792848620169519, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3155792848620169519, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50de47d0c1de788418b9df544b60a310, type: 2}
+    - target: {fileID: -3155792848620169519, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: e13a16ff528d379449d840cc301f42ca, type: 3}
+    - target: {fileID: -326909098771216998, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50de47d0c1de788418b9df544b60a310, type: 2}
+    - target: {fileID: 244997617756738383, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50de47d0c1de788418b9df544b60a310, type: 2}
+    - target: {fileID: 656882779864163744, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Name
+      value: LargeFan
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150491597371343305, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760766958006013122, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50de47d0c1de788418b9df544b60a310, type: 2}
+    - target: {fileID: 8152927876048264207, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd2778c6619025c4c8743eac66767c54, type: 3}
 --- !u!64 &505074942
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3604,22 +3717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2c1eb74c68f01419c200fa4c024e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 0
-  canGrapple: 0
-  showText: 1
-  textToShow: E to interact with
-  updateNPCDialogue: 1
-  newTrigger: {fileID: 0}
   DoorObj: {fileID: 0}
   robot: {fileID: 0}
   nextTrigger: {fileID: 0}
+  doorAnimator: {fileID: 0}
   npcMovementTrigger: {fileID: 0}
   dialogueActivator: {fileID: 0}
-  locked: 1
-  lockedMessage: I need a new power cell
-  requiredObj: power_cell
-  reactivateOnUse: 0
-  doorAnimator: {fileID: 0}
 --- !u!65 &618832379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3777,6 +3880,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: a81437702b649524bbe1bb9de8005d5d, type: 2}
   autoTriggerDialogue: 0
+  showText: 0
+  popupText: 
 --- !u!65 &618832385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5136,22 +5241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2c1eb74c68f01419c200fa4c024e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 0
-  canGrapple: 0
-  showText: 0
-  textToShow: 
-  updateNPCDialogue: 0
-  newTrigger: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 0}
+  doorAnimator: {fileID: 1478962602}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 793346537}
-  locked: 0
-  lockedMessage: 
-  requiredObj: 
-  reactivateOnUse: 0
-  doorAnimator: {fileID: 1478962602}
 --- !u!114 &793346536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5211,6 +5306,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 19b7059688d83d14c9a2a7a1cf16e58b, type: 2}
   autoTriggerDialogue: 1
+  showText: 0
+  popupText: 
 --- !u!114 &793346539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6163,7 +6260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 49cef279bca37a745be117bb4ea28e1f, type: 2}
   events:
-  - name: Yes
+  - name: Continue
     onSelectedResponse:
       m_PersistentCalls:
         m_Calls:
@@ -6203,10 +6300,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - name: No
-    onSelectedResponse:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &932322862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6224,6 +6317,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 49cef279bca37a745be117bb4ea28e1f, type: 2}
   autoTriggerDialogue: 0
+  showText: 0
+  popupText: 
 --- !u!114 &932322863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7327,16 +7422,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  canGrapple: 1
   showText: 1
   textToShow: Right click to grapple
-  updateNPCDialogue: 0
-  newTrigger: {fileID: 0}
+  useAnimation: 0
+  animationString: 
+  ani: {fileID: 0}
+  deactivateObjects: 0
+  delayBetweenDeactivation: 0
+  objsToDeactivate: []
+  activateObjects: 0
+  delayBetweenActivation: 0
+  objsToActivate: []
   itemName: Power cell
   itemDesc: Power cell
   itemImage: {fileID: 0}
   itemID: power_cell
-  weight: 0
+  canGrapple: 1
 --- !u!65 &1193507793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8984,22 +9085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2c1eb74c68f01419c200fa4c024e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 0
-  canGrapple: 0
-  showText: 0
-  textToShow: 
-  updateNPCDialogue: 0
-  newTrigger: {fileID: 887225432912911986}
   DoorObj: {fileID: 1320713845}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 407982855}
+  doorAnimator: {fileID: 1320713847}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015142366984874}
-  locked: 0
-  lockedMessage: 
-  requiredObj: 
-  reactivateOnUse: 0
-  doorAnimator: {fileID: 1320713847}
 --- !u!64 &1452270021
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10274,6 +10365,111 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7521345556157658967, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1001 &1705750249
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 82.501
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.923
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.337
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.076011255
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000002869377
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99710697
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000037639936
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 548.719
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7142349276332710552, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 208dc844cf965c646a178211e4ae52ba, type: 2}
+    - target: {fileID: -1400179569140587709, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -1262325489619786624, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Name
+      value: Tanks
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432580018918869743, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 208dc844cf965c646a178211e4ae52ba, type: 2}
+    - target: {fileID: 2869344807088711131, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 208dc844cf965c646a178211e4ae52ba, type: 2}
+    - target: {fileID: 3567315679083939608, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915700001655063024, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112731102878130267, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085036178219441596, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709030488998597830, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 208dc844cf965c646a178211e4ae52ba, type: 2}
+    - target: {fileID: 8909100850841215542, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 208dc844cf965c646a178211e4ae52ba, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9441ce4b25d40e64884c0635099eeabe, type: 3}
 --- !u!64 &1709473354
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13716,6 +13912,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 5561349426305759274, guid: c3d673b934c3ddb42ae36e2406fc86a4, type: 3}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16781,6 +16978,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 435740fa012d2d94fa74ae85e0258846, type: 2}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20380,6 +20578,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 435740fa012d2d94fa74ae85e0258846, type: 2}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20812,6 +21011,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 0ef4549a8a82ad74a840d2389afb1d41, type: 2}
   autoTriggerDialogue: 0
+  showText: 0
+  popupText: 
 --- !u!114 &1885015141653999730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20829,6 +21030,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 1e7dff1b0752b404e8924c5d09548762, type: 2}
   autoTriggerDialogue: 0
+  showText: 0
+  popupText: 
 --- !u!114 &1885015142366984874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20846,6 +21049,8 @@ MonoBehaviour:
   playerManagerScript: {fileID: 5927878564056376354}
   dialogueObject: {fileID: 11400000, guid: a0238f4a32f68924aa383bdddda500c8, type: 2}
   autoTriggerDialogue: 0
+  showText: 0
+  popupText: 
 --- !u!1 &1887818471941975306
 GameObject:
   m_ObjectHideFlags: 0
@@ -21847,7 +22052,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7084f4f42ae42c940a0215a6431a24af, type: 2}
-  - {fileID: 2100000, guid: f395832bc8df7e24b8bd4af74666cb7a, type: 2}
+  - {fileID: -876546973899608171, guid: e13a16ff528d379449d840cc301f42ca, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23887,7 +24092,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7084f4f42ae42c940a0215a6431a24af, type: 2}
-  - {fileID: -876546973899608171, guid: e13a16ff528d379449d840cc301f42ca, type: 3}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31979,6 +32184,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9a47b9efebbc71a45a29187d950317da, type: 2}
+  - {fileID: 2100000, guid: 9a47b9efebbc71a45a29187d950317da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33031,6 +33237,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ba252d0e7d8c1774896a96633768bc4c, type: 2}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35866,6 +36073,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 5561349426305759274, guid: c3d673b934c3ddb42ae36e2406fc86a4, type: 3}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38460,14 +38668,18 @@ MonoBehaviour:
   thirdPerson: 1
   sensX: 0
   sensY: 0
+  tpSensX: 0
+  tpSensY: 0
   interactKey: 101
   jumpKey: 32
   dashKey: 304
   crouchKey: 306
   grappleKey: 324
+  transitionKey: 47
   interactRange: 3
   grappleRange: 25
   currentInteractable: {fileID: 0}
+  currentRespawnPoint: {fileID: 0}
   inventory: {fileID: 0}
   dialogueUI: {fileID: 299990184}
   npcAreaTriggers:
@@ -41064,7 +41276,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7084f4f42ae42c940a0215a6431a24af, type: 2}
-  - {fileID: 2100000, guid: f395832bc8df7e24b8bd4af74666cb7a, type: 2}
+  - {fileID: -876546973899608171, guid: e13a16ff528d379449d840cc301f42ca, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42076,10 +42288,12 @@ MonoBehaviour:
   testPrefab: {fileID: 0}
   state: 0
   walkSpeed: 4
+  runnerSpeed: 0
   slideSpeed: 15
   slopeSlideSpeed: 30
   crouchSpeed: 2
   wallRunSpeed: 0
+  climbSpeed: 0
   lerpMultiplier: 20
   airLerpMultiplier: 1
   speedIncreaseMultiplier: 1.5
@@ -42099,6 +42313,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   maxSlopeAngle: 50
+  whatIsClimbingWall:
+    serializedVersion: 2
+    m_Bits: 0
+  feetPos: {fileID: 0}
+  climbLiftSpeed: 0
+  maxClimbTime: 0
+  climbDetectionLength: 0
+  sphereCastRadius: 0
+  maxWallLookAngle: 0
   useGravity: 0
   gravityCounterForce: 0
   whatIsWall:
@@ -42122,6 +42345,18 @@ MonoBehaviour:
   overshootY: 0
   freeze: 0
   grappleCD: 0
+  quality: 0
+  damper: 0
+  strength: 0
+  velocity: 0
+  waveCount: 0
+  waveHeight: 0
+  affectCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   grounded: 0
   readyToJump: 0
   sliding: 0
@@ -44108,6 +44343,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7b7b3be64e79bd04eb824dd2492ee3fb, type: 2}
+  - {fileID: 2100000, guid: 4dee00546a6e3a44db0e6663c0a3a777, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49443,22 +49679,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2c1eb74c68f01419c200fa4c024e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 0
-  canGrapple: 0
-  showText: 0
-  textToShow: 
-  updateNPCDialogue: 0
-  newTrigger: {fileID: 0}
   DoorObj: {fileID: 6255691704675499892}
   robot: {fileID: 1401658322}
   nextTrigger: {fileID: 793346534}
+  doorAnimator: {fileID: 1478962602}
   npcMovementTrigger: {fileID: 366344039}
   dialogueActivator: {fileID: 1885015141653999730}
-  locked: 0
-  lockedMessage: 
-  requiredObj: 
-  reactivateOnUse: 0
-  doorAnimator: {fileID: 1478962602}
 --- !u!114 &8653624841108411949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52175,3 +52401,5 @@ SceneRoots:
   - {fileID: 3538211147848799538}
   - {fileID: 2543788323815690329}
   - {fileID: 6640540796510383874}
+  - {fileID: 504171453}
+  - {fileID: 1705750249}
