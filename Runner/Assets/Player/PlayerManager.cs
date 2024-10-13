@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class PlayerManager : MonoBehaviour
     public Transform currentRespawnPoint;
 
     [Header("Inventory")]
+    public GameObject inventoryCanvas;
+    public GameObject itemPrefab;
     public Inventory inventory;
 
     [Header("Dialogue")]
@@ -107,6 +110,13 @@ public class PlayerManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void AddItem(Item item)
+    {
+        inventory.items.Add(item);
+        var newItem = Instantiate(itemPrefab, inventoryCanvas.transform, false);
+        newItem.GetComponent<RawImage>().texture = item.itemImage;
     }
 
     public void UpdatePopupText(string input)

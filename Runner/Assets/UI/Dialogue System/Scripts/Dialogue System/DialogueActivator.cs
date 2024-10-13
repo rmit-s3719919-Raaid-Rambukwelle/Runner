@@ -20,7 +20,7 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
         PlayerManager.current.Interactable = null;
         gameObject.SetActive(false);
         EnablePlayerControls();
-
+        playerCameraScript.AdjustNpcCam(10);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -37,6 +37,7 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
                 if (autoTriggerDialogue)
                 {
                     TriggerDialogue(playerManager);
+                    playerCameraScript.AdjustNpcCam(50);
                 }
                 else
                 {
@@ -62,7 +63,7 @@ public class DialogueActivator : PlayerControlHandler, IInteractable
     public void Interact(PlayerManager playerManager)
     {
         TriggerDialogue(playerManager);
-
+        playerCameraScript.AdjustNpcCam(50);
         PlayerManager.current.UpdatePopupText(" ");
     }
 

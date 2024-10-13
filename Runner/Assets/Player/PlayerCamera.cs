@@ -6,10 +6,13 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [Header("References")]
+    public CinemachineBrain brain;
     public CinemachineVirtualCamera firstPersonCam;
     public CinemachineFreeLook thirdPersonCam;
+    public CinemachineFreeLook npcCam;
     public Transform orientation;
     public Transform player;
+    public Transform npc;
 
     [Header("Noise Profiles")]
     public NoiseSettings headBobProfile;
@@ -55,7 +58,7 @@ public class PlayerCamera : MonoBehaviour
             }
             else
             {
-                StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 1.75f));
+                StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 0.25f));
                 firstPersonCam.Priority = 40;
                 thirdPersonCam.Priority = 10;
                 FirstPersonCamera();
@@ -164,6 +167,16 @@ public class PlayerCamera : MonoBehaviour
 
         thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
         thirdPersonCam.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+    }
+
+    public void AdjustNpcCam(int prio)
+    {
+        npcCam.Priority = prio;
+    }
+
+    public void AdjustBlendSpeed(float speed)
+    {
+        brain.m_DefaultBlend.m_Time = speed;
     }
 
 }

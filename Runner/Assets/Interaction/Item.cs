@@ -7,7 +7,7 @@ public class Item : Interactable
     [Header("Item variables")]
     public string itemName;
     public string itemDesc;
-    public Sprite itemImage;
+    public Texture itemImage;
     public string itemID;
 
     [Header("Grapple grab")]
@@ -27,7 +27,7 @@ public class Item : Interactable
     {
         if (showText)
             PlayerManager.current.UpdatePopupText(" ");
-        PlayerManager.current.inventory.items.Add(this);
+        PlayerManager.current.AddItem(this);
         PlayerManager.current.currentInteractable = null;
 
 

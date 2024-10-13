@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NPCAreaTrigger : MonoBehaviour
 {
-    public bool singleActivation;
-    public bool activateDialogue;
 
     [SerializeField] private bool readyToTrigger;
 
@@ -13,6 +11,7 @@ public class NPCAreaTrigger : MonoBehaviour
     public string triggerTag;
 
     public Transform newTargetPosition;
+    public GameObject npcIcon;
 
     private bool isNpcInZone = false; // Tracks if NPC is in zone
     private bool isPlayerInZone = false; // Tracks if Player is in zone
@@ -30,6 +29,7 @@ public class NPCAreaTrigger : MonoBehaviour
             other.GetComponent<NPCMovementTrigger>().targetPosition = newTargetPosition;
             isNpcInZone = true;
             readyToTrigger = true;
+            ToggleNPCIcon(true);
         }
 
         // Activate on player entering range
@@ -49,6 +49,7 @@ public class NPCAreaTrigger : MonoBehaviour
             Debug.Log("NPC left trigger zone");
             isNpcInZone = false;
             readyToTrigger = false;
+            ToggleNPCIcon(false);
         }
 
         if (other.CompareTag("Player"))
@@ -66,5 +67,10 @@ public class NPCAreaTrigger : MonoBehaviour
     public void Test() 
     {
         Debug.Log("If you're reading this, then the dialouge system can handle multiple dialogues");
+    }
+
+    public void ToggleNPCIcon(bool toggle)
+    {
+        npcIcon.SetActive(toggle);
     }
 }
