@@ -8,25 +8,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: glass
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6f9fcc0cb55789449b262111302c4f12, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  - _ALPHATEST_ON
-  - _NORMALMAP
-  - _PARALLAXMAP
-  - _SURFACE_TYPE_TRANSPARENT
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - DepthOnly
-  - SHADOWCASTER
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -71,7 +63,55 @@ Material:
         m_Texture: {fileID: 2800000, guid: 5911fc1e55cf0824db4b9472fb716fef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8893f6f290f14ccc8cb6b6d1b6c32a8c_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9acce6cffff048478c6ba287ec0c7db2_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_efa2f5f68fb9416ab05014f278a69613_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ambientOccTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ambientOcclusionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _emissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mainTex:
+        m_Texture: {fileID: 2800000, guid: 9c5d3b7d14d30674893ab992df954e02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _metallicTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalTex:
+        m_Texture: {fileID: 2800000, guid: 5911fc1e55cf0824db4b9472fb716fef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _shadowTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _smoothnessTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -106,9 +146,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Light_Probe_Contribution: -1.8
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.0351
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -119,11 +161,29 @@ Material:
     - _Surface: 1
     - _WorkflowMode: 1
     - _ZWrite: 0
+    - _ambientOcclusionStrength: 0
+    - _emissionStrength: 0
+    - _lightSmoothness: 1
+    - _metallicStrength: 0
+    - _normalStrength: 1
+    - _outlineDepthSensitivity: 0
+    - _outlineNormalSensitivity: 0
+    - _outlineThickness: 0
+    - _shadowStep: 0
+    - _smoothnessStrength: 0
+    - _transparency: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.62352943}
     - _Color: {r: 1, g: 1, b: 1, a: 0.62352943}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _mainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
+    - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _shadowIntensity: {r: 0.18, g: 1, b: 0, a: 0}
+    - _shadowTexColor: {r: 1, g: 1, b: 1, a: 0}
+    - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3660135941553547753
 MonoBehaviour:
