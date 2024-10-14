@@ -25,7 +25,9 @@ public abstract class Interactable : MonoBehaviour
     [Header("Activate Objects")]
     public bool activateObjects;
     public float delayBetweenActivation;
-    public GameObject[] objsToActivate;
+    public GameObject[] objsToActivate1;
+    public GameObject[] objsToActivate2;
+    public GameObject[] objsToActivate3;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -56,17 +58,28 @@ public abstract class Interactable : MonoBehaviour
     {
         foreach (var obj in objsToDeactivate)
         {
-            yield return new WaitForSeconds(delayBetweenDeactivation);
             obj.SetActive(false);
+            yield return null;
         }
     }
 
     protected IEnumerator activateObjectsInScript()
     {
-        foreach (var obj in objsToActivate)
+        foreach (var obj1 in objsToActivate1)
         {
-            yield return new WaitForSeconds(delayBetweenActivation);
-            obj.SetActive(true);
+            obj1.SetActive(true);
         }
+        yield return new WaitForSeconds(1f);
+        foreach (var obj2 in objsToActivate2)
+        {
+            obj2.SetActive(true);
+        }
+        yield return new WaitForSeconds(1f);
+        foreach (var obj3 in objsToActivate3) 
+        {
+             obj3.SetActive(true);
+        }
+            
+        
     }
 }

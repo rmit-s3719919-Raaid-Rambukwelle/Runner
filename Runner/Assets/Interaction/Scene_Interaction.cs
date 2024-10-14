@@ -39,11 +39,14 @@ public class Scene_Interaction : Interactable
         if (playAudio)
             ap.PlayAllSounds();
 
-        if (deactivateObjects)
-            StartCoroutine(deactivateObjectsInScript());
+        if (deactivateObjects && activateObjects) 
+        {
+            StartCoroutine(StartGenerator());
+        }
+            //StartCoroutine(deactivateObjectsInScript());
 
-        if (activateObjects)
-            StartCoroutine(activateObjectsInScript());
+        //if (activateObjects)
+            //StartCoroutine(activateObjectsInScript());
 
         PlayerManager.current.UpdatePopupText(" ");
     }
@@ -53,5 +56,11 @@ public class Scene_Interaction : Interactable
         objAni.SetBool(objAnimationString, true);
     }
 
-
+    public IEnumerator StartGenerator() 
+    {
+        playerAni.SetTrigger(triggerString);
+        yield return new WaitForSeconds(5f);
+            StartCoroutine(deactivateObjectsInScript());
+            StartCoroutine(activateObjectsInScript());
+    }
 }
