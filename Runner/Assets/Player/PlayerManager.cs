@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
     public KeyCode crouchKey = KeyCode.LeftControl;
     public KeyCode grappleKey = KeyCode.Mouse1;
     public KeyCode transitionKey = KeyCode.Slash;
+    public KeyCode inventoryKey = KeyCode.I;
 
 
     [Header("Interactables")]
@@ -42,6 +43,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject itemPrefab;
     public Inventory inventory;
+    public Animator inventoryAni;
+    bool inventoryOpen = false;
 
     [Header("Dialogue")]
     [SerializeField] private DialogueUI dialogueUI;
@@ -72,6 +75,12 @@ public class PlayerManager : MonoBehaviour
         {
             thirdPerson = !thirdPerson;
             running = !running;
+        }
+
+        if (Input.GetKeyDown(inventoryKey))
+        {
+            inventoryOpen = !inventoryOpen;
+            inventoryAni.SetBool("Toggle", inventoryOpen);
         }
 
         //Interactions

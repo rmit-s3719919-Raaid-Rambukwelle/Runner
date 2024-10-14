@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [Header("References")]
+    public GameObject crosshair;
     public CinemachineBrain brain;
     public CinemachineVirtualCamera firstPersonCam;
     public CinemachineFreeLook thirdPersonCam;
@@ -49,6 +50,7 @@ public class PlayerCamera : MonoBehaviour
 
         if (PlayerManager.current.canMove)
         {
+            crosshair.SetActive(!PlayerManager.current.thirdPerson);
             if (PlayerManager.current.thirdPerson)
             {
                 StartCoroutine(switchGfx(PlayerManager.current.thirdPerson, 0f));
