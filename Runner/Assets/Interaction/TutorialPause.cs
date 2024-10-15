@@ -6,11 +6,13 @@ using TMPro;
 public class TutorialPause : MonoBehaviour
 {
     public KeyCode interactKey;
+    public float delay;
     public GameObject dialogueBox;
     public string tutorialMsg;
     public TypeWriter tp;
     public TMP_Text textLabel;
-    bool paused = false;
+    public bool paused = false;
+    public bool activateAfterDelay;
     bool interactable = true;
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +21,7 @@ public class TutorialPause : MonoBehaviour
         {
             Time.timeScale = 0.05f;
             interactable = false;
-            paused = true;
+            StartCoroutine(nameof(WaitForDelay));
             dialogueBox.SetActive(true);
             tp.Run(tutorialMsg, textLabel);
         }
@@ -27,11 +29,22 @@ public class TutorialPause : MonoBehaviour
 
     private void Update()
     {
-        if (paused && Input.GetKey(interactKey))
+        if (paused)
         {
-            Time.timeScale = 1;
-            dialogueBox.SetActive(false);
+            if (activateAfterDelay || Input.GetKey(interactKey))
+            {
+                Time.timeScale = 1;
+                dialogueBox.SetActive(false);
+            }
+            
+
         }
 
+    }
+
+    IEnumerator WaitForDelay()
+    {
+        yield return new WaitForSeconds(delay * 0.05f);
+        paused = true;
     }
 }
