@@ -73,9 +73,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: 2629925101722381986}
   - {fileID: -7465007637798403858}
-  - {fileID: -1351329656490340777}
   - {fileID: 6435964566093727188}
-  m_RendererFeatureMap: a2ae0b32f25e7f24eec072cf1af76698574e714ad61c3fedd4850475ac235159
+  m_RendererFeatureMap: a2ae0b32f25e7f24eec072cf1af76698d4850475ac235159
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -127,9 +126,9 @@ MonoBehaviour:
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  injectionPoint: 600
+  injectionPoint: 450
   fetchColorBuffer: 1
-  requirements: 6
+  requirements: 7
   passMaterial: {fileID: 2100000, guid: de538fc041b17f64792bc3d113f431dc, type: 2}
   passIndex: 0
   bindDepthStencilAttachment: 0
