@@ -161,6 +161,7 @@ Material:
     - _ZWrite: 1
     - _emissionStrength: 0
     - _lightSmoothness: 1
+    - _metallicStrength: 0
     - _normalStrength: 0
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0

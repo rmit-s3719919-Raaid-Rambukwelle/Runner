@@ -146,8 +146,9 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _emissionStrength: 68.72
+    - _emissionStrength: 39.1
     - _lightSmoothness: 1
+    - _metallicStrength: 0
     - _normalStrength: 1
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0

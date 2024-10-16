@@ -2047,7 +2047,9 @@ MonoBehaviour:
   objsToDeactivate: []
   activateObjects: 0
   delayBetweenActivation: 0
-  objsToActivate: []
+  objsToActivate1: []
+  objsToActivate2: []
+  objsToActivate3: []
   itemName: Red Keycard
   itemDesc: Red Keycard
   itemImage: {fileID: 0}
@@ -2326,11 +2328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 6772992453029327326}
+  npcIcon: {fileID: 0}
 --- !u!65 &407982859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5049,7 +5050,7 @@ GameObject:
   - component: {fileID: 767289347}
   - component: {fileID: 767289346}
   - component: {fileID: 767289345}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5323,11 +5324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 1913608092}
+  npcIcon: {fileID: 0}
 --- !u!65 &793346540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6334,11 +6334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 6772992453629993586}
+  npcIcon: {fileID: 0}
 --- !u!65 &932322864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7024,6 +7023,119 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3833490754351350137, guid: a4f265672da19c244b112f45717bd646, type: 3}
+--- !u!1001 &1092111594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 87.65267
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2602283
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5728016
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7634590915347977059, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -6407638527476658802, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
+    - target: {fileID: -5714191403340158114, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5330659279759759097, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3941074810079208363, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
+    - target: {fileID: -3751805057571542777, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3667779438198402741, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Name
+      value: LIGHTS (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049317156916130698, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
+    - target: {fileID: 1873882993235008323, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122776270228747429, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
+    - target: {fileID: 5748850023168078831, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898026391671166761, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203452299723213859, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00dcbddf9a9c4ed40abfbd0fc05bc69f, type: 3}
 --- !u!64 &1102420664
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7434,7 +7546,9 @@ MonoBehaviour:
   objsToDeactivate: []
   activateObjects: 0
   delayBetweenActivation: 0
-  objsToActivate: []
+  objsToActivate1: []
+  objsToActivate2: []
+  objsToActivate3: []
   itemName: Power cell
   itemDesc: Power cell
   itemImage: {fileID: 0}
@@ -7680,7 +7794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217502587}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Decorative Assets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8105,11 +8219,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1241683595747259058, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!4 &1314625883 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7610511182503055996, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-  m_PrefabInstance: {fileID: 1407547599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1316908741
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8384,7 +8493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320713846}
   - component: {fileID: 1320713847}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SequenceOneDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8996,181 +9105,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8882371055824888311, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!1001 &1407547599
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 82.989
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.103
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.637
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7634590915347977059, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -6407638527476658802, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    - target: {fileID: -5714191403340158114, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -5330659279759759097, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -3941074810079208363, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    - target: {fileID: -3751805057571542777, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -3667779438198402741, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -1665430371114409797, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 95d50b02ef9fd834691744c3fe1ebe11, type: 2}
-    - target: {fileID: -617929503379668650, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.393
-      objectReference: {fileID: 0}
-    - target: {fileID: -617929503379668650, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.872
-      objectReference: {fileID: 0}
-    - target: {fileID: -617929503379668650, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.498
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Name
-      value: LIGHTS (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049317156916130698, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    - target: {fileID: 1873882993235008323, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4122776270228747429, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    - target: {fileID: 5355795537560804728, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    - target: {fileID: 5748850023168078831, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898026391671166761, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6977771934071360768, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.065
-      objectReference: {fileID: 0}
-    - target: {fileID: 6977771934071360768, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.863
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203452299723213859, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8.206113
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8.206113
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8.206113
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.9897
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.256
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481132507415196118, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.842
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747064088775955510, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8d32dbb60389c749abc128780db67e5, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -7610511182503055996, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1703746744}
-    - targetCorrespondingSourceObject: {fileID: -617929503379668650, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2115742648}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
 --- !u!64 &1411887723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9397,7 +9331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478962601}
   - component: {fileID: 1478962602}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FlightDeckDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10219,11 +10153,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8055412674293863285, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!4 &1642314001 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -617929503379668650, guid: e7bb147b3a96cf846b00e850619edc0c, type: 3}
-  m_PrefabInstance: {fileID: 1407547599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1644341241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10556,124 +10485,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7521345556157658967, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!1 &1703746743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1703746744}
-  - component: {fileID: 1703746746}
-  - component: {fileID: 1703746745}
-  m_Layer: 9
-  m_Name: Point Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1703746744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703746743}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1314625883}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1703746745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703746743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1703746746
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703746743}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.03
-  m_Range: 3.14
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &1705750249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13012,124 +12823,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -168202225644900649, guid: a4f265672da19c244b112f45717bd646, type: 3}
---- !u!1 &2115742647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2115742648}
-  - component: {fileID: 2115742650}
-  - component: {fileID: 2115742649}
-  m_Layer: 13
-  m_Name: Point Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2115742648
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115742647}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1642314001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2115742649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115742647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &2115742650
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115742647}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 0.6415094, g: 0.26503676, b: 0, a: 1}
-  m_Intensity: 198.77
-  m_Range: 3.21
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!64 &2119798266
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13664,7 +13357,7 @@ GameObject:
   - component: {fileID: 3781720125902645963}
   - component: {fileID: 3675871811562690766}
   - component: {fileID: 236229148}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14017,7 +13710,7 @@ GameObject:
   - component: {fileID: 364647531601020553}
   - component: {fileID: 8967110668395367781}
   - component: {fileID: 2107524750}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14086,7 +13779,7 @@ GameObject:
   - component: {fileID: 5004629904139156663}
   - component: {fileID: 7661778452026380494}
   - component: {fileID: 819646945}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14112,7 +13805,7 @@ GameObject:
   - component: {fileID: 2813604925068765703}
   - component: {fileID: 815499512621077634}
   - component: {fileID: 5897120660704745308}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14311,7 +14004,7 @@ GameObject:
   - component: {fileID: 2110120075268648975}
   - component: {fileID: 6345329802577186998}
   - component: {fileID: 4713956296554807777}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14417,7 +14110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4632845107320316474}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14444,7 +14137,7 @@ GameObject:
   - component: {fileID: 1871120761839567270}
   - component: {fileID: 8312273449878333576}
   - component: {fileID: 259846417}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14463,7 +14156,7 @@ GameObject:
   - component: {fileID: 8869849304189174085}
   - component: {fileID: 7588463709185747995}
   - component: {fileID: 1761773981}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14531,7 +14224,7 @@ GameObject:
   - component: {fileID: 8747816118717199541}
   - component: {fileID: 6716148642471142035}
   - component: {fileID: 1052768333}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14784,7 +14477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2154510069747736935}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14803,7 +14496,7 @@ GameObject:
   - component: {fileID: 6873418993968998124}
   - component: {fileID: 2123252292562816146}
   - component: {fileID: 950255313}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14822,7 +14515,7 @@ GameObject:
   - component: {fileID: 2840694052475969525}
   - component: {fileID: 4097186588997451952}
   - component: {fileID: 1461150613}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14840,7 +14533,7 @@ GameObject:
   - component: {fileID: 791401811955968795}
   - component: {fileID: 4370062434814506846}
   - component: {fileID: 5522748088172832286}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15307,7 +15000,7 @@ GameObject:
   - component: {fileID: 3399081163950729521}
   - component: {fileID: 3625864530167232457}
   - component: {fileID: 600759633}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15955,7 +15648,7 @@ GameObject:
   - component: {fileID: 1733676416499388068}
   - component: {fileID: 4782649094098435631}
   - component: {fileID: 721174822}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16004,7 +15697,7 @@ GameObject:
   - component: {fileID: 1737716481118823306}
   - component: {fileID: 5373875740868182280}
   - component: {fileID: 1814699926}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16167,7 +15860,7 @@ GameObject:
   - component: {fileID: 8573482189101075174}
   - component: {fileID: 2846227770722662159}
   - component: {fileID: 1455360267}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16278,7 +15971,7 @@ GameObject:
   - component: {fileID: 9160711798850926917}
   - component: {fileID: 7868507484860038905}
   - component: {fileID: 5868002806155359376}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16313,7 +16006,7 @@ GameObject:
   - component: {fileID: 4853596410686936643}
   - component: {fileID: 2350408107084000188}
   - component: {fileID: 1782680677}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16390,7 +16083,7 @@ GameObject:
   - component: {fileID: 3605451226357253755}
   - component: {fileID: 3156186508425725345}
   - component: {fileID: 5952537247523322478}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16440,7 +16133,7 @@ GameObject:
   - component: {fileID: 5218842042871194845}
   - component: {fileID: 5810430471045262536}
   - component: {fileID: 1209471887}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door_right.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16459,7 +16152,7 @@ GameObject:
   - component: {fileID: 5218842042383829578}
   - component: {fileID: 5810430470493405791}
   - component: {fileID: 8514224246057998718}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door_right.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16533,7 +16226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6961014851717557574}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16852,7 +16545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521626606223588498}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16974,7 +16667,7 @@ GameObject:
   - component: {fileID: 4622856295904253334}
   - component: {fileID: 1334347229680635300}
   - component: {fileID: 912215567}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16993,7 +16686,7 @@ GameObject:
   - component: {fileID: 8653990020936931249}
   - component: {fileID: 4230177549647715361}
   - component: {fileID: 1310810430}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17012,7 +16705,7 @@ GameObject:
   - component: {fileID: 5825254084673104025}
   - component: {fileID: 45533216470212452}
   - component: {fileID: 391680074}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17031,7 +16724,7 @@ GameObject:
   - component: {fileID: 7205073517841516140}
   - component: {fileID: 2518351896862855879}
   - component: {fileID: 7205073517841516141}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17050,7 +16743,7 @@ GameObject:
   - component: {fileID: 7205073517255796987}
   - component: {fileID: 2518351897349241936}
   - component: {fileID: 1123703945}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17100,7 +16793,7 @@ GameObject:
   - component: {fileID: 5115654692429923634}
   - component: {fileID: 19745408351540382}
   - component: {fileID: 523279309}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17161,7 +16854,7 @@ GameObject:
   - component: {fileID: 2302715043506230204}
   - component: {fileID: 2976279353045582578}
   - component: {fileID: 687809647}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door.left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17358,7 +17051,7 @@ GameObject:
   - component: {fileID: 9084311447157390705}
   - component: {fileID: 5775740863009383673}
   - component: {fileID: 8811544825840684789}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17377,7 +17070,7 @@ GameObject:
   - component: {fileID: 4724114150868575375}
   - component: {fileID: 6659490164253212357}
   - component: {fileID: 1828339941}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door.left.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17490,7 +17183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653041968572}
   - component: {fileID: 1786361425}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: RUNNER_Scavenger_Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17506,7 +17199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653529926443}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: collapseddoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17658,7 +17351,7 @@ GameObject:
   - component: {fileID: 9170234436218871717}
   - component: {fileID: 4203538101569319787}
   - component: {fileID: 147030521}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17734,7 +17427,7 @@ GameObject:
   - component: {fileID: 4377729622357797169}
   - component: {fileID: 814922451737719681}
   - component: {fileID: 835271852}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17932,7 +17625,7 @@ GameObject:
   - component: {fileID: 3105935255707998731}
   - component: {fileID: 5208622579478960231}
   - component: {fileID: 2007157184}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18491,7 +18184,7 @@ GameObject:
   - component: {fileID: 8984192883566999454}
   - component: {fileID: 2212197925212129227}
   - component: {fileID: 6997245278855679001}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18509,7 +18202,7 @@ GameObject:
   - component: {fileID: 5398696144843540602}
   - component: {fileID: 1005883811226139867}
   - component: {fileID: 311847582383088172}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlatonic3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18694,7 +18387,7 @@ GameObject:
   - component: {fileID: 7464078606107521586}
   - component: {fileID: 4985170017873758849}
   - component: {fileID: 1687067267}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: clutter.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18728,7 +18421,7 @@ GameObject:
   - component: {fileID: 1891818411270815183}
   - component: {fileID: 5198195140524846355}
   - component: {fileID: 8136172345198402085}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18747,7 +18440,7 @@ GameObject:
   - component: {fileID: 1891818411756393304}
   - component: {fileID: 5198195140039705476}
   - component: {fileID: 1676744223}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18796,7 +18489,7 @@ GameObject:
   - component: {fileID: 372828886300802467}
   - component: {fileID: 9175921747135969300}
   - component: {fileID: 1724137665}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door.left.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18898,7 +18591,7 @@ GameObject:
   - component: {fileID: 6535098463326445603}
   - component: {fileID: 6814588905372818578}
   - component: {fileID: 2046158584480754110}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18974,7 +18667,7 @@ GameObject:
   - component: {fileID: 7389589122135547328}
   - component: {fileID: 3530402338613700367}
   - component: {fileID: 4644695079383221882}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19035,7 +18728,7 @@ GameObject:
   - component: {fileID: 4553431902452148432}
   - component: {fileID: 550196916447992190}
   - component: {fileID: 1927059799}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19131,7 +18824,7 @@ GameObject:
   - component: {fileID: 165278477458207889}
   - component: {fileID: 6213433581924927404}
   - component: {fileID: 11311577}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19223,7 +18916,7 @@ GameObject:
   - component: {fileID: 8088595802274378171}
   - component: {fileID: 9150577912746239943}
   - component: {fileID: 789321945}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19242,7 +18935,7 @@ GameObject:
   - component: {fileID: 4873584258526130704}
   - component: {fileID: 8168697079184852838}
   - component: {fileID: 801482411}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19261,7 +18954,7 @@ GameObject:
   - component: {fileID: 4873584259115064455}
   - component: {fileID: 8168697079704201713}
   - component: {fileID: 8168697079704201714}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19280,7 +18973,7 @@ GameObject:
   - component: {fileID: 8978594918178140352}
   - component: {fileID: 4104367407834707490}
   - component: {fileID: 410179405}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19299,7 +18992,7 @@ GameObject:
   - component: {fileID: 6058644273325047976}
   - component: {fileID: 456167970766681187}
   - component: {fileID: 1340207095}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19348,7 +19041,7 @@ GameObject:
   - component: {fileID: 8584298971339516243}
   - component: {fileID: 8395363252512719143}
   - component: {fileID: 171159244}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19424,7 +19117,7 @@ GameObject:
   - component: {fileID: 7092404165870375071}
   - component: {fileID: 7993538321995497236}
   - component: {fileID: 519132280}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19442,7 +19135,7 @@ GameObject:
   - component: {fileID: 7646980100687175462}
   - component: {fileID: 3813991584161760042}
   - component: {fileID: 4154348137305592403}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlane11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19461,7 +19154,7 @@ GameObject:
   - component: {fileID: 2191320221711395236}
   - component: {fileID: 3848488091128577732}
   - component: {fileID: 1989004184}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19526,7 +19219,7 @@ GameObject:
   - component: {fileID: 2918385763624443006}
   - component: {fileID: 2854947427561589939}
   - component: {fileID: 4424049172314947094}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19568,7 +19261,7 @@ GameObject:
   - component: {fileID: 224241556881534383}
   - component: {fileID: 9167181786644399954}
   - component: {fileID: 453250146}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19607,7 +19300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3721897662179202119}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19634,7 +19327,7 @@ GameObject:
   - component: {fileID: 4930872085694355435}
   - component: {fileID: 1041847270952888272}
   - component: {fileID: 1460015471}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19769,7 +19462,7 @@ GameObject:
   - component: {fileID: 8555816608315373587}
   - component: {fileID: 3069285328737677850}
   - component: {fileID: 1418380121}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19838,7 +19531,7 @@ GameObject:
   - component: {fileID: 1757285687587366054}
   - component: {fileID: 2266064350766174087}
   - component: {fileID: 112011888}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19895,7 +19588,7 @@ GameObject:
   - component: {fileID: 4993302143731729488}
   - component: {fileID: 7777200215859736246}
   - component: {fileID: 1318819881}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19956,7 +19649,7 @@ GameObject:
   - component: {fileID: 7218893324860747638}
   - component: {fileID: 5412628452283498745}
   - component: {fileID: 357099261}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19972,7 +19665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271625422118970896}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20033,7 +19726,7 @@ GameObject:
   - component: {fileID: 7894296475300711339}
   - component: {fileID: 1375537087385191214}
   - component: {fileID: 7894296475300711340}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20052,7 +19745,7 @@ GameObject:
   - component: {fileID: 5913030111138798098}
   - component: {fileID: 4370704967859709424}
   - component: {fileID: 226595250}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20070,7 +19763,7 @@ GameObject:
   - component: {fileID: 4452708543768574139}
   - component: {fileID: 57870285215263745}
   - component: {fileID: 7217101890093057066}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20203,7 +19896,7 @@ GameObject:
   - component: {fileID: 5350548494803911280}
   - component: {fileID: 138094720650480919}
   - component: {fileID: 4855281575460910561}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20221,7 +19914,7 @@ GameObject:
   - component: {fileID: 7185488994056140528}
   - component: {fileID: 6756724734012007705}
   - component: {fileID: 7384553404335125170}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: pCube20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20263,7 +19956,7 @@ GameObject:
   - component: {fileID: 3556692923310839286}
   - component: {fileID: 3160439735782193526}
   - component: {fileID: 232623904}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20290,7 +19983,7 @@ GameObject:
   - component: {fileID: 6752692298175403978}
   - component: {fileID: 5906986734413681613}
   - component: {fileID: 1227313508}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20309,7 +20002,7 @@ GameObject:
   - component: {fileID: 2820719283919483601}
   - component: {fileID: 1170970069044289617}
   - component: {fileID: 5898855749674780427}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20558,7 +20251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5044990255947237124}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20577,7 +20270,7 @@ GameObject:
   - component: {fileID: 7811438693719869777}
   - component: {fileID: 4525968758110294779}
   - component: {fileID: 146833711}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: fd_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20619,7 +20312,7 @@ GameObject:
   - component: {fileID: 2738343249978565875}
   - component: {fileID: 3502434546664263753}
   - component: {fileID: 1547346151}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20654,7 +20347,7 @@ GameObject:
   - component: {fileID: 7581626172013593216}
   - component: {fileID: 750110451924352786}
   - component: {fileID: 1136670211}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20681,7 +20374,7 @@ GameObject:
   - component: {fileID: 5730875045604686791}
   - component: {fileID: 6533237849326845577}
   - component: {fileID: 6533237849326845578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20716,7 +20409,7 @@ GameObject:
   - component: {fileID: 2496429488115658194}
   - component: {fileID: 4176179177075814096}
   - component: {fileID: 356328476}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20735,7 +20428,7 @@ GameObject:
   - component: {fileID: 2496429488669066053}
   - component: {fileID: 4176179177560670279}
   - component: {fileID: 4176179177560670280}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20791,7 +20484,7 @@ GameObject:
   - component: {fileID: 1322145386108802675}
   - component: {fileID: 8632993995805476449}
   - component: {fileID: 958609862}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20809,7 +20502,7 @@ GameObject:
   - component: {fileID: 1145685719989648281}
   - component: {fileID: 5501223426200998277}
   - component: {fileID: 6149024187825778823}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20893,7 +20586,7 @@ GameObject:
   - component: {fileID: 45596899467452562}
   - component: {fileID: 4559790392143079379}
   - component: {fileID: 1391385875}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20927,7 +20620,7 @@ GameObject:
   - component: {fileID: 6029401431796537153}
   - component: {fileID: 4303158586352824067}
   - component: {fileID: 255743587}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door_right.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21081,7 +20774,7 @@ GameObject:
   - component: {fileID: 457418582300717176}
   - component: {fileID: 2396029332012503841}
   - component: {fileID: 590774084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21372,7 +21065,7 @@ GameObject:
   - component: {fileID: 7567837517986818113}
   - component: {fileID: 8119176685419583452}
   - component: {fileID: 726485914}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21490,7 +21183,7 @@ GameObject:
   - component: {fileID: 3315788724776442136}
   - component: {fileID: 4351712305988897073}
   - component: {fileID: 1316908741}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21541,7 +21234,7 @@ GameObject:
   - component: {fileID: 7158107546211510294}
   - component: {fileID: 3251758105182536838}
   - component: {fileID: 689780355}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21602,7 +21295,7 @@ GameObject:
   - component: {fileID: 7776619801261285293}
   - component: {fileID: 3120246888878847927}
   - component: {fileID: 135174690}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21628,7 +21321,7 @@ GameObject:
   - component: {fileID: 7347388957677276062}
   - component: {fileID: 7836668206612008575}
   - component: {fileID: 4984783627770411732}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21749,7 +21442,7 @@ GameObject:
   - component: {fileID: 148596120667573251}
   - component: {fileID: 5907162998272180406}
   - component: {fileID: 9043264698421052380}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21810,7 +21503,7 @@ GameObject:
   - component: {fileID: 5407026100990815603}
   - component: {fileID: 4878191787664079415}
   - component: {fileID: 6249623784638832043}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21966,7 +21659,7 @@ GameObject:
   - component: {fileID: 4717412284574015602}
   - component: {fileID: 6713153901928794302}
   - component: {fileID: 6050924985117543831}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21985,7 +21678,7 @@ GameObject:
   - component: {fileID: 1649677158816447587}
   - component: {fileID: 538486606571168372}
   - component: {fileID: 1733441853}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22133,7 +21826,7 @@ GameObject:
   - component: {fileID: 1891936591526354123}
   - component: {fileID: 738005433304504727}
   - component: {fileID: 196702475}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.r.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22284,7 +21977,7 @@ GameObject:
   - component: {fileID: 6839822691696768959}
   - component: {fileID: 8049721826366506569}
   - component: {fileID: 24358474}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22318,7 +22011,7 @@ GameObject:
   - component: {fileID: 5443271093047772853}
   - component: {fileID: 9166728975569622706}
   - component: {fileID: 425117642}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.l.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22337,7 +22030,7 @@ GameObject:
   - component: {fileID: 7863048741761077344}
   - component: {fileID: 4476696494551744366}
   - component: {fileID: 232668726}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22533,11 +22226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 6772992453629993586}
+  npcIcon: {fileID: 0}
 --- !u!114 &2148604338876543628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22550,11 +22242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 1913608092}
+  npcIcon: {fileID: 0}
 --- !u!114 &2148604340025800788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22567,11 +22258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b6447bf8c06243a945769a9c2c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleActivation: 1
-  activateDialogue: 1
   readyToTrigger: 0
   triggerTag: NPC_1
   newTargetPosition: {fileID: 6772992453029327326}
+  npcIcon: {fileID: 0}
 --- !u!1 &2148690140092767103
 GameObject:
   m_ObjectHideFlags: 0
@@ -22654,7 +22344,7 @@ GameObject:
   - component: {fileID: 1849756445558774778}
   - component: {fileID: 7681807789471477075}
   - component: {fileID: 397401542}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22818,7 +22508,7 @@ GameObject:
   - component: {fileID: 3101194308706877492}
   - component: {fileID: 5970289810670056081}
   - component: {fileID: 7118560228909934122}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22859,7 +22549,7 @@ GameObject:
   - component: {fileID: 5039099957804475823}
   - component: {fileID: 824941289954065243}
   - component: {fileID: 1786147163961027966}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22943,7 +22633,7 @@ GameObject:
   - component: {fileID: 8879265174592460951}
   - component: {fileID: 7618295466916553559}
   - component: {fileID: 53018386}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22962,7 +22652,7 @@ GameObject:
   - component: {fileID: 5404645889444017229}
   - component: {fileID: 2783534280912648072}
   - component: {fileID: 1345910187}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.l.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23077,7 +22767,7 @@ GameObject:
   - component: {fileID: 5850628336959911925}
   - component: {fileID: 3470954282455642917}
   - component: {fileID: 468958711}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23096,7 +22786,7 @@ GameObject:
   - component: {fileID: 4023660015847123091}
   - component: {fileID: 1537079773533702218}
   - component: {fileID: 133661318}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23791,7 +23481,7 @@ GameObject:
   - component: {fileID: 804677116311415866}
   - component: {fileID: 292900499530617587}
   - component: {fileID: 327433306}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23824,7 +23514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2989402325037872474}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24096,7 +23786,7 @@ GameObject:
   - component: {fileID: 3470176154102374322}
   - component: {fileID: 1456865955032481862}
   - component: {fileID: 914131032}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_floor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24157,7 +23847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4325034631564208343}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24360,7 +24050,7 @@ GameObject:
   - component: {fileID: 7749501495496405214}
   - component: {fileID: 72913937839708719}
   - component: {fileID: 866879756}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24566,7 +24256,7 @@ GameObject:
   - component: {fileID: 3312098421382716050}
   - component: {fileID: 2941367956213786345}
   - component: {fileID: 1006292149}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24679,7 +24369,7 @@ GameObject:
   - component: {fileID: 6620963378990875459}
   - component: {fileID: 518100749006506141}
   - component: {fileID: 8159696090926707717}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24740,7 +24430,7 @@ GameObject:
   - component: {fileID: 6549572814889453420}
   - component: {fileID: 3326677358597650443}
   - component: {fileID: 1906744734}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24917,7 +24607,7 @@ GameObject:
   - component: {fileID: 7590946488614073200}
   - component: {fileID: 224356097882623444}
   - component: {fileID: 1661454778}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24936,7 +24626,7 @@ GameObject:
   - component: {fileID: 4186758091779824573}
   - component: {fileID: 1513947139752376050}
   - component: {fileID: 1571295649}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25012,7 +24702,7 @@ GameObject:
   - component: {fileID: 7462843968429565384}
   - component: {fileID: 7974096082462694143}
   - component: {fileID: 1279001360}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25031,7 +24721,7 @@ GameObject:
   - component: {fileID: 7462843967943904095}
   - component: {fileID: 7974096081977504872}
   - component: {fileID: 8467770199981609295}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25050,7 +24740,7 @@ GameObject:
   - component: {fileID: 5620795992598914446}
   - component: {fileID: 5594176031505710207}
   - component: {fileID: 869847572}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25084,7 +24774,7 @@ GameObject:
   - component: {fileID: 6750918712888423969}
   - component: {fileID: 4195725854210207164}
   - component: {fileID: 1563617449771177094}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlane12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25359,7 +25049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6164562106609501502}
   - component: {fileID: 6164562106609501503}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25451,7 +25141,7 @@ GameObject:
   - component: {fileID: 2840759924455313456}
   - component: {fileID: 467862078466270658}
   - component: {fileID: 1190417976}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: room2_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25638,7 +25328,7 @@ GameObject:
   - component: {fileID: 7878281643606121801}
   - component: {fileID: 6252819126856741106}
   - component: {fileID: 864925695646849673}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25754,7 +25444,7 @@ GameObject:
   - component: {fileID: 915736272480818244}
   - component: {fileID: 6002801587149623464}
   - component: {fileID: 6161013376886544171}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25877,7 +25567,7 @@ GameObject:
   - component: {fileID: 5633194089481784444}
   - component: {fileID: 1880240870389837782}
   - component: {fileID: 1912550747}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26043,7 +25733,7 @@ GameObject:
   - component: {fileID: 6266220637688730363}
   - component: {fileID: 5206638694904177056}
   - component: {fileID: 382144487}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26681,7 +26371,7 @@ GameObject:
   - component: {fileID: 37775304063801870}
   - component: {fileID: 2053045047783463181}
   - component: {fileID: 348154132}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26742,7 +26432,7 @@ GameObject:
   - component: {fileID: 649927625467045558}
   - component: {fileID: 5297038796730442962}
   - component: {fileID: 1489760605}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27081,7 +26771,7 @@ GameObject:
   - component: {fileID: 2274713870840953447}
   - component: {fileID: 4859407673629911605}
   - component: {fileID: 3393827171074161058}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27244,7 +26934,7 @@ GameObject:
   - component: {fileID: 5735833161164914213}
   - component: {fileID: 4782010323622340505}
   - component: {fileID: 887357046207413743}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27336,7 +27026,7 @@ GameObject:
   - component: {fileID: 3893220195486357968}
   - component: {fileID: 7754339580910769612}
   - component: {fileID: 519556725}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27543,7 +27233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5241292014775127393}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27577,7 +27267,7 @@ GameObject:
   - component: {fileID: 6624749867944130678}
   - component: {fileID: 8959154642814444211}
   - component: {fileID: 1999544730}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27726,7 +27416,7 @@ GameObject:
   - component: {fileID: 5210023858298972835}
   - component: {fileID: 2301586811860897099}
   - component: {fileID: 1250720218}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27760,7 +27450,7 @@ GameObject:
   - component: {fileID: 4372875301340509069}
   - component: {fileID: 8785295966183924329}
   - component: {fileID: 322573384}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27910,7 +27600,7 @@ GameObject:
   - component: {fileID: 9046279225395970203}
   - component: {fileID: 2649537305661759967}
   - component: {fileID: 548270432}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27987,7 +27677,7 @@ GameObject:
   - component: {fileID: 1829827971215995430}
   - component: {fileID: 1832393281524712716}
   - component: {fileID: 1405720322}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28037,7 +27727,7 @@ GameObject:
   - component: {fileID: 6095245017592967551}
   - component: {fileID: 7789042675862954068}
   - component: {fileID: 535130274}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28251,7 +27941,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -28283,7 +27973,7 @@ GameObject:
   - component: {fileID: 2296350879543755659}
   - component: {fileID: 8093593013070341060}
   - component: {fileID: 1522050346}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28575,7 +28265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6574053701205724406}
   - component: {fileID: 6574053701205724407}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28594,7 +28284,7 @@ GameObject:
   - component: {fileID: 6657423233612333990}
   - component: {fileID: 7381015135115075473}
   - component: {fileID: 358276651}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28612,7 +28302,7 @@ GameObject:
   - component: {fileID: 5284187418260403621}
   - component: {fileID: 3984878224112265771}
   - component: {fileID: 512826247594209500}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28836,7 +28526,7 @@ GameObject:
   - component: {fileID: 2586877342131747882}
   - component: {fileID: 4455337464956558767}
   - component: {fileID: 1105976792}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28867,7 +28557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4817097994087272739}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28901,7 +28591,7 @@ GameObject:
   - component: {fileID: 847492020624409643}
   - component: {fileID: 7275448723152444875}
   - component: {fileID: 241724989}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29077,7 +28767,7 @@ GameObject:
   - component: {fileID: 8801006520240223216}
   - component: {fileID: 7355084970987095436}
   - component: {fileID: 1684625899}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29216,7 +28906,7 @@ GameObject:
   - component: {fileID: 2150778284210859243}
   - component: {fileID: 1152376285892235798}
   - component: {fileID: 2120742811}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29290,7 +28980,7 @@ GameObject:
   - component: {fileID: 687891640331516228}
   - component: {fileID: 9024755394672942278}
   - component: {fileID: 1147009768}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_wall.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29340,7 +29030,7 @@ GameObject:
   - component: {fileID: 1929802415793426681}
   - component: {fileID: 3566390032004834245}
   - component: {fileID: 3779745573443657892}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29462,7 +29152,7 @@ GameObject:
   - component: {fileID: 8234509816297471450}
   - component: {fileID: 2475388433974280749}
   - component: {fileID: 196317091}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29481,7 +29171,7 @@ GameObject:
   - component: {fileID: 6757802162425793899}
   - component: {fileID: 586239588852505559}
   - component: {fileID: 1913750410}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29499,7 +29189,7 @@ GameObject:
   - component: {fileID: 8668826021534614491}
   - component: {fileID: 7349691494574568194}
   - component: {fileID: 7873441669930083398}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29643,7 +29333,7 @@ GameObject:
   - component: {fileID: 5464337710877196322}
   - component: {fileID: 728825067170776044}
   - component: {fileID: 4718090914686399623}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: pCylinder49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29739,7 +29429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5905855051644985473}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29772,7 +29462,7 @@ GameObject:
   - component: {fileID: 8512832264280716957}
   - component: {fileID: 640329891749424836}
   - component: {fileID: 7577504962518076074}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29822,7 +29512,7 @@ GameObject:
   - component: {fileID: 7759889693766724800}
   - component: {fileID: 8798661404301587334}
   - component: {fileID: 1192328132}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29898,7 +29588,7 @@ GameObject:
   - component: {fileID: 4351609636244142759}
   - component: {fileID: 4713908749703704241}
   - component: {fileID: 516886702}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29917,7 +29607,7 @@ GameObject:
   - component: {fileID: 1840146624670156566}
   - component: {fileID: 7788858595210602479}
   - component: {fileID: 2009116543}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29933,7 +29623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1961172146360163977}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29983,7 +29673,7 @@ GameObject:
   - component: {fileID: 8846872589535198482}
   - component: {fileID: 5321379473247070908}
   - component: {fileID: 8846872589535198483}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlane1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30001,7 +29691,7 @@ GameObject:
   - component: {fileID: 2762194820981971136}
   - component: {fileID: 7025312587523548598}
   - component: {fileID: 8384714988295708920}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30020,7 +29710,7 @@ GameObject:
   - component: {fileID: 5682407542160614050}
   - component: {fileID: 968849822372749397}
   - component: {fileID: 792002989}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30039,7 +29729,7 @@ GameObject:
   - component: {fileID: 4770870377208856588}
   - component: {fileID: 2952481077958794554}
   - component: {fileID: 4770870377208856589}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30058,7 +29748,7 @@ GameObject:
   - component: {fileID: 4770870376654204571}
   - component: {fileID: 2952481078513005485}
   - component: {fileID: 909269891}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30211,7 +29901,7 @@ GameObject:
   - component: {fileID: 8175890529744620937}
   - component: {fileID: 6167162555394735298}
   - component: {fileID: 1411887723}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: cell_pillar_walls.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30230,7 +29920,7 @@ GameObject:
   - component: {fileID: 341860100795937437}
   - component: {fileID: 2118801199903807424}
   - component: {fileID: 621147622}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.l.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30361,7 +30051,7 @@ GameObject:
   - component: {fileID: 884171031867844373}
   - component: {fileID: 5637693663888079567}
   - component: {fileID: 1239310710}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30423,7 +30113,7 @@ GameObject:
   - component: {fileID: 9118797461297252083}
   - component: {fileID: 1285947510318045312}
   - component: {fileID: 1489713948}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30449,7 +30139,7 @@ GameObject:
   - component: {fileID: 2083263535922444978}
   - component: {fileID: 2366804262794950568}
   - component: {fileID: 3283314236709896702}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30483,7 +30173,7 @@ GameObject:
   - component: {fileID: 5689205718955386643}
   - component: {fileID: 7927298846280222409}
   - component: {fileID: 741778899}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door_right.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30510,7 +30200,7 @@ GameObject:
   - component: {fileID: 8937717419357944785}
   - component: {fileID: 7161058977874272567}
   - component: {fileID: 530550280}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30571,7 +30261,7 @@ GameObject:
   - component: {fileID: 5526490601471853853}
   - component: {fileID: 6879627009789901147}
   - component: {fileID: 1051601030}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30723,7 +30413,7 @@ GameObject:
   - component: {fileID: 3756924284043199652}
   - component: {fileID: 3041959594882814263}
   - component: {fileID: 5394506583449466334}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30742,7 +30432,7 @@ GameObject:
   - component: {fileID: 892295553321528265}
   - component: {fileID: 7611231777276369164}
   - component: {fileID: 1027898571}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30760,7 +30450,7 @@ GameObject:
   - component: {fileID: 2437377501950899745}
   - component: {fileID: 5789394034595781368}
   - component: {fileID: 8580918891864714275}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30794,7 +30484,7 @@ GameObject:
   - component: {fileID: 5033904034416811640}
   - component: {fileID: 3047048142849552232}
   - component: {fileID: 498565972}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31109,7 +30799,7 @@ GameObject:
   - component: {fileID: 2388947290771595298}
   - component: {fileID: 4930189488051946402}
   - component: {fileID: 551309662}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31128,7 +30818,7 @@ GameObject:
   - component: {fileID: 2620088159670227599}
   - component: {fileID: 8328673919404758649}
   - component: {fileID: 1699096833}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31324,7 +31014,7 @@ GameObject:
   - component: {fileID: 1493681262383948534}
   - component: {fileID: 4750398945966306187}
   - component: {fileID: 1826411225}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_roof.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31585,7 +31275,7 @@ GameObject:
   - component: {fileID: 2164965858956389620}
   - component: {fileID: 3230352529856379832}
   - component: {fileID: 1644341241}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31604,7 +31294,7 @@ GameObject:
   - component: {fileID: 932164449091970826}
   - component: {fileID: 6656485565695093847}
   - component: {fileID: 866205462}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31623,7 +31313,7 @@ GameObject:
   - component: {fileID: 5194136934197155522}
   - component: {fileID: 4215301126560681399}
   - component: {fileID: 85496498}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31657,7 +31347,7 @@ GameObject:
   - component: {fileID: 8060028367066403300}
   - component: {fileID: 1282219121158674432}
   - component: {fileID: 8060028367066403301}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlane3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32516,7 +32206,7 @@ GameObject:
   - component: {fileID: 3738330115229293913}
   - component: {fileID: 3486679324722423997}
   - component: {fileID: 661050198}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32534,7 +32224,7 @@ GameObject:
   - component: {fileID: 16545539068351243}
   - component: {fileID: 1424143443384766998}
   - component: {fileID: 7339435948632855097}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32583,7 +32273,7 @@ GameObject:
   - component: {fileID: 7812370221198501392}
   - component: {fileID: 475233730231974898}
   - component: {fileID: 884397637481427052}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33131,7 +32821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993885494412511792}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33173,7 +32863,7 @@ GameObject:
   - component: {fileID: 8499966853439636094}
   - component: {fileID: 4993260013212176273}
   - component: {fileID: 68902883}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33265,7 +32955,7 @@ GameObject:
   - component: {fileID: 7074044794819917673}
   - component: {fileID: 6545521396064152234}
   - component: {fileID: 1095648277035604062}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33284,7 +32974,7 @@ GameObject:
   - component: {fileID: 8592371141317063309}
   - component: {fileID: 2186143692287794300}
   - component: {fileID: 2088205194}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33303,7 +32993,7 @@ GameObject:
   - component: {fileID: 8837049848832463705}
   - component: {fileID: 6430890528760321966}
   - component: {fileID: 826607981}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33322,7 +33012,7 @@ GameObject:
   - component: {fileID: 8837049849352011214}
   - component: {fileID: 6430890529347696953}
   - component: {fileID: 8837049849352011215}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33463,7 +33153,7 @@ GameObject:
   - component: {fileID: 2562858249315579386}
   - component: {fileID: 4554471127603717815}
   - component: {fileID: 1346967544}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33694,7 +33384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2849921186931548021}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33721,7 +33411,7 @@ GameObject:
   - component: {fileID: 5066451152974246898}
   - component: {fileID: 195311331922027037}
   - component: {fileID: 2113243984}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33739,7 +33429,7 @@ GameObject:
   - component: {fileID: 7774015275766903971}
   - component: {fileID: 4778018063388094769}
   - component: {fileID: 5066036425337900218}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34054,7 +33744,7 @@ GameObject:
   - component: {fileID: 2177243240491459006}
   - component: {fileID: 8425714720151867147}
   - component: {fileID: 980768599}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34126,7 +33816,7 @@ GameObject:
   - component: {fileID: 7479241015776494180}
   - component: {fileID: 5870002761882588938}
   - component: {fileID: 1996740428}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34198,7 +33888,7 @@ GameObject:
   - component: {fileID: 4676564175374534394}
   - component: {fileID: 4443922978012861267}
   - component: {fileID: 466111750}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34642,7 +34332,7 @@ GameObject:
   - component: {fileID: 1221207935582069177}
   - component: {fileID: 5106125488128340115}
   - component: {fileID: 906058000}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34774,7 +34464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4846848459549136803}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34908,7 +34598,7 @@ GameObject:
   - component: {fileID: 166148666238098537}
   - component: {fileID: 9162141447870485588}
   - component: {fileID: 1065055232}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35226,7 +34916,7 @@ GameObject:
   - component: {fileID: 4435834097123556580}
   - component: {fileID: 3712336550932450780}
   - component: {fileID: 1870078535}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35276,7 +34966,7 @@ GameObject:
   - component: {fileID: 5554616506670388172}
   - component: {fileID: 4456797088864069788}
   - component: {fileID: 602617106}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35400,7 +35090,7 @@ GameObject:
   - component: {fileID: 7464420111479503727}
   - component: {fileID: 8226952881528146436}
   - component: {fileID: 8719573575484006611}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35492,7 +35182,7 @@ GameObject:
   - component: {fileID: 7183798987295018090}
   - component: {fileID: 3597971516006759443}
   - component: {fileID: 2107463017}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35761,7 +35451,7 @@ GameObject:
   - component: {fileID: 7145886315658509881}
   - component: {fileID: 641361179425667163}
   - component: {fileID: 845355294}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35851,7 +35541,7 @@ GameObject:
   - component: {fileID: 1845494090742888280}
   - component: {fileID: 534370962852435744}
   - component: {fileID: 721949478}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35928,7 +35618,7 @@ GameObject:
   - component: {fileID: 6484840016480776785}
   - component: {fileID: 5901893356486856675}
   - component: {fileID: 6484840016480776786}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36019,7 +35709,7 @@ GameObject:
   - component: {fileID: 5649598461577982341}
   - component: {fileID: 5516171869390114552}
   - component: {fileID: 1747029484}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36053,7 +35743,7 @@ GameObject:
   - component: {fileID: 5512439736329577346}
   - component: {fileID: 7044384167262087123}
   - component: {fileID: 216675790}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36155,7 +35845,7 @@ GameObject:
   - component: {fileID: 1560785437338787419}
   - component: {fileID: 3713679550412979953}
   - component: {fileID: 5030602273170406328}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36239,7 +35929,7 @@ GameObject:
   - component: {fileID: 6946866715669303054}
   - component: {fileID: 6490138598591704950}
   - component: {fileID: 6946866715669303055}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36330,7 +36020,7 @@ GameObject:
   - component: {fileID: 7462767585519584292}
   - component: {fileID: 7674594816101505893}
   - component: {fileID: 1797287306}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36447,7 +36137,7 @@ GameObject:
   - component: {fileID: 6533172434945392604}
   - component: {fileID: 7830481170313254095}
   - component: {fileID: 6498839232370534837}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36508,10 +36198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e3228e2a12c8f489a7ed1106db81c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crosshair: {fileID: 0}
+  brain: {fileID: 0}
   firstPersonCam: {fileID: 8744887550304818851}
   thirdPersonCam: {fileID: 468354953339152790}
+  npcCam: {fileID: 0}
   orientation: {fileID: 7469515214164040843}
   player: {fileID: 7950927787948652452}
+  npc: {fileID: 0}
   headBobProfile: {fileID: 0}
   shakeProfile: {fileID: 0}
   amp: 0
@@ -36532,7 +36226,7 @@ GameObject:
   - component: {fileID: 8322838713974657551}
   - component: {fileID: 3525323791785230591}
   - component: {fileID: 321036331}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36682,7 +36376,7 @@ GameObject:
   - component: {fileID: 7291613071446560958}
   - component: {fileID: 3885844700955332156}
   - component: {fileID: 884224448}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36701,7 +36395,7 @@ GameObject:
   - component: {fileID: 7150326025015428946}
   - component: {fileID: 7986064004919308596}
   - component: {fileID: 238934350}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36770,7 +36464,7 @@ GameObject:
   - component: {fileID: 1109839512214610086}
   - component: {fileID: 2398814476963703304}
   - component: {fileID: 783744555}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: room1_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36883,7 +36577,7 @@ GameObject:
   - component: {fileID: 3606750928866622821}
   - component: {fileID: 2254785255988796954}
   - component: {fileID: 8659094774058872037}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36955,7 +36649,7 @@ GameObject:
   - component: {fileID: 6212185115980814044}
   - component: {fileID: 269568217882394766}
   - component: {fileID: 505074942}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37016,7 +36710,7 @@ GameObject:
   - component: {fileID: 3396236960963519137}
   - component: {fileID: 4677420436243829588}
   - component: {fileID: 7163215277824408337}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37244,7 +36938,7 @@ GameObject:
   - component: {fileID: 8061364886506358674}
   - component: {fileID: 4123125606412408095}
   - component: {fileID: 1932114985}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.l.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37278,7 +36972,7 @@ GameObject:
   - component: {fileID: 4464599558916101036}
   - component: {fileID: 231713610291589955}
   - component: {fileID: 3786254577515831163}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pGear3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37312,7 +37006,7 @@ GameObject:
   - component: {fileID: 3789913833229989667}
   - component: {fileID: 4882261861782522770}
   - component: {fileID: 1542351111}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37451,7 +37145,7 @@ GameObject:
   - component: {fileID: 6833030156564567664}
   - component: {fileID: 6868278462175021010}
   - component: {fileID: 1859665121748754689}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37470,7 +37164,7 @@ GameObject:
   - component: {fileID: 3616822917120641239}
   - component: {fileID: 5669722207575123660}
   - component: {fileID: 1969549474}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37589,7 +37283,7 @@ GameObject:
   - component: {fileID: 6031502524796131707}
   - component: {fileID: 4945292293009727041}
   - component: {fileID: 591840002}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37608,7 +37302,7 @@ GameObject:
   - component: {fileID: 1752464700260303040}
   - component: {fileID: 802842669003521371}
   - component: {fileID: 1544999018}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.r.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37635,7 +37329,7 @@ GameObject:
   - component: {fileID: 247807851572636185}
   - component: {fileID: 8209701004208563246}
   - component: {fileID: 275300305}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37696,7 +37390,7 @@ GameObject:
   - component: {fileID: 2638499567204623342}
   - component: {fileID: 3030103088232773457}
   - component: {fileID: 830986981}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37997,7 +37691,7 @@ GameObject:
   - component: {fileID: 1256282439281303580}
   - component: {fileID: 6359175052799422611}
   - component: {fileID: 5386931986796018292}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38040,7 +37734,7 @@ GameObject:
   - component: {fileID: 1677280924478222284}
   - component: {fileID: 8219701434333695263}
   - component: {fileID: 1699425413}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38248,7 +37942,7 @@ GameObject:
   - component: {fileID: 4689597680737240356}
   - component: {fileID: 5701513260825199650}
   - component: {fileID: 1102420664}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38283,7 +37977,7 @@ GameObject:
   - component: {fileID: 7248574809606565203}
   - component: {fileID: 1069526109003488620}
   - component: {fileID: 637366150}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38660,7 +38354,7 @@ GameObject:
   - component: {fileID: 1601829114067913392}
   - component: {fileID: 2493719707435706525}
   - component: {fileID: 844324724}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38679,7 +38373,7 @@ GameObject:
   - component: {fileID: 5847355845009011830}
   - component: {fileID: 4745640320946051751}
   - component: {fileID: 1573124488}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38698,7 +38392,7 @@ GameObject:
   - component: {fileID: 5847355845562555105}
   - component: {fileID: 4745640320427701296}
   - component: {fileID: 5888126516088896441}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38739,7 +38433,7 @@ GameObject:
   - component: {fileID: 4061478677832005897}
   - component: {fileID: 6134734448893225127}
   - component: {fileID: 732431305}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39131,7 +38825,7 @@ GameObject:
   - component: {fileID: 8979837967040962052}
   - component: {fileID: 8179356091633122128}
   - component: {fileID: 5902012595721371276}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39164,11 +38858,15 @@ MonoBehaviour:
   crouchKey: 306
   grappleKey: 324
   transitionKey: 47
+  inventoryKey: 105
   interactRange: 3
   grappleRange: 25
   currentInteractable: {fileID: 0}
   currentRespawnPoint: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
+  itemPrefab: {fileID: 0}
   inventory: {fileID: 0}
+  inventoryAni: {fileID: 0}
   dialogueUI: {fileID: 299990184}
   npcAreaTriggers:
   - {fileID: 2148604340025800788}
@@ -39187,7 +38885,7 @@ GameObject:
   - component: {fileID: 1415134255407171950}
   - component: {fileID: 4159688928200075972}
   - component: {fileID: 2060861979}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39220,7 +38918,7 @@ GameObject:
   - component: {fileID: 2983828498158932368}
   - component: {fileID: 6200927895348893795}
   - component: {fileID: 5183411701754038241}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39411,7 +39109,7 @@ GameObject:
   - component: {fileID: 7306803612479808418}
   - component: {fileID: 5823722372280891703}
   - component: {fileID: 608810333}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39564,7 +39262,7 @@ GameObject:
   - component: {fileID: 5242058444405130857}
   - component: {fileID: 3237640560688285923}
   - component: {fileID: 1925048022}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39705,7 +39403,7 @@ GameObject:
   - component: {fileID: 5477337222345843577}
   - component: {fileID: 3243841650331356472}
   - component: {fileID: 1906307617803716393}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39724,7 +39422,7 @@ GameObject:
   - component: {fileID: 2270990226215734991}
   - component: {fileID: 6938306874071057993}
   - component: {fileID: 2051547915}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39859,7 +39557,7 @@ GameObject:
   - component: {fileID: 6339526924925031375}
   - component: {fileID: 492383189098681123}
   - component: {fileID: 1611795113}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39878,7 +39576,7 @@ GameObject:
   - component: {fileID: 683344184789526343}
   - component: {fileID: 7653896449212706521}
   - component: {fileID: 1209594649}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_wall.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40489,7 +40187,7 @@ GameObject:
   - component: {fileID: 4709352434071433896}
   - component: {fileID: 6085674886045856090}
   - component: {fileID: 897844084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40516,7 +40214,7 @@ GameObject:
   - component: {fileID: 7829555651341649420}
   - component: {fileID: 256065812915026251}
   - component: {fileID: 381649582}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40635,7 +40333,7 @@ GameObject:
   - component: {fileID: 7269723250973496552}
   - component: {fileID: 6097861328452369710}
   - component: {fileID: 4031619883520612668}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40671,7 +40369,7 @@ GameObject:
   - component: {fileID: 6148810755372736399}
   - component: {fileID: 872024282952703533}
   - component: {fileID: 689316901}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40744,7 +40442,7 @@ GameObject:
   - component: {fileID: 2286212441705130856}
   - component: {fileID: 3199412532038048165}
   - component: {fileID: 830211883}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40763,7 +40461,7 @@ GameObject:
   - component: {fileID: 8712618143589590672}
   - component: {fileID: 108486807040913019}
   - component: {fileID: 1972034467}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40832,7 +40530,7 @@ GameObject:
   - component: {fileID: 8861543451163064311}
   - component: {fileID: 5510896572946338292}
   - component: {fileID: 1834822026}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40858,7 +40556,7 @@ GameObject:
   - component: {fileID: 1033441663923088614}
   - component: {fileID: 6766211552486993856}
   - component: {fileID: 6760812101567528339}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41129,7 +40827,7 @@ GameObject:
   - component: {fileID: 4006700273890093349}
   - component: {fileID: 6409054971684310430}
   - component: {fileID: 1165243155}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41148,7 +40846,7 @@ GameObject:
   - component: {fileID: 5596057479936821871}
   - component: {fileID: 3857999175433797813}
   - component: {fileID: 200368349}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41297,7 +40995,7 @@ GameObject:
   - component: {fileID: 5527837429882141643}
   - component: {fileID: 9150199800751425192}
   - component: {fileID: 1649134927}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41347,7 +41045,7 @@ GameObject:
   - component: {fileID: 3220154706377843832}
   - component: {fileID: 7173406661601109796}
   - component: {fileID: 1934308798}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41366,7 +41064,7 @@ GameObject:
   - component: {fileID: 3220154705790077679}
   - component: {fileID: 7173406661048535475}
   - component: {fileID: 7173406661048535476}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41579,7 +41277,7 @@ GameObject:
   - component: {fileID: 5548885214620977154}
   - component: {fileID: 6529889692143439625}
   - component: {fileID: 314921547}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41598,7 +41296,7 @@ GameObject:
   - component: {fileID: 8379814610693904305}
   - component: {fileID: 6732705809604281885}
   - component: {fileID: 263754590}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41613,15 +41311,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8603018886559540575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.52573115, y: 0, z: 0, w: 0.85065085}
-  m_LocalPosition: {x: 88.631, y: 7.29, z: -2.286}
+  m_LocalRotation: {x: 0.04036147, y: -0.7197097, z: -0.045550916, w: -0.6916025}
+  m_LocalPosition: {x: -63.57, y: 2.16, z: 11.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1399754298306483502}
   - {fileID: 8514569338570159879}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 15.965, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.973, y: 452.265, z: 0.283}
 --- !u!4 &6574053701205724406
 Transform:
   m_ObjectHideFlags: 0
@@ -41713,7 +41411,7 @@ GameObject:
   - component: {fileID: 1786442701405977883}
   - component: {fileID: 3845747760407772677}
   - component: {fileID: 690294092}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41892,7 +41590,7 @@ GameObject:
   - component: {fileID: 722533363781252219}
   - component: {fileID: 6667117300647907989}
   - component: {fileID: 1254901127}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41909,7 +41607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8041509162280210330}
   - component: {fileID: 8041509162280210331}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42078,7 +41776,7 @@ GameObject:
   - component: {fileID: 3968161323776971048}
   - component: {fileID: 1993464410175610622}
   - component: {fileID: 1525749693}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42112,7 +41810,7 @@ GameObject:
   - component: {fileID: 466218202074027289}
   - component: {fileID: 2191154540705785881}
   - component: {fileID: 1367310111}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42223,7 +41921,7 @@ GameObject:
   - component: {fileID: 4007726660817527935}
   - component: {fileID: 4610974108629263926}
   - component: {fileID: 761961120}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42242,7 +41940,7 @@ GameObject:
   - component: {fileID: 8292598866007271271}
   - component: {fileID: 1063758020699076596}
   - component: {fileID: 1863516925}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42496,7 +42194,7 @@ GameObject:
   - component: {fileID: 5009940023328658701}
   - component: {fileID: 8100452623526757396}
   - component: {fileID: 408498956}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42577,7 +42275,7 @@ GameObject:
   - component: {fileID: 2758055570030661077}
   - component: {fileID: 2759000452121397744}
   - component: {fileID: 2119798266}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42755,7 +42453,7 @@ GameObject:
   - component: {fileID: 950097762906110741}
   - component: {fileID: 1889909123340937608}
   - component: {fileID: 5911589125917849844}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42937,7 +42635,7 @@ GameObject:
   - component: {fileID: 736870289052019830}
   - component: {fileID: 1972974369152103119}
   - component: {fileID: 706393642}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42986,7 +42684,7 @@ GameObject:
   - component: {fileID: 1316808105115807498}
   - component: {fileID: 8120093067012567767}
   - component: {fileID: 744474425}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43258,7 +42956,7 @@ GameObject:
   - component: {fileID: 1836048785003386983}
   - component: {fileID: 5288203241910325024}
   - component: {fileID: 1261320664}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43506,7 +43204,7 @@ GameObject:
   - component: {fileID: 4444686283511134072}
   - component: {fileID: 2700691735805346523}
   - component: {fileID: 1989338683}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_floor.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43661,7 +43359,7 @@ GameObject:
   - component: {fileID: 4083716593358414889}
   - component: {fileID: 601929962505929112}
   - component: {fileID: 7811910086943860795}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43680,7 +43378,7 @@ GameObject:
   - component: {fileID: 1397309645777663767}
   - component: {fileID: 3920912404603217222}
   - component: {fileID: 135919450}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43816,7 +43514,7 @@ GameObject:
   - component: {fileID: 7542827022127644113}
   - component: {fileID: 2079545355942436024}
   - component: {fileID: 1425472754}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44002,7 +43700,7 @@ GameObject:
   - component: {fileID: 4275339177204252490}
   - component: {fileID: 7264959216408961342}
   - component: {fileID: 348660851}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44168,7 +43866,7 @@ GameObject:
   - component: {fileID: 4851391910881047080}
   - component: {fileID: 773991199240729420}
   - component: {fileID: 1803945864}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44362,7 +44060,7 @@ GameObject:
   - component: {fileID: 210299718750471111}
   - component: {fileID: 9170932695804332412}
   - component: {fileID: 3994095458078051051}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44476,7 +44174,7 @@ GameObject:
   - component: {fileID: 773175619179392655}
   - component: {fileID: 8968889615778053811}
   - component: {fileID: 975238493}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44495,7 +44193,7 @@ GameObject:
   - component: {fileID: 2019141026780566360}
   - component: {fileID: 5219473164104830839}
   - component: {fileID: 1628778220}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44549,7 +44247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2624605363185888267}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44568,7 +44266,7 @@ GameObject:
   - component: {fileID: 5524494044393846934}
   - component: {fileID: 1482061049852232516}
   - component: {fileID: 1731808789}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44629,7 +44327,7 @@ GameObject:
   - component: {fileID: 217592188997513509}
   - component: {fileID: 1633815323129819871}
   - component: {fileID: 140257282}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44645,7 +44343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968252547578842005}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44885,7 +44583,7 @@ GameObject:
   - component: {fileID: 1444851397629912336}
   - component: {fileID: 8519998330093132403}
   - component: {fileID: 905154555}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45186,7 +44884,7 @@ GameObject:
   - component: {fileID: 7370205078242282183}
   - component: {fileID: 790561870148650988}
   - component: {fileID: 1517063315}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45202,7 +44900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9047574177422818014}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45228,7 +44926,7 @@ GameObject:
   - component: {fileID: 4339128930443308461}
   - component: {fileID: 8546351394855649602}
   - component: {fileID: 8353481597221095031}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45320,7 +45018,7 @@ GameObject:
   - component: {fileID: 1581457900052475441}
   - component: {fileID: 1825046018696232303}
   - component: {fileID: 165342836}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: room1_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45339,7 +45037,7 @@ GameObject:
   - component: {fileID: 3158164053435131228}
   - component: {fileID: 421492569028934372}
   - component: {fileID: 1565966632}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45358,7 +45056,7 @@ GameObject:
   - component: {fileID: 5134390876073873042}
   - component: {fileID: 7448274034781477025}
   - component: {fileID: 137141848}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_bend_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45384,7 +45082,7 @@ GameObject:
   - component: {fileID: 6129868527458130252}
   - component: {fileID: 4897524562749368019}
   - component: {fileID: 5309326558863723725}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45475,7 +45173,7 @@ GameObject:
   - component: {fileID: 794131658508764215}
   - component: {fileID: 4748181198766634458}
   - component: {fileID: 825237985}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: clutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45619,7 +45317,7 @@ GameObject:
   - component: {fileID: 5620657961217938884}
   - component: {fileID: 3114510284943163191}
   - component: {fileID: 920252690}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: cell_pillar_walls.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45726,7 +45424,7 @@ GameObject:
   - component: {fileID: 1483563037249787154}
   - component: {fileID: 5082335128183685909}
   - component: {fileID: 1594900675}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45819,7 +45517,7 @@ GameObject:
   - component: {fileID: 7962612867125394035}
   - component: {fileID: 6860993132963847615}
   - component: {fileID: 534639051}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45838,7 +45536,7 @@ GameObject:
   - component: {fileID: 2580036825368997632}
   - component: {fileID: 4151543976665326972}
   - component: {fileID: 132500110}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46102,7 +45800,7 @@ GameObject:
   - component: {fileID: 2316438981562430850}
   - component: {fileID: 2006251427754638472}
   - component: {fileID: 1118429682}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46121,7 +45819,7 @@ GameObject:
   - component: {fileID: 409377728185255741}
   - component: {fileID: 9135672808693315101}
   - component: {fileID: 1466867053}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_roof.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46198,7 +45896,7 @@ GameObject:
   - component: {fileID: 4476445818066645631}
   - component: {fileID: 8233988158649943285}
   - component: {fileID: 1983490933}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46232,7 +45930,7 @@ GameObject:
   - component: {fileID: 1074795582922511591}
   - component: {fileID: 1038970473949045178}
   - component: {fileID: 995488023}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46337,7 +46035,7 @@ GameObject:
   - component: {fileID: 6242535951786093483}
   - component: {fileID: 7254702264712850348}
   - component: {fileID: 1313314409}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46356,7 +46054,7 @@ GameObject:
   - component: {fileID: 6826006289267454718}
   - component: {fileID: 6385346331419537977}
   - component: {fileID: 714920843}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46456,7 +46154,7 @@ GameObject:
   - component: {fileID: 6805147407061369483}
   - component: {fileID: 2064698562542842732}
   - component: {fileID: 7034772648113002134}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46540,7 +46238,7 @@ GameObject:
   - component: {fileID: 3433466479135358373}
   - component: {fileID: 2628467791105861470}
   - component: {fileID: 1072021949}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46643,7 +46341,7 @@ GameObject:
   - component: {fileID: 1677311952999873275}
   - component: {fileID: 5855025273251612370}
   - component: {fileID: 267794720}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46662,7 +46360,7 @@ GameObject:
   - component: {fileID: 4820475228524560715}
   - component: {fileID: 5356794788820513339}
   - component: {fileID: 1258203456}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46680,7 +46378,7 @@ GameObject:
   - component: {fileID: 1870117588154587980}
   - component: {fileID: 3708254410686043033}
   - component: {fileID: 2840317762824415474}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46775,7 +46473,7 @@ GameObject:
   - component: {fileID: 4123709204320082969}
   - component: {fileID: 3022868440581094623}
   - component: {fileID: 641873302}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_floor.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46794,7 +46492,7 @@ GameObject:
   - component: {fileID: 7596653972969636796}
   - component: {fileID: 2607508635017239430}
   - component: {fileID: 984923987}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46846,7 +46544,7 @@ GameObject:
   - component: {fileID: 2308580590075702807}
   - component: {fileID: 8301425127719905930}
   - component: {fileID: 8301425127719905931}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46896,7 +46594,7 @@ GameObject:
   - component: {fileID: 4484099248449859065}
   - component: {fileID: 2748578999290178274}
   - component: {fileID: 325439610}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46923,7 +46621,7 @@ GameObject:
   - component: {fileID: 5085597719254914298}
   - component: {fileID: 8159000707959676058}
   - component: {fileID: 1208001551}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47082,7 +46780,7 @@ GameObject:
   - component: {fileID: 8129448066582630855}
   - component: {fileID: 7248310833654833727}
   - component: {fileID: 1261478499}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47100,7 +46798,7 @@ GameObject:
   - component: {fileID: 7605914110267455554}
   - component: {fileID: 5232746982324309855}
   - component: {fileID: 693772730630951232}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47134,7 +46832,7 @@ GameObject:
   - component: {fileID: 5317776502677478041}
   - component: {fileID: 5877466251391206094}
   - component: {fileID: 545795569}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FlightDeck_Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47262,7 +46960,7 @@ GameObject:
   - component: {fileID: 5537961535620524312}
   - component: {fileID: 8367857336816923867}
   - component: {fileID: 2432580018752767535}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47289,7 +46987,7 @@ GameObject:
   - component: {fileID: 475210763982891011}
   - component: {fileID: 188112679882316903}
   - component: {fileID: 598695657}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47596,7 +47294,7 @@ GameObject:
   - component: {fileID: 4977635762155219666}
   - component: {fileID: 7834058775389843264}
   - component: {fileID: 7546038081836913355}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47615,7 +47313,7 @@ GameObject:
   - component: {fileID: 2542014251210108717}
   - component: {fileID: 6574664030279638390}
   - component: {fileID: 1225867427}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47686,7 +47384,7 @@ GameObject:
   - component: {fileID: 2494827185579128020}
   - component: {fileID: 3034589700669537216}
   - component: {fileID: 77468569}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47747,7 +47445,7 @@ GameObject:
   - component: {fileID: 7609818614522572162}
   - component: {fileID: 1877505519558447170}
   - component: {fileID: 8059682997487599225}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47926,7 +47624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &8100452623526757396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48198,7 +47896,7 @@ GameObject:
   - component: {fileID: 640883923811932303}
   - component: {fileID: 5008004590188418751}
   - component: {fileID: 934459944}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48381,7 +48079,7 @@ GameObject:
   - component: {fileID: 1643261283753418649}
   - component: {fileID: 7082172808361695326}
   - component: {fileID: 276277018}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_bend_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48530,7 +48228,7 @@ GameObject:
   - component: {fileID: 4262478280086246818}
   - component: {fileID: 2739826241899266950}
   - component: {fileID: 522654324}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.l.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48736,7 +48434,7 @@ GameObject:
   - component: {fileID: 4939540134734845105}
   - component: {fileID: 1550091788095220352}
   - component: {fileID: 672250635}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: room2_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48911,7 +48609,7 @@ GameObject:
   - component: {fileID: 6792889160000447373}
   - component: {fileID: 2903700277037397060}
   - component: {fileID: 1709473354}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49015,7 +48713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7457891945219674837}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49048,7 +48746,7 @@ GameObject:
   - component: {fileID: 7660727231884338953}
   - component: {fileID: 3109155799668839619}
   - component: {fileID: 3674379298217226525}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49128,7 +48826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &8367857336816923867
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49272,7 +48970,7 @@ GameObject:
   - component: {fileID: 5906157863825125840}
   - component: {fileID: 776031044069443433}
   - component: {fileID: 1378837119}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_floor.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49347,7 +49045,7 @@ GameObject:
   - component: {fileID: 4075455618351807847}
   - component: {fileID: 5822662185261408110}
   - component: {fileID: 1297236193572867923}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCylinder20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49366,7 +49064,7 @@ GameObject:
   - component: {fileID: 9066894819539775036}
   - component: {fileID: 4460323893786798315}
   - component: {fileID: 1727749641}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49385,7 +49083,7 @@ GameObject:
   - component: {fileID: 2421689118067794031}
   - component: {fileID: 7250856052478178142}
   - component: {fileID: 742261177}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49514,7 +49212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497807829779936262}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49541,7 +49239,7 @@ GameObject:
   - component: {fileID: 1466986950741512039}
   - component: {fileID: 8325536640731148667}
   - component: {fileID: 588540266}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49767,7 +49465,7 @@ GameObject:
   - component: {fileID: 1419368335640174251}
   - component: {fileID: 3116936312302000956}
   - component: {fileID: 1831615140235500558}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pGear2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49902,7 +49600,7 @@ GameObject:
   - component: {fileID: 3494225864070517058}
   - component: {fileID: 5390060389760188436}
   - component: {fileID: 8603018886559540576}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -50009,7 +49707,7 @@ GameObject:
   - component: {fileID: 932686066398321381}
   - component: {fileID: 5614853521837571442}
   - component: {fileID: 8763952572134614848}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door.left.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50028,7 +49726,7 @@ GameObject:
   - component: {fileID: 932686065846678642}
   - component: {fileID: 5614853522356245477}
   - component: {fileID: 2068518362}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: large_door.left.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50088,7 +49786,7 @@ GameObject:
   - component: {fileID: 4560190991374834177}
   - component: {fileID: 4630498590868662381}
   - component: {fileID: 8547999722906266207}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50358,7 +50056,7 @@ GameObject:
   - component: {fileID: 1731050060449226751}
   - component: {fileID: 5374194912859163487}
   - component: {fileID: 718216656}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_walls.r.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50407,7 +50105,7 @@ GameObject:
   - component: {fileID: 5851675563295052339}
   - component: {fileID: 540482104433155424}
   - component: {fileID: 2400163292989932516}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50475,7 +50173,7 @@ GameObject:
   - component: {fileID: 1061119928997627855}
   - component: {fileID: 4163553968690828163}
   - component: {fileID: 4687728470407453141}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50517,7 +50215,7 @@ GameObject:
   - component: {fileID: 4874820975404649814}
   - component: {fileID: 7500035484995098483}
   - component: {fileID: 2094882778}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50593,7 +50291,7 @@ GameObject:
   - component: {fileID: 5904079828468085577}
   - component: {fileID: 4495414801253123154}
   - component: {fileID: 8728723278369202318}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pPlane2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50634,7 +50332,7 @@ GameObject:
   - component: {fileID: 6237071853554589671}
   - component: {fileID: 2942831247405360266}
   - component: {fileID: 970143249}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_front_roof.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50653,7 +50351,7 @@ GameObject:
   - component: {fileID: 6932178572629436589}
   - component: {fileID: 6005334740630892938}
   - component: {fileID: 628393135}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50733,7 +50431,7 @@ GameObject:
   - component: {fileID: 1967567204054423945}
   - component: {fileID: 6757641697618077166}
   - component: {fileID: 4085419394323870088}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: sweep13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50846,7 +50544,7 @@ GameObject:
   - component: {fileID: 8682931834447275704}
   - component: {fileID: 6151536506647890485}
   - component: {fileID: 123282261}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51209,7 +50907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2511964170236949703}
   - component: {fileID: 8841375361412022839}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51330,7 +51028,7 @@ GameObject:
   - component: {fileID: 44575237444074910}
   - component: {fileID: 4442150673209531849}
   - component: {fileID: 1080138629}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51380,7 +51078,7 @@ GameObject:
   - component: {fileID: 736567455812339999}
   - component: {fileID: 2929640277817789003}
   - component: {fileID: 8879367955663493936}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51511,7 +51209,7 @@ GameObject:
   - component: {fileID: 7753012636201309712}
   - component: {fileID: 2318845783404101852}
   - component: {fileID: 865719822}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51536,7 +51234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2262733901307531471}
   - component: {fileID: 8950826683836061161}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: curve3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51661,7 +51359,7 @@ GameObject:
   - component: {fileID: 3084267982578917080}
   - component: {fileID: 5450406279602977948}
   - component: {fileID: 8967592443316394023}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_floor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51744,7 +51442,7 @@ GameObject:
   - component: {fileID: 4202745069842720987}
   - component: {fileID: 7082176848054744956}
   - component: {fileID: 1452270021}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51801,7 +51499,7 @@ GameObject:
   - component: {fileID: 1642058454580522982}
   - component: {fileID: 3682669517761454121}
   - component: {fileID: 295314856}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51850,7 +51548,7 @@ GameObject:
   - component: {fileID: 7855207505673617112}
   - component: {fileID: 184761315944809693}
   - component: {fileID: 3365800149010984551}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: pCube49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52065,7 +51763,7 @@ GameObject:
   - component: {fileID: 3164579080482236273}
   - component: {fileID: 5264819972615759089}
   - component: {fileID: 1822696584}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_bend_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52115,7 +51813,7 @@ GameObject:
   - component: {fileID: 6164730813230757483}
   - component: {fileID: 2374681767868691060}
   - component: {fileID: 1438789658}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_roof.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52149,7 +51847,7 @@ GameObject:
   - component: {fileID: 9056909411811780755}
   - component: {fileID: 8857481891267327588}
   - component: {fileID: 1754921426}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_corner_walls.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52257,7 +51955,7 @@ GameObject:
   - component: {fileID: 2147537193734065262}
   - component: {fileID: 1659585177898358095}
   - component: {fileID: 2111189859}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: half_cell_wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52284,7 +51982,7 @@ GameObject:
   - component: {fileID: 200006650234936323}
   - component: {fileID: 6053675316861764917}
   - component: {fileID: 635130059}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: door_cell_wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52345,7 +52043,7 @@ GameObject:
   - component: {fileID: 3487190406159489530}
   - component: {fileID: 4661947409611739787}
   - component: {fileID: 1649765969}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hall_cell_walls.r.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52364,7 +52062,7 @@ GameObject:
   - component: {fileID: 8554183879762882274}
   - component: {fileID: 7220676442616194053}
   - component: {fileID: 9137287319614979696}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sweep3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52520,7 +52218,7 @@ GameObject:
   - component: {fileID: 1398847946653527365}
   - component: {fileID: 3389957548440188483}
   - component: {fileID: 1054513960}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52828,7 +52526,7 @@ GameObject:
   - component: {fileID: 1664745828006836289}
   - component: {fileID: 4500320213801254500}
   - component: {fileID: 614739710}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_walls.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52904,7 +52602,7 @@ GameObject:
   - component: {fileID: 3113672684108161498}
   - component: {fileID: 4479158299512392761}
   - component: {fileID: 825409077}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cell_pillar_roof.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52957,5 +52655,5 @@ SceneRoots:
   - {fileID: 6640540796510383874}
   - {fileID: 504171453}
   - {fileID: 1705750249}
-  - {fileID: 1407547599}
   - {fileID: 4996820538019749980}
+  - {fileID: 1092111594}
