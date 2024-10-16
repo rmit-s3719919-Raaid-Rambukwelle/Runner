@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: spaceshipMat 1
+  m_Name: soaceshio_2
   m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
   m_Parent: {fileID: 2100000, guid: 5f3c093009c677e4e874fbe9d6ca864c, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -60,13 +60,16 @@ Material:
     m_Floats:
     - _Light_Probe_Contribution: 1
     - _QueueControl: 0
+    - _metallicStrength: 0.643
     - _normalStrength: 0
-    - _outlineDepthSensitivity: 0.301
+    - _outlineDepthSensitivity: 0
     - _outlineNormalsSensitivity: 0
-    - _shadowStep: 0
+    - _outlineThickness: 0
+    - _shadowStep: 0.572
+    - _smoothnessStrength: 0.168
     m_Colors:
-    - _mainColor: {r: 0.2761659, g: 0.49635658, b: 0.5471698, a: 0}
+    - _mainColor: {r: 0.2284176, g: 0.4055339, b: 0.5566038, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _shadowIntensity: {r: -0.16, g: 1, b: 0, a: 0}
+    - _shadowIntensity: {r: 3.04, g: 1.36, b: 0, a: 0}
     - _shadowTexColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
