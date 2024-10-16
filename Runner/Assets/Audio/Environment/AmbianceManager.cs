@@ -11,6 +11,8 @@ public class AmbianceManager : MonoBehaviour
     public float fadeDuration = 5f;
     public float maxVolume = 0.15f;
 
+    private bool isFading = false;
+
     void Start()
     {
         audioSource.clip = ScavnengerAmbience;
@@ -21,61 +23,65 @@ public class AmbianceManager : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
-    public void ChangeAmbience() 
+    public void ChangeAmbience()
     {
-        StartCoroutine(ChangeAmbientClip());
+        if (!isFading) StartCoroutine(ChangeAmbientClip());
     }
 
-    public void Runner() 
+    public void Runner()
     {
-        StartCoroutine(TransitionToRunner());
-        StopCoroutine(FadeOut());
+        if (!isFading) StartCoroutine(TransitionToRunner());
     }
 
-    public IEnumerator ChangeAmbientClip() 
+    private IEnumerator ChangeAmbientClip()
     {
+        isFading = true;
         yield return StartCoroutine(FadeOut());
+
         yield return new WaitForSeconds(1f);
         audioSource.clip = flightDeckAmbience;
         audioSource.Play();
+
+        yield return StartCoroutine(FadeIn());
+        isFading = false;
     }
 
-    public IEnumerator TransitionToRunner()
+    private IEnumerator TransitionToRunner()
     {
+        isFading = true;
         yield return StartCoroutine(FadeOut());
+
         yield return new WaitForSeconds(1f);
         audioSource.clip = runnerSoundTrack;
         audioSource.Play();
+
+        yield return StartCoroutine(FadeIn());
+
+        // End after fading in the runner track without looping again
+        isFading = false;
     }
 
-    private IEnumerator FadeIn() 
+    private IEnumerator FadeIn()
     {
         float elapsedTime = 0f;
-        while (elapsedTime < fadeDuration) 
+        while (elapsedTime < fadeDuration)
         {
             audioSource.volume = Mathf.Lerp(0f, maxVolume, elapsedTime / fadeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         audioSource.volume = maxVolume;
-        yield return new WaitForSeconds(audioSource.clip.length - fadeDuration - 5);
-        StartCoroutine(FadeOut());
     }
 
-    private IEnumerator FadeOut() 
+    private IEnumerator FadeOut()
     {
         float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration) 
+        while (elapsedTime < fadeDuration)
         {
-            //Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
             audioSource.volume = Mathf.Lerp(maxVolume, 0f, elapsedTime / fadeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        //Debug.Log("Volume: " + audioSource.volume + " Elapsed Time: " + elapsedTime);
         audioSource.volume = 0f;
-        StartCoroutine(FadeIn());
     }
 }
