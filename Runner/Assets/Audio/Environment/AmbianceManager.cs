@@ -6,6 +6,7 @@ public class AmbianceManager : MonoBehaviour
 {
     public AudioClip ScavnengerAmbience;
     public AudioClip flightDeckAmbience;
+    public AudioClip runnerSoundTrack;
     public AudioSource audioSource;
     public float fadeDuration = 5f;
     public float maxVolume = 0.15f;
@@ -25,11 +26,25 @@ public class AmbianceManager : MonoBehaviour
         StartCoroutine(ChangeAmbientClip());
     }
 
+    public void Runner() 
+    {
+        StartCoroutine(TransitionToRunner());
+        StopCoroutine(FadeOut());
+    }
+
     public IEnumerator ChangeAmbientClip() 
     {
         yield return StartCoroutine(FadeOut());
         yield return new WaitForSeconds(1f);
         audioSource.clip = flightDeckAmbience;
+        audioSource.Play();
+    }
+
+    public IEnumerator TransitionToRunner()
+    {
+        yield return StartCoroutine(FadeOut());
+        yield return new WaitForSeconds(1f);
+        audioSource.clip = runnerSoundTrack;
         audioSource.Play();
     }
 
