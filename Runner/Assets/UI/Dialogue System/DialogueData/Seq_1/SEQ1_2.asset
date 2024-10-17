@@ -24,10 +24,6 @@ MonoBehaviour:
   - I suppose it is no wonder that all the locals swarmed here like a pack of dune-dogs
     to a corpse.
   - Come to think of it, we better keep moving if we hope to make our escape...
-  - I would not put it past the emperor to send out a band of riders to lock down
-    the site either.
-  - 'And between you and I, I would take cozying up with a mob of dusters any day
-    over those bootlickers. '
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}
