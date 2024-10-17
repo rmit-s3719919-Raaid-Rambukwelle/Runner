@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _edgeValue: 0.175
     - _edgeValue2: 0.189
-    - _lineThickness: 0.6
+    - _lineThickness: 1.22
     - _normalTreshold: 0
     m_Colors:
     - _black: {r: 0, g: 0, b: 0, a: 0}
