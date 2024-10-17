@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
+  m_Name: SEQ1_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Not that you asked, but now that we have a moment to breathe \u2013 albeit air
+    quality that is registering..."
+  - '*whirring*'
+  - "...12.82% dust - I thought you would appreciate knowing that, factoring in the
+    time-of-impact, and our approximate location, I\u2019d estimate a... "
+  - '...97% probability that we are the first to be walking through an undocumented
+    imperial ship crash site in over 200 years! '
+  - Just think about all the ancient tech lying about, ripe for scrapping!
+  - I suppose it is no wonder that all the locals swarmed here like a pack of dune-dogs
+    to a corpse.
+  - Come to think of it, we better keep moving if we hope to make our escape...
+  - I would not put it past the emperor to send out a band of riders to lock down
+    the site either.
+  - 'And between you and I, I would take cozying up with a mob of dusters any day
+    over those bootlickers. '
+  responses:
+  - responseText: Continue
+    dialogueObject: {fileID: 0}

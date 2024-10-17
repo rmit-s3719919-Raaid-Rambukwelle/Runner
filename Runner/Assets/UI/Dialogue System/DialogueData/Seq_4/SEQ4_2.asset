@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a822fa7cdc0ad45ac23712b1979002, type: 3}
+  m_Name: SEQ4_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "I\u2019m going to power down the core\u2019s protective shielding."
+  - "The core is connected to the ship\u2019s navigational framework, effectively
+    serving as the ship\u2019s \"brain\u201D."
+  - "Despite being dormant, it isn\u2019t going to appreciate being ripped from its
+    \u201Cbody\u201D."
+  - "And so, despite being dormant, it isn\u2019t going to appreciate being ripped
+    from its \u201Cbody\u201D."
+  - "If we aren\u2019t immediately incinerated upon retravel, you must waste no time
+    in escaping the site."
+  - Take the core to your father, he will help you harness its power.
+  - Thank you for always being kind to me, the core is in good hands.
+  - Run along now.
+  responses:
+  - responseText: Goodbye
+    dialogueObject: {fileID: 0}

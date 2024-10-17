@@ -27,7 +27,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Particles
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: particles
+    uniqueID: 3370023411
     locked: 0
