@@ -22,16 +22,6 @@ public class Door_Switch : MonoBehaviour
         StartCoroutine(PlayAnimationSequence());
     }
 
-    public void CloseDoor()
-    {
-        doorAnimator.SetBool("Open", false);
-    }
-
-    public void OpenDoor()
-    {
-        doorAnimator.SetBool("Open", true);
-    }
-
     private IEnumerator PlayAnimationSequence() 
     {
         originalRotation = robot.transform.rotation;
