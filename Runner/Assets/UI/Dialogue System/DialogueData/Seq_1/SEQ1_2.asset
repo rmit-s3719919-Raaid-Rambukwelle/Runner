@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: SEQ1_2
   m_EditorClassIdentifier: 
   dialogue:
-  - "Not that you asked, but now that we have a moment to breathe \u2013 albeit air
-    quality that is registering..."
+  - "Not that you asked, but now that we have a moment to breathe - I thought you
+    would appreciate knowing that, factoring in the time-of-impact, and our approximate
+    location, I\u2019d estimate a... "
   - '*whirring*'
-  - "...12.82% dust - I thought you would appreciate knowing that, factoring in the
-    time-of-impact, and our approximate location, I\u2019d estimate a... "
   - '...97% probability that we are the first to be walking through an undocumented
     imperial ship crash site in over 200 years! '
   - Just think about all the ancient tech lying about, ripe for scrapping!
   - I suppose it is no wonder that all the locals swarmed here like a pack of dune-dogs
     to a corpse.
-  - Come to think of it, we better keep moving if we hope to make our escape...
+  - Fascinating... Now that I consider that, we better keep moving if we wish on
+    making our escape...
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}

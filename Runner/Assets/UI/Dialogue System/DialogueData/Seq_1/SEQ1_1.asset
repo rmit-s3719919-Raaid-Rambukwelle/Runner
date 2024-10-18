@@ -24,4 +24,4 @@ MonoBehaviour:
     through the scrap, and I\u2019m not so keen on a reunion."
   responses:
   - responseText: Continue
-    dialogueObject: {fileID: 11400000, guid: a40acd8bcf5c33a4385ddd6ace7aef47, type: 2}
+    dialogueObject: {fileID: 0}
