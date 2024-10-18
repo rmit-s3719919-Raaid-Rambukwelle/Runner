@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
     float vInput;
     Vector3 moveDir;
     Rigidbody rb;
+    MovementState lastState;
 
     public enum MovementState
     {
@@ -167,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerManager.current.moveSpeed = new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
-        ani.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
+
 
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
@@ -253,6 +254,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 readyToJump = false;
                 Jump();
+                PlayerManager.current.audioAni.SetTrigger("Jump");
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
 
@@ -263,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (moveDir.magnitude > 0f && !sliding && grounded && canSlide)
                 {
+                    PlayerManager.current.audioAni.SetTrigger("Slide");
                     StartSlide();
                 }
             }
@@ -279,6 +282,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(PlayerManager.current.grappleKey))
             {
                 StartGrapple();
+                PlayerManager.current.audioAni.SetTrigger("Grapple");
             }
 
             if (grappleCDTimer > 0) grappleCDTimer -= Time.deltaTime;
@@ -298,6 +302,8 @@ public class PlayerMovement : MonoBehaviour
                     desiredMoveSpeed = jogSpeed;
                 else
                     desiredMoveSpeed = walkSpeed;
+
+                ani.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
             }
             else // idle
             {
@@ -317,6 +323,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 state = MovementState.freeze;                
                 rb.velocity *= 0.98f;
+                PlayerManager.current.audioAni.SetFloat("Velocity", 0f);
             }
             else if (climbing)
             {
@@ -331,7 +338,7 @@ public class PlayerMovement : MonoBehaviour
             else if (sliding) // sliding
             {
                 state = MovementState.sliding;
-
+                PlayerManager.current.audioAni.SetFloat("Velocity", 0f);
                 if (OnSlope() && rb.velocity.y < 0.1f)
                     desiredMoveSpeed = slopeSlideSpeed;
                 else
@@ -346,16 +353,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 state = MovementState.walking;
                 desiredMoveSpeed = runnerSpeed;
+                PlayerManager.current.audioAni.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
             }
             else if (!grounded) // jumping
             {
                 state = MovementState.air;
                 desiredMoveSpeed = walkSpeed;
+                PlayerManager.current.audioAni.SetFloat("Velocity", 0f);
             }
             else // idle
             {
                 state = MovementState.idle;
                 desiredMoveSpeed = 0f;
+                PlayerManager.current.audioAni.SetFloat("Velocity", 0f);
             }
 
             // Keep the movement speed consistent
@@ -370,6 +380,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             lastDesiredMoveSpeed = desiredMoveSpeed;
+            lastState = state;
         }
     }
 

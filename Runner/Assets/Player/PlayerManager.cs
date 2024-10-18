@@ -57,6 +57,10 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI interactText;
     bool updateUI = true;
 
+    [Header("Runner Audio")]
+    public Animator audioAni;
+
+
     PlayerMovement pm;
 
     void Start()

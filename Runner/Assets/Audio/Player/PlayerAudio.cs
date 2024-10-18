@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    [Header("Play Random")]
+    [Header("Audio Clips")]
     public AudioClip[] walkSounds;
     public AudioClip[] actionSounds;
     public AudioClip[] miscSounds;
+    public AudioClip grappleSound;
 
+    [Header("Audio Sources")]
     public AudioSource audioSource;
     public AudioSource actionSource;
     public AudioSource miscSource;
@@ -35,6 +37,11 @@ public class PlayerAudio : MonoBehaviour
     {
         AudioClip clip = miscSounds[(int)Random.Range(0, miscSounds.Length)];
         miscSource.PlayOneShot(clip);
+    }
+
+    public void PlayGrappleSound()
+    {
+        audioSource.PlayOneShot(grappleSound);
     }
 
     public void StopWalkSound() 

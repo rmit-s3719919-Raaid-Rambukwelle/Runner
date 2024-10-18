@@ -35,11 +35,13 @@ public class PlayerCamera : MonoBehaviour
 
     bool shaking;
     float xRot, yRot = 180f;
+    CinemachineBasicMultiChannelPerlin noise;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        noise = firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     void Update()
@@ -66,14 +68,15 @@ public class PlayerCamera : MonoBehaviour
                 FirstPersonCamera();
                 if (!shaking && new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).magnitude > 0)
                 {
-                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1;
-                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1;
-                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = headBobProfile;
+                    noise.m_FrequencyGain = 1;
+                    noise.m_FrequencyGain = 1;
+                    noise.m_NoiseProfile = headBobProfile;
+                    
                 }
                 else
                 {
-                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
-                    firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+                    noise.m_FrequencyGain = 0;
+                    noise.m_FrequencyGain = 0;
                 }
             }
         }
@@ -141,9 +144,9 @@ public class PlayerCamera : MonoBehaviour
     public void ActivateScreenShake()
     {
         shaking = true;
-        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
-        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = amp;
-        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = shakeProfile;
+        noise.m_FrequencyGain = freq;
+        noise.m_FrequencyGain = amp;
+        noise.m_NoiseProfile = shakeProfile;
 
         thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = freq;
         thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amp;
@@ -158,8 +161,8 @@ public class PlayerCamera : MonoBehaviour
     public void DeactivateScreenShake()
     {
         shaking = false;
-        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
-        firstPersonCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        noise.m_FrequencyGain = 0;
+        noise.m_AmplitudeGain = 0;
 
         thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
         thirdPersonCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
