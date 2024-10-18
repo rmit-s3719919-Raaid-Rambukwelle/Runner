@@ -126,19 +126,19 @@ Material:
     - _ZWrite: 1
     - _emissionStrength: 0
     - _lightSmoothness: 1
-    - _metallicStrength: 0.17
+    - _metallicStrength: 0
     - _normalStrength: 1
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0
     - _outlineThickness: 0
-    - _shadowStep: 0
+    - _shadowStep: 0.078
     - _transparency: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _mainColor: {r: 1, g: 1, b: 1, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
-    - _shadowColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
+    - _shadowColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0}
     - _shadowIntensity: {r: 0.18, g: 1, b: 0, a: 0}
     - _shadowTexColor: {r: 1, g: 1, b: 1, a: 0}
     - _shadowTiling: {r: 1, g: 1, b: 0, a: 0}
