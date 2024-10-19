@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: glass_sctn1
-  m_Shader: {fileID: -6465566751694194690, guid: f5c0acc4e1b6ce84e8c927aa76731dfe, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a5e3120f759d8eb4b858e0e5f6d1bb41, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -71,12 +71,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8f1f032fd28a4883b67b33587cf14874_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_9acce6cffff048478c6ba287ec0c7db2_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_cd4f0cc430a0485abb0e17aac07d5e62_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_efa2f5f68fb9416ab05014f278a69613_Texture_1_Texture2D:
@@ -155,6 +163,7 @@ Material:
     - _ambientOcclusionStrength: 0
     - _emissionStrength: 0
     - _lightSmoothness: 1
+    - _mainTexStrength: 1
     - _metallic: 0
     - _metallicStrength: 0.5
     - _normalStrength: 1
@@ -169,6 +178,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _glassColor: {r: 0, g: 0, b: 0, a: 0}
     - _mainColor: {r: 1, g: 1, b: 1, a: 0}
     - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
