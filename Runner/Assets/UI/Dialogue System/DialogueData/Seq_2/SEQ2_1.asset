@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - This looks promising...
-  - Considering the layout and contents of this room, I estimate this to be the foyer
+  - Considering the present layout and contents, I estimate this to be the foyer
     that leads directly into the flight deck of the ship.
   - Which conveniently for us, suggests that an emergency generator is located nearby.
   - "Have a look around, I\u2019ll... keep watch."

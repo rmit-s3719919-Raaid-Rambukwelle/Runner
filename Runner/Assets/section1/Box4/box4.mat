@@ -144,7 +144,7 @@ Material:
     - _emissionStrength: 0
     - _lightSmoothness: 1
     - _metallicStrength: 0.5
-    - _normalStrength: 0
+    - _normalStrength: 1
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0
     - _outlineThickness: 0

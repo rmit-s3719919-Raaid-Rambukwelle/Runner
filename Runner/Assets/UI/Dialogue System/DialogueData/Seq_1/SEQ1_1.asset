@@ -18,10 +18,10 @@ MonoBehaviour:
 
 
     (Press ''E'' or click anywhere to continue)'
-  - "Those fusion cells would have run us a fortune, you know... but at least those
-    dusters won\u2019t trouble us anymore."
+  - Those fusion cells would've run us a fortune, you know...
+  - "but at least those dusters won\u2019t trouble us anymore."
   - "I suggest we keep moving. Any survivors are certain to be clawing their way
-    through the scrap, and I\u2019m not so keen on a reunion."
+    through, and I\u2019m not so keen on a reunion."
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}

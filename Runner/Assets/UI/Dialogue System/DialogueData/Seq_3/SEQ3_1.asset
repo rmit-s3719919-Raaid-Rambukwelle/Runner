@@ -18,7 +18,7 @@ MonoBehaviour:
     event?"
   - ...
   - "I\u2019m doing it again, aren\u2019t I?"
-  - ...I am sorry.
+  - I... am sorry.
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SEQ1_3
   m_EditorClassIdentifier: 
   dialogue:
-  - "...That is assuming of course there is still an exit by the time we are done
-    here... Let\u2019s keep moving. "
+  - "...That's assuming there still IS an exit by the time we're done here... Let\u2019s
+    keep moving. "
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}

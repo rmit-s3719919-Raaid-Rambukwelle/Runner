@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - An Empire AI core!
-  - The whole continent is going to want to get their grubby mitts on this.
+  - The whole continent is gonna want to get their grubby mitts on this.
   - Effectively making us hostile to an estimated ... 99.994% of all sentient lifeforms.
   - Which is only a marginal difference of 0.86%, assuming that my database is up
     to date.
-  - Anyway, there is no time to lose...
+  - Anyway, there's no time to lose...
   responses:
   - responseText: Continue.
     dialogueObject: {fileID: 0}

@@ -20,8 +20,10 @@ MonoBehaviour:
     from its \u201Cbody\u201D."
   - "If we aren\u2019t immediately incinerated upon retravel, you must waste no time
     in escaping the site."
-  - Take the core to your father, he will help you harness its power.
-  - Thank you for always being kind to me, the core is in good hands.
+  - Take the core to your father, the old man will know what to do with it.
+  - 'Me? Oh... '
+  - I'll...
+  - ...I'll be fine.
   - Run along now.
   responses:
   - responseText: Goodbye
