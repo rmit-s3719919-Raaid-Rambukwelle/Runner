@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item : Interactable
 {
+
+
     [Header("Item variables")]
     public string itemName;
     public string itemDesc;
@@ -54,9 +56,7 @@ public class Item : Interactable
 
     public void ItemGrapple()
     {
-        lr.positionCount = 0;
         lr.positionCount = 2;
-        lr.SetPosition(0, grappleHand.position);
         lr.SetPosition(1, target.position);          
     }
 }

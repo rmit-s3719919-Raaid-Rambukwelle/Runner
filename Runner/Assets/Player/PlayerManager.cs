@@ -8,6 +8,10 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager current;
 
+    [Header("Runner")]
+    public float maxTime;
+    public float timer;
+
     [Header("Settings")]
     public bool running;
     public bool canMove;
@@ -55,6 +59,8 @@ public class PlayerManager : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI interactText;
+    public Animator timerUI;
+    public TextMeshProUGUI timerText;
     bool updateUI = true;
 
     [Header("Runner Audio")]
@@ -71,7 +77,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
+        timerText.text = timer.ToString();
+
         //Stops player from moving if dialogue is open
         if (dialogueUI.IsOpen) return;
 
@@ -141,6 +149,9 @@ public class PlayerManager : MonoBehaviour
     {
         thirdPerson = !thirdPerson;
         running = !running;
+
+        timerUI.CrossFade("Open", 1f);
+        StartCoroutine(nameof(StartTimer));
     }
 
     public void Respawn()
@@ -163,6 +174,18 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
+    IEnumerator StartTimer()
+    {
+        timer = maxTime;
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            timer--;
+            if (timer <= 0f)
+                break;
+        }
+    }
+
     IEnumerator HoldUI()
     {
         updateUI = false;

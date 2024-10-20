@@ -168,7 +168,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerManager.current.moveSpeed = new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
-
+        if (PlayerManager.current.thirdPerson)
+            PlayerManager.current.audioAni.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
 
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
@@ -254,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 readyToJump = false;
                 Jump();
-                PlayerManager.current.audioAni.SetTrigger("Jump");
+                PlayerManager.current.audioAni.CrossFade("Jump", 0.1f);
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
 
@@ -265,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (moveDir.magnitude > 0f && !sliding && grounded && canSlide)
                 {
-                    PlayerManager.current.audioAni.SetTrigger("Slide");
+                    PlayerManager.current.audioAni.CrossFade("Slide", 0.1f);
                     StartSlide();
                 }
             }
@@ -282,7 +283,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(PlayerManager.current.grappleKey))
             {
                 StartGrapple();
-                PlayerManager.current.audioAni.SetTrigger("Grapple");
+                PlayerManager.current.audioAni.CrossFade("Grapple", 0.1f);
             }
 
             if (grappleCDTimer > 0) grappleCDTimer -= Time.deltaTime;
@@ -353,7 +354,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 state = MovementState.walking;
                 desiredMoveSpeed = runnerSpeed;
-                PlayerManager.current.audioAni.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
             }
             else if (!grounded) // jumping
             {
@@ -737,7 +737,7 @@ public class PlayerMovement : MonoBehaviour
         float highestPointOnArc = grapplePointRelYPos + overshootY;
 
         if (grapplePointRelYPos < 0) highestPointOnArc = overshootY;
-
+        PlayerManager.current.audioAni.CrossFade("GrappleHit", 0.1f);
         JumpToPosition(grapplePoint, highestPointOnArc);
         Invoke(nameof(StopGrapple), 0.5f);
     }

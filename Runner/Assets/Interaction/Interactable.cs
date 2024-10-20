@@ -9,6 +9,9 @@ public abstract class Interactable : MonoBehaviour
 
     public bool interactable;
 
+    [Header("UI Icon")]
+    public GameObject interactIcon;
+
     [Header("UI Text")]
     public bool showText;
     public string textToShow;
@@ -33,6 +36,7 @@ public abstract class Interactable : MonoBehaviour
     {
         if (!interactable) return;
         PlayerManager.current.currentInteractable = this;
+        interactIcon.SetActive(true);
         if (showText)
             PlayerManager.current.UpdatePopupText(textToShow);
     }
@@ -43,6 +47,7 @@ public abstract class Interactable : MonoBehaviour
         if (PlayerManager.current.currentInteractable == this)
         {
             PlayerManager.current.currentInteractable = null;
+            interactIcon.SetActive(false);
             if (showText)
                 PlayerManager.current.UpdatePopupText(" ");
         }

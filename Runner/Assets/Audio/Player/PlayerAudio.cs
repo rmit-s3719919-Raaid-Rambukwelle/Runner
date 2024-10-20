@@ -8,7 +8,8 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip[] walkSounds;
     public AudioClip[] actionSounds;
     public AudioClip[] miscSounds;
-    public AudioClip grappleSound;
+    public AudioClip grappleSoundOne;
+    public AudioClip grappleSoundTwo;
 
     [Header("Audio Sources")]
     public AudioSource audioSource;
@@ -39,9 +40,14 @@ public class PlayerAudio : MonoBehaviour
         miscSource.PlayOneShot(clip);
     }
 
-    public void PlayGrappleSound()
+    public void PlayGrappleSoundOne()
     {
-        audioSource.PlayOneShot(grappleSound);
+        audioSource.PlayOneShot(grappleSoundOne);
+    }    
+    
+    public void PlayGrappleSoundTwo()
+    {
+        audioSource.PlayOneShot(grappleSoundTwo);
     }
 
     public void StopWalkSound() 
