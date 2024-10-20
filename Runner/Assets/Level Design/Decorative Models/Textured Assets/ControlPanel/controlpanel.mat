@@ -92,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normalTex:
-        m_Texture: {fileID: 2800000, guid: 29e62d5fd71715747800375f14124532, type: 3}
+        m_Texture: {fileID: 2800000, guid: 079ba2ca813d3d343aa08cd4cabe23eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _shadowTex:
@@ -152,7 +152,7 @@ Material:
     - _ambientOcclusionStrength: 0
     - _emissionStrength: 0
     - _metallicStrength: 0
-    - _normalStrength: 0
+    - _normalStrength: 0.29
     - _shadowStep: 0
     - _smoothnessStrength: 0
     m_Colors:
