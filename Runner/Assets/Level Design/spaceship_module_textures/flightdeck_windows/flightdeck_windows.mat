@@ -187,7 +187,7 @@ Material:
     - _mainTexStrength: 1
     - _metallic: 0
     - _metallicStrength: 0
-    - _normalStrength: 1
+    - _normalStrength: 9.49
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0
     - _outlineThickness: 0
