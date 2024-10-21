@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SettingsMenu : MonoBehaviour
     private bool isSettingsOpen = false;
 
     public TMP_Dropdown resolutionDropDown;
+
+    public FadeSequence fs;
 
     Resolution[] resolutions;
     public void Start()
@@ -79,5 +82,11 @@ public class SettingsMenu : MonoBehaviour
     public void SetQuality(int qualityIndex) 
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void ReturnToMenu()
+    {
+        fs.message = " ";
+        SceneManager.LoadScene("StartScreen");
     }
 }

@@ -11,15 +11,20 @@ public class TutorialPause : MonoBehaviour
     public TypeWriter tp;
     public TMP_Text textLabel;
     public float delay;
-    bool paused = false;
-    bool interactable = true;
+    public bool paused = false;
+    public bool checking = false;
+    public bool interactable = true;
+    public bool buttonPressed = false;
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && interactable)
         {
+            Debug.LogWarning("HIT: " + interactKey);
             Time.timeScale = 0.05f;
-            interactable = false;
+            checking = true;
+            StopAllCoroutines();
             StartCoroutine(nameof(WaitForDelay));
             dialogueBox.SetActive(true);
             tp.Run(tutorialMsg, textLabel);
@@ -28,9 +33,16 @@ public class TutorialPause : MonoBehaviour
 
     private void Update()
     {
-        if (paused && Input.GetKey(interactKey))
+        if (Input.GetKey(interactKey) && checking)
+        {
+            buttonPressed = true;
+        }
+
+        if (paused && buttonPressed && interactable)
         {
             Time.timeScale = 1;
+            interactable = false;
+            Debug.LogWarning("FINISHED: " + interactKey);
             dialogueBox.SetActive(false);
         }
 
@@ -38,7 +50,7 @@ public class TutorialPause : MonoBehaviour
 
     IEnumerator WaitForDelay()
     {
-        yield return new WaitForSeconds(delay / 0.05f);
+        yield return new WaitForSeconds(delay * 0.05f);
         paused = true;
     }
 }

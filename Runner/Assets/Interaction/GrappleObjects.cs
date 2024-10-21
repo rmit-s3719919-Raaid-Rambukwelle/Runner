@@ -9,7 +9,7 @@ public class GrappleObjects : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (Vector3.Distance(PlayerManager.current.transform.position, transform.position) <= 125f)
+        if (Vector3.Distance(PlayerManager.current.transform.position, transform.position) <= 175f)
             uiElement.SetActive(true);
     }
 

@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager current;
 
     [Header("Runner")]
+    public FadeSequence fs;
     public float maxTime;
     public float timer;
 
@@ -85,15 +86,9 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(transitionKey))
         {
-            thirdPerson = !thirdPerson;
-            running = !running;
+            SwapPerspective();
         }
 
-        if (Input.GetKeyDown(inventoryKey))
-        {
-            inventoryOpen = !inventoryOpen;
-            inventoryAni.SetBool("Toggle", inventoryOpen);
-        }
 
         //Interactions
         if (Input.GetKeyDown(interactKey))
@@ -177,13 +172,31 @@ public class PlayerManager : MonoBehaviour
     IEnumerator StartTimer()
     {
         timer = maxTime;
-        while (true)
+        while (running)
         {
             yield return new WaitForSeconds(1f);
             timer--;
-            if (timer <= 0f)
+            if (timer <= 0f || !running)
+            {
+                fs.message = "You failed to escape the ship in time";
+                fs.StartFade();
+                running = false;
                 break;
+            }
         }
+
+        if (timer <= 0f || !running)
+        {
+            fs.message = "You failed to escape the ship in time";
+            fs.StartFade();
+            running = false;
+        }
+    }
+
+    public void StopTimer()
+    {
+        running = false;
+        StopCoroutine(StartTimer());
     }
 
     IEnumerator HoldUI()

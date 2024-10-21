@@ -6,10 +6,14 @@ using TMPro;
 
 public class FadeSequence : MonoBehaviour
 {
+    public Rigidbody rb;
     public RawImage fadeImage;
     public float duration;
     public TextMeshProUGUI uiText;
+    public GameObject buttonObj;
+    public GameObject crosshair;
     public string message;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,8 +45,15 @@ public class FadeSequence : MonoBehaviour
         }
 
         imageColor.a = 1f;
+
         uiText.text = message;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        buttonObj.SetActive(true);
+        crosshair.SetActive(false);
         PlayerManager.current.canMove = false;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        PlayerManager.current.StopTimer();
         fadeImage.color = imageColor;
     }
 }
