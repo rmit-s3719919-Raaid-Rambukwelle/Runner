@@ -176,20 +176,13 @@ public class PlayerManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             timer--;
-            if (timer <= 0f || !running)
+            if (timer <= 0f)
             {
                 fs.message = "You failed to escape the ship in time";
                 fs.StartFade();
                 running = false;
                 break;
             }
-        }
-
-        if (timer <= 0f || !running)
-        {
-            fs.message = "You failed to escape the ship in time";
-            fs.StartFade();
-            running = false;
         }
     }
 

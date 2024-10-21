@@ -291,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(PlayerManager.current.grappleKey))
             {
                 StartGrapple();
-                PlayerManager.current.audioAni.CrossFade("Grapple", 0.1f);
+                
             }
 
             if (grappleCDTimer > 0) grappleCDTimer -= Time.deltaTime;
@@ -722,6 +722,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(cameraPoint.position, cameraPoint.forward, out grappleHit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = grappleHit.point;
+            PlayerManager.current.audioAni.CrossFade("Grapple", 0.1f);
             Invoke(nameof(GrappleMovement), grappleDelayTime);
             //Debug.Log("Hit Grapple Point: + " + grappleHit.collider.name);
         }
