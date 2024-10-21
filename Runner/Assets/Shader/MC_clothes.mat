@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MC_clothes
-  m_Shader: {fileID: -6465566751694194690, guid: bc3235349f6938d4b83a731936f392dc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -63,6 +63,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8893f6f290f14ccc8cb6b6d1b6c32a8c_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9acce6cffff048478c6ba287ec0c7db2_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cd234c89f3ed437d968af52565f58cda_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 756ef2b0edf5e6e46baee24dcf64a39c, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -75,8 +83,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ambientOccTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ambientOcclusionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _emissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _mainTex:
         m_Texture: {fileID: 2800000, guid: ee058e9ba764f904daa6f4438e73d651, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _metallicTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normalTex:
@@ -84,6 +108,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _shadowTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _smoothnessTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -133,19 +161,25 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _ambientOcclusionStrength: 0
+    - _emissionStrength: 0
     - _lightSmoothness: 1
+    - _metallicStrength: 0
     - _normalStrength: 0.49
     - _outlineDepthSensitivity: 0
     - _outlineNormalSensitivity: 0
     - _outlineThickness: 0
     - _shadowStep: 0
+    - _smoothnessStrength: 0
     - _transparency: 0.5
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _emissionColor: {r: 1, g: 1, b: 1, a: 0}
     - _mainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}
     - _shadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _shadowIntensity: {r: 0.18, g: 1, b: 0, a: 0}

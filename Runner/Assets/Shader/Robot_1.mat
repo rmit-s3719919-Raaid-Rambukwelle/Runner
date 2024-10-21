@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Robot_1
-  m_Shader: {fileID: -6465566751694194690, guid: bc3235349f6938d4b83a731936f392dc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5d18e68f6425863468d66967201d9a6d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,6 +37,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_efa2f5f68fb9416ab05014f278a69613_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: a1a4108227a8a8b4f9067f80f37c33ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ambientOccTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ambientOcclusionTex:
@@ -97,6 +101,7 @@ Material:
     - _smoothnessStrength: 0
     - _transparency: 0.5
     m_Colors:
+    - _emissionColor: {r: 1, g: 1, b: 1, a: 0}
     - _mainColor: {r: 1, g: 1, b: 1, a: 0}
     - _mainTexTiling: {r: 1, g: 1, b: 0, a: 0}
     - _mainTexTint: {r: 1, g: 1, b: 1, a: 0}

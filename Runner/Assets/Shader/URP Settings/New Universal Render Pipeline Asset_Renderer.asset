@@ -54,10 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: customOutlines
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     passTag: customOutlines
-    Event: 450
+    Event: 500
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -183,10 +183,10 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1081343
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 32767
+    m_Bits: 1081344
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
-  m_CopyDepthMode: 0
+  m_CopyDepthMode: 2
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
 --- !u!114 &2629925101722381986
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   injectionPoint: 450
   fetchColorBuffer: 1
   requirements: 7
@@ -230,17 +230,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: customOutlines
+  m_Name: robotOutline
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: customOutlines
-    Event: 300
+    passTag: robotOutline
+    Event: 550
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 65536
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
