@@ -76,5 +76,7 @@ public class LevelManager : MonoBehaviour
 
         // Play the transition out animation after the scene has fully loaded and is active
         yield return transition.AnimateTransitionOut();
+
+        transitionsContainer.SetActive(false);
     }
 }

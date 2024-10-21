@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        LevelManager.Instance.LoadScene("Main_UI", "CrossFade");
+        LevelManager.Instance.LoadScene("Main", "CrossFade");
     }
 
     public void Settings() 

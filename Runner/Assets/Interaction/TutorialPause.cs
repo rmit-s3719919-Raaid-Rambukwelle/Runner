@@ -10,6 +10,7 @@ public class TutorialPause : MonoBehaviour
     public string tutorialMsg;
     public TypeWriter tp;
     public TMP_Text textLabel;
+    public float delay;
     bool paused = false;
     bool interactable = true;
 
@@ -19,7 +20,7 @@ public class TutorialPause : MonoBehaviour
         {
             Time.timeScale = 0.05f;
             interactable = false;
-            paused = true;
+            StartCoroutine(nameof(WaitForDelay));
             dialogueBox.SetActive(true);
             tp.Run(tutorialMsg, textLabel);
         }
@@ -33,5 +34,11 @@ public class TutorialPause : MonoBehaviour
             dialogueBox.SetActive(false);
         }
 
+    }
+
+    IEnumerator WaitForDelay()
+    {
+        yield return new WaitForSeconds(delay / 0.05f);
+        paused = true;
     }
 }

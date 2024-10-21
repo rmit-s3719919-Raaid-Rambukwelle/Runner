@@ -27,6 +27,7 @@ public abstract class PlayerControlHandler : MonoBehaviour
     protected virtual void DisablePlayerControls() 
     {
         //Debug.Log("DisablePlayerControls called from: " + this.GetType().Name);
+        playerMovementScript.ani.SetFloat("Velocity", 0f);
         playerManagerScript.canMove = false;
     }
 

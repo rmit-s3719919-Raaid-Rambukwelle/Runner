@@ -167,9 +167,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!PlayerManager.current.canMove) return;
+
         PlayerManager.current.moveSpeed = new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
-        if (PlayerManager.current.thirdPerson)
+        if (!PlayerManager.current.thirdPerson)
             PlayerManager.current.audioAni.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
+        else
+        {
+            ani.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
+        }
 
         DebugSpeed = rb.velocity.magnitude;
         DebugDesiredMoveSpeed = desiredMoveSpeed;
@@ -199,6 +205,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!PlayerManager.current.canMove) return;
+
         //checks to see if any ui element is active
         bool isAnyUIActive = false;
         foreach (var uiElement in ui)
@@ -304,11 +312,12 @@ public class PlayerMovement : MonoBehaviour
                 else
                     desiredMoveSpeed = walkSpeed;
 
-                ani.SetFloat("Velocity", new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).magnitude);
+                
             }
             else // idle
             {
                 state = MovementState.idle;
+                ani.SetFloat("Velocity", 0f);
                 desiredMoveSpeed = 0f;
             }
 
