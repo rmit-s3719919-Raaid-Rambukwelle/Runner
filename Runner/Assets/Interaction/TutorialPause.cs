@@ -11,6 +11,7 @@ public class TutorialPause : MonoBehaviour
     public TypeWriter tp;
     public TMP_Text textLabel;
     public float delay;
+    bool active = true;
     public bool paused = false;
     public bool checking = false;
     public bool interactable = true;
@@ -19,11 +20,12 @@ public class TutorialPause : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && interactable)
+        if (other.CompareTag("Player") && active && !PlayerManager.current.thirdPerson)
         {
             Debug.LogWarning("HIT: " + interactKey);
             Time.timeScale = 0.05f;
             checking = true;
+            active = false;
             StopAllCoroutines();
             StartCoroutine(nameof(WaitForDelay));
             dialogueBox.SetActive(true);

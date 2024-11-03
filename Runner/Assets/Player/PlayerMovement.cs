@@ -722,7 +722,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(cameraPoint.position, cameraPoint.forward, out grappleHit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = grappleHit.point;
-            PlayerManager.current.audioAni.CrossFade("Grapple", 0.1f);
+            
             Invoke(nameof(GrappleMovement), grappleDelayTime);
             //Debug.Log("Hit Grapple Point: + " + grappleHit.collider.name);
         }
@@ -733,7 +733,7 @@ public class PlayerMovement : MonoBehaviour
             //Instantiate(testPrefab, grapplePoint, Quaternion.identity);
             //Debug.Log("Missed Grapple Point: + " + grappleHit);
         }
-
+        PlayerManager.current.audioAni.CrossFade("Grapple", 0.1f);
         lr.enabled = true;
     }
 
