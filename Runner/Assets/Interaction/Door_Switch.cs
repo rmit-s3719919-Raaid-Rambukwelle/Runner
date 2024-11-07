@@ -14,8 +14,15 @@ public class Door_Switch : MonoBehaviour
     public NPCMovementTrigger npcMovementTrigger;
     public DialogueActivator dialogueActivator;
 
+    public bool activateOnAwake = false;
+
     private Quaternion originalRotation;
 
+    private void Awake()
+    {
+        if (activateOnAwake)
+            doorAnimator.SetTrigger("OpenTrigger");
+    }
 
     public void Interact()
     {
