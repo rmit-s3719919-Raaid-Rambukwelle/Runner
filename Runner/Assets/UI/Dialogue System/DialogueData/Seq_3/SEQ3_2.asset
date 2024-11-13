@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - '*whirrs intensely*'
   - Woah...
-  - Is that... what I believe it to be?
+  - Is that...
   responses:
   - responseText: Continue.
     dialogueObject: {fileID: 0}
