@@ -41728,7 +41728,7 @@ GameObject:
   - component: {fileID: 537088762}
   - component: {fileID: 537088761}
   - component: {fileID: 537088760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box4_sctn1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47168,7 +47168,7 @@ GameObject:
   - component: {fileID: 593836805}
   - component: {fileID: 593836804}
   - component: {fileID: 593836803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tribeam (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58569,8 +58569,8 @@ GameObject:
   - component: {fileID: 708102341}
   - component: {fileID: 708102344}
   - component: {fileID: 708102343}
-  - component: {fileID: 708102342}
-  m_Layer: 0
+  - component: {fileID: 708102345}
+  m_Layer: 10
   m_Name: Box4_sctn1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58592,28 +58592,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1044134314}
   m_LocalEulerAnglesHint: {x: 0.974, y: -308.546, z: -0.776}
---- !u!64 &708102342
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708102340}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3378841179633581857, guid: 27c43af19143b904cad7ad5279e67c79, type: 3}
 --- !u!23 &708102343
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58664,6 +58642,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708102340}
   m_Mesh: {fileID: 3378841179633581857, guid: 27c43af19143b904cad7ad5279e67c79, type: 3}
+--- !u!65 &708102345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708102340}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020742133, y: 0.01, z: 0.009417781}
+  m_Center: {x: 0.0037031882, y: 0.000000037351118, z: -0.00029182728}
 --- !u!1 &708841344
 GameObject:
   m_ObjectHideFlags: 0
@@ -94104,8 +94103,8 @@ GameObject:
   - component: {fileID: 1162790004}
   - component: {fileID: 1162790007}
   - component: {fileID: 1162790006}
-  - component: {fileID: 1162790005}
-  m_Layer: 0
+  - component: {fileID: 1162790008}
+  m_Layer: 10
   m_Name: Box4_sctn1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94127,28 +94126,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1044134314}
   m_LocalEulerAnglesHint: {x: 0, y: -382.235, z: 90}
---- !u!64 &1162790005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162790003}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3378841179633581857, guid: 27c43af19143b904cad7ad5279e67c79, type: 3}
 --- !u!23 &1162790006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94199,6 +94176,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162790003}
   m_Mesh: {fileID: 3378841179633581857, guid: 27c43af19143b904cad7ad5279e67c79, type: 3}
+--- !u!65 &1162790008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162790003}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012338527, y: 0.010000005, z: 0.009417782}
+  m_Center: {x: -0.00049870793, y: 0.00000023883203, z: -0.0002912316}
 --- !u!1 &1163946989
 GameObject:
   m_ObjectHideFlags: 0
@@ -112743,7 +112741,7 @@ GameObject:
   - component: {fileID: 1401456394}
   - component: {fileID: 1401456393}
   - component: {fileID: 1401456392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box4_sctn1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120100,7 +120098,7 @@ GameObject:
   - component: {fileID: 1479996529}
   - component: {fileID: 1479996528}
   - component: {fileID: 1479996527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box3_sctn1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147737,7 +147735,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -180214,7 +180212,7 @@ GameObject:
   - component: {fileID: 2143393578}
   - component: {fileID: 2143393577}
   - component: {fileID: 2143393576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box3_sctn1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
