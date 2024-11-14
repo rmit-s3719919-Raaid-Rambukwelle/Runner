@@ -22,6 +22,8 @@ public class PlayerManager : MonoBehaviour
     [Header("Sensitivity")]
     public float sensX;
     public float sensY;
+    [HideInInspector] public float initSensX;
+    [HideInInspector] public float initSensY;
     public float tpSensX;
     public float tpSensY;
 
@@ -62,6 +64,8 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI interactText;
     public Animator timerUI;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI questText;
+
     bool updateUI = true;
 
     [Header("Runner Audio")]
@@ -75,6 +79,8 @@ public class PlayerManager : MonoBehaviour
         current = this;
         pm = GetComponent<PlayerMovement>();
         inventory = GetComponent<Inventory>();
+        initSensX = sensX;
+        initSensY = sensY;
     }
 
     void Update()
@@ -203,4 +209,9 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         updateUI = true;
     }    
+
+    public void UpdateQuest(string input)
+    {
+        questText.text = input;
+    }
 }

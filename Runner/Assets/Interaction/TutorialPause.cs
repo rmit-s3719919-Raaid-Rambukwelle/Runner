@@ -30,6 +30,8 @@ public class TutorialPause : MonoBehaviour
             StartCoroutine(nameof(WaitForDelay));
             dialogueBox.SetActive(true);
             tp.Run(tutorialMsg, textLabel);
+            PlayerManager.current.sensX /= 0.05f;
+            PlayerManager.current.sensY /= 0.05f;
         }
     }
 
@@ -46,6 +48,8 @@ public class TutorialPause : MonoBehaviour
             interactable = false;
             Debug.LogWarning("FINISHED: " + interactKey);
             dialogueBox.SetActive(false);
+            PlayerManager.current.sensX = PlayerManager.current.initSensX;
+            PlayerManager.current.sensY = PlayerManager.current.initSensY;
         }
 
     }

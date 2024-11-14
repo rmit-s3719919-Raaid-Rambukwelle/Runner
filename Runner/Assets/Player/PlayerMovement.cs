@@ -771,7 +771,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 vy = Vector3.up * MathF.Sqrt(-2 * g * trajectoryHeight);
         Vector3 vxz = dxz / (MathF.Sqrt(-2 * trajectoryHeight / g) + MathF.Sqrt(2 * (dy - trajectoryHeight) / g));
 
-        return vy + vxz;
+        return (vy + vxz) * 0.9f;
     }
 
     void FrontWallCheck()
@@ -816,5 +816,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         transform.position = PlayerManager.current.currentRespawnPoint.position;
+        cam.cameraHolder.rotation = PlayerManager.current.currentRespawnPoint.rotation;
+        cam.orientation.rotation = PlayerManager.current.currentRespawnPoint.rotation;
     }
 }

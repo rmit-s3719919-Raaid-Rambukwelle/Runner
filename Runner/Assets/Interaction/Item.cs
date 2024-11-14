@@ -41,11 +41,11 @@ public class Item : Interactable
         playerAni.SetTrigger(triggerString);
         Invoke(nameof(DisableItem), 1.2f);
 
+        if (activateObjects)
+            StartCoroutine(activateObjectsInScript());
         if (deactivateObjects)
             StartCoroutine(deactivateObjectsInScript());
 
-        if (activateObjects)
-            StartCoroutine(activateObjectsInScript());
     }
 
 
