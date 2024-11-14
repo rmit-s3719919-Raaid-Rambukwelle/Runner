@@ -109,6 +109,11 @@ public class PlayerManager : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (currentRespawnPoint != null) Respawn();
+        }
+
         if (Input.GetMouseButton(1) && currentInteractable != null && Vector3.Distance(transform.position, currentInteractable.transform.position) <= grappleRange && currentInteractable.interactable)
         {
             currentInteractable.Interact();

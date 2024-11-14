@@ -21,7 +21,7 @@ MonoBehaviour:
   - Those fusion cells would've run us a fortune, you know...
   - "but at least those dusters won\u2019t trouble us anymore."
   - "I suggest we keep moving. Any survivors are certain to be clawing their way
-    through, and I\u2019m not so keen on a reunion."
+    through, and I\u2019m not so keen on a reunion.\n\n(Click continue)"
   responses:
   - responseText: Continue
     dialogueObject: {fileID: 0}
